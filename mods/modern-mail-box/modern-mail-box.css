@@ -1,0 +1,22 @@
+.treemenu-viewport {
+    padding-right: 10px !important;
+}
+
+.treemenu-viewport .ccl-treemenu>ul>li>ul li {
+    padding: 10px !important;
+    border-radius: 10px !important;
+    transition-duration: .3s !important;
+    margin-bottom: 5px !important;
+}
+
+.treemenu-viewport .ccl-treemenu>ul>li>ul li:hover {
+    background-color: #ffffff !important;
+}
+
+.treemenu-viewport .ccl-treemenu>ul>li>ul>li:has(a.jstree-clicked) {
+    background-color: #ffffff !important;
+}
+
+#ctl00_TreeMenu_ViewPort {
+    padding-left: 20px;
+}

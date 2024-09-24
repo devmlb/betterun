@@ -1,0 +1,98 @@
+[
+    {
+        "id": "mod-float-perso-menu",
+        "title": "Menu personnel flottant",
+        "desc": "Transforme le menu personnel en menu flottant et unifie son apparence.",
+        "frame": "main",
+        "default-state": true,
+        "chromium-files": ["/mods/float-perso-menu/float-perso-menu.css"],
+        "firefox-files": ["/mods/float-perso-menu/float-perso-menu.css"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "v1.0",
+        "hidden": false
+    },
+    {
+        "id": "mod-material-icons",
+        "title": "Icônes Material",
+        "desc": "Remplace les icônes diverses par des icônes Material Design.",
+        "frame": "all",
+        "default-state": true,
+        "chromium-files": ["/mods/material-icons/material-icons-chromium.css", "/mods/material-icons/material-icons.js"],
+        "firefox-files": ["/mods/material-icons/material-icons-firefox.css", "/mods/material-icons/material-icons.js"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "beta",
+        "hidden": false
+    },
+    {
+        "id": "mod-home-layout",
+        "title": "Accueil moderne",
+        "desc": "Améliore l'apparence du contenu de l'onglet accueil.",
+        "frame": "all",
+        "default-state": true,
+        "chromium-files": ["/mods/home-layout/home-layout.css"],
+        "firefox-files": ["/mods/home-layout/home-layout.css"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "beta",
+        "hidden": false
+    },
+    {
+        "id": "mod-navbar",
+        "title": "Navbar améliorée",
+        "desc": "Améliore l'apparence de la navbar et des menus flottants associés.",
+        "frame": "main",
+        "default-state": true,
+        "chromium-files": ["/mods/navbar/navbar.css", "/mods/navbar/navbar.js"],
+        "firefox-files": ["/mods/navbar/navbar.css", "/mods/navbar/navbar.js"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "v1.2",
+        "hidden": false
+    },
+    {
+        "id": "mod-float-notif-menu",
+        "title": "Menu de notifications flottant",
+        "desc": "Transforme le menu de notifications en menu flottant et unifie son apparence.",
+        "frame": "main",
+        "default-state": true,
+        "chromium-files": ["/mods/float-notif-menu/float-notif-menu.css"],
+        "firefox-files": ["/mods/float-notif-menu/float-notif-menu.css"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "v1.0",
+        "hidden": false
+    },
+    {
+        "id": "mod-material-icons-font",
+        "title": "",
+        "desc": "Ajoute automatiquement la feuille CSS pour la police Material.",
+        "frame": "all",
+        "default-state": true,
+        "chromium-files": ["/mods/material-icons-font/material-icons-font-chromium.css"],
+        "firefox-files": ["/mods/material-icons-font/material-icons-font-firefox.css"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "v1.0",
+        "hidden": true
+    },
+    {
+        "id": "mod-revamped-home",
+        "title": "Accueil repensé",
+        "desc": "Réorganise la page d'accueil pour une meilleure praticité. Disponible pour certains établissements uniquement.",
+        "frame": "all",
+        "default-state": false,
+        "chromium-files": ["/mods/revamped-home/revamped-home.css", "/mods/revamped-home/revamped-home.js"],
+        "firefox-files": ["/mods/revamped-home/revamped-home.css", "/mods/revamped-home/revamped-home.js"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "alpha",
+        "hidden": false
+    },
+    {
+        "id": "mod-modern-mail-box",
+        "title": "Boite mail moderne",
+        "desc": "Apporte une touche de fraicheur à l'interface de la boite mail.",
+        "frame": "all",
+        "default-state": true,
+        "chromium-files": ["/mods/modern-mail-box/modern-mail-box.css"],
+        "firefox-files": ["/mods/modern-mail-box/modern-mail-box.css"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "beta",
+        "hidden": false
+    }
+]

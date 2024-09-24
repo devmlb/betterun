@@ -1,0 +1,18 @@
+/* Modifies home content look */
+body:not(.l-group-dashboard) .itsl-cb-news .itsl-widget-content-ul>li, .itsl-cb-stream .itsl-widget-content-ul>li, .l-modern-ui-dashboard .itsl-cb-notifications .itsl-widget-content-ul>li {
+    border-radius: 10px !important;
+}
+.itsl-homepagetabs .il-widget.itsl-cb-tasks2 .tasklist2_container {
+    border-radius: 10px !important;
+}
+.itsl-updatestab-wrapper .itsl-cb-activities>.il-widget-bottom {
+    padding-left: 28px !important;
+    border-radius: 0px 0px 10px 10px !important;
+}
+.itsl-updatestab-wrapper .itsl-cb-activities .itsl-widget-toolbar {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+/* html {
+    overflow-y: hidden;
+} */

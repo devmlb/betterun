@@ -1,0 +1,49 @@
+{
+    "manifest_version": 3,
+    "name": "ItsBetter",
+    "version": "1.2.0",
+    "description": "Improve your Itslearning experience",
+    "permissions": [
+        "storage",
+        "scripting",
+        "tabs",
+        "webNavigation",
+        "alarms"
+    ],
+    "action": {
+        "default_title": "ItsBetter",
+        "default_popup": "/internal/popup.html"
+    },
+    "icons": {
+        "16": "/internal/icons/itsbetter-icon-16.png",
+        "32": "/internal/icons/itsbetter-icon-32.png",
+        "48": "/internal/icons/itsbetter-icon-48.png",
+        "128": "/internal/icons/itsbetter-icon-128.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://*.itslearning.com/*"],
+          "js": ["/internal/itsbetter-api.js"],
+          "run_at": "document_start"
+        }
+      ],
+    "web_accessible_resources": [
+        {
+        "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/itsbetter/*"],
+        "matches": ["https://*.itslearning.com/*"]
+        }
+    ],
+    "background": {
+        "service_worker": "/internal/background.js",
+        "scripts": ["/internal/background.js"]
+    },
+    "host_permissions": [
+        "https://*.itslearning.com/*"
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "itsbetter@mlb",
+            "update_url": "https://example.com/updates.json"
+        }
+    }
+}

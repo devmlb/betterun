@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="mdui-theme-auto">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="/mdui/mdui.css">
+    <script src="/mdui/mdui.global.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="popup.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: rgb(var(--mdui-color-surface-container-highest));
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(var(--mdui-color-primary));
+            border-radius: 10px;
+        }
+        body {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding: 10px;
+            width: 350px;
+            overflow-x: hidden;
+        }
+        .material-symbols-rounded {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+        p,
+        a {
+            font-size: 14px;
+            color: var(--mdui-color-on-surface);
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+        }
+        p:not(.checkbox-title, .checkbox-desc, #contributors) {
+            white-space: nowrap;
+        }
+        a {
+            text-decoration: none;
+            color: var(--mdui-color-on-surface);
+        }
+        mdui-card {
+            padding: 15px;
+            width: 100%;
+        }
+        .checkbox-desc {
+            color: var(--mdui-color-on-surface-variant-light);
+            margin-top: 5px;
+            font-size: 13px;
+        }
+        .checkbox-title {
+            font-weight: bold;
+        }
+        .checkbox-title>mdui-badge {
+            margin-left: 5px;
+        }
+        .checkbox-div {
+            margin-left: 10px;
+        }
+        mdui-badge {
+            background-color: rgb(var(--mdui-color-primary));
+        }
+        #div-active-switch {
+            cursor: pointer;
+        }
+        #active-switch {
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-bottom: 20px; width: 100%; display: flex; align-items: center; justify-content: center ;">
+        <img src="/internal/icons/itsbetter-icon-128.png" style="width: 50px; height: 50px; margin-right: 10px;">
+        <h1>ItsBetter</h1>
+    </div>
+    <mdui-card id="update-card" variant="filled" style="display: none; cursor: pointer; margin-bottom: 20px; background-color: rgb(var(--mdui-color-error-light)); align-items: center;">
+        <i class="material-icons-round" style="color: rgb(var(--mdui-color-on-error-light)); margin-right: 20px;">error</i>
+        <div>
+            <h2 style="color: rgb(var(--mdui-color-on-error-light)); margin-block-start: 0px; margin-block-end: 0px;">Une mise à jour est disponible !</h2>
+            <p style="display: flex; align-items: center; margin-block-start: 10px; color: rgb(var(--mdui-color-on-error-light));">Téléchargez la dernière version<i class="material-icons-round" style="font-size: 14px; margin-left: 5px;">open_in_new</i></p>
+        </div>
+    </mdui-card>
+    <mdui-card variant="filled" style="margin-bottom: 20px;">
+        <div id="div-active-switch" style="display: flex; align-items: center; justify-content: space-between;">
+            <p style="margin-right: 10px; font-weight: bold;">Activer l'extension</p>
+            <mdui-switch id="active-switch" style="scale: 0.8;">Test</mdui-switch>
+        </div>
+    </mdui-card>
+    <h2>Mods</h2>
+    <mdui-card variant="outlined" id="settings" style="display: flex; flex-direction: column;"></mdui-card>
+    <h2 id="about">À propos</h2>
+    <mdui-card variant="outlined">
+        <p style="margin-bottom: 10px;" id="contributors">Cette extension a été développée par Mlb et Titilapierre.</p>
+        <mdui-button id="check-updates-btn" style="margin-top: 15px;" icon="sync--rounded" full-width variant="text">Vérifier les mises à jour</mdui-button>
+        <mdui-button style="margin-top: 5px;" icon="code--rounded" full-width href="https://github.com/devmlb/itsbetter/" target="_blank" variant="text">Voir sur Github</mdui-button>
+        <mdui-button style="margin-top: 5px;" icon="bug_report--rounded" full-width href="https://forms.gle/Poo2q21Fc2fXqF3z9" target="_blank" variant="text">Signaler un bug</mdui-button>
+    </mdui-card>
+</body>
+
+</html>
