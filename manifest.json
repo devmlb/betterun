@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "ItsBetter",
-    "version": "1.2.0",
-    "description": "Improve your Itslearning experience",
+    "name": "BetterUN",
+    "version": "0.0.0",
+    "description": "Improve your experience on the Nantes Université websites",
     "permissions": [
         "storage",
         "scripting",
@@ -11,18 +11,18 @@
         "alarms"
     ],
     "action": {
-        "default_title": "ItsBetter",
+        "default_title": "BetterUN",
         "default_popup": "/internal/popup.html"
     },
     "icons": {
-        "16": "/internal/icons/itsbetter-icon-16.png",
-        "32": "/internal/icons/itsbetter-icon-32.png",
-        "48": "/internal/icons/itsbetter-icon-48.png",
-        "128": "/internal/icons/itsbetter-icon-128.png"
+        "16": "/internal/icons/icon-16.png",
+        "32": "/internal/icons/icon-32.png",
+        "48": "/internal/icons/icon-48.png",
+        "128": "/internal/icons/icon-128.png"
     },
     "content_scripts": [
         {
-          "matches": ["https://*.itslearning.com/*"],
+          "matches": ["https://*.univ-nantes.fr/*"],
           "js": ["/internal/itsbetter-api.js"],
           "run_at": "document_start"
         }
@@ -30,7 +30,7 @@
     "web_accessible_resources": [
         {
         "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/itsbetter/*"],
-        "matches": ["https://*.itslearning.com/*"]
+        "matches": ["https://*.univ-nantes.fr/*"]
         }
     ],
     "background": {
@@ -38,7 +38,7 @@
         "scripts": ["/internal/background.js"]
     },
     "host_permissions": [
-        "https://*.itslearning.com/*"
+        "https://*.univ-nantes.fr/*"
     ],
     "browser_specific_settings": {
         "gecko": {
