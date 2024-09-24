@@ -28,7 +28,7 @@ function checkUpdates() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    mdui.setColorScheme('#f47920');
+    mdui.setColorScheme('#3452ff');
     const settingsCard = document.getElementById("settings");
     const activeSwitch = document.getElementById("active-switch");
     const activeSwitchHoverEffect = document.querySelector("#active-switch").shadowRoot.querySelector("label > div > div > mdui-ripple").shadowRoot.querySelector("div")
