@@ -1,5 +1,5 @@
 function getModsAndDefault(data) {
-    // Read the available-mods.json file and extract the mods ids with their default values
+    // Read the mods.json file and extract the mods ids with their default values
     const result = {};
     data.forEach(item => {
         if (item.hasOwnProperty('id') && item.hasOwnProperty('default-state')) {
@@ -10,7 +10,7 @@ function getModsAndDefault(data) {
 }
 
 function initStorageKeys(requiredSettings) {
-    // Compare the mods present in available-mods.json and the settings corresponding to them in the browser's storage and make the two match
+    // Compare the mods present in mods.json and the settings corresponding to them in the browser's storage and make the two match
     chrome.storage.sync.get(null, function (localSettings) {
         let toRemove = [];
         // console.log("Local storage: " + JSON.stringify(localSettings));
@@ -39,7 +39,7 @@ function initStorageKeys(requiredSettings) {
 };
 
 function checkSettingsStorage(previousReleaseVersion, currentReleaseVersion) {
-    fetch(chrome.runtime.getURL("/available-mods.json")).then(function (response) {
+    fetch(chrome.runtime.getURL("/mods.json")).then(function (response) {
         return response.json();
     }).then(function (data) {
         let settings = getModsAndDefault(data);
@@ -74,7 +74,7 @@ function isFirefox() {
 
 function checkPermissions() {
     chrome.permissions.contains({
-        origins: ["https://*.itslearning.com/*"]
+        origins: ["https://*.univ-nantes.fr/*"]
     }, function (response) {
         if (!response) {
             console.log("Not all permissions are granted. Opening the onboarding page.");
@@ -115,7 +115,7 @@ function injectContent(modsInfo, requiredContent, url, tabId, frameId) {
                                 }
                             }
                         } else {
-                            console.log("Skipping injection of '" + tempMod.id + "' in tab with id '" + tabId + "' in frame with id '" + frameId + "' because 'frame' is set to 'main' in 'available-mods.json'")
+                            console.log("Skipping injection of '" + tempMod.id + "' in tab with id '" + tabId + "' in frame with id '" + frameId + "' because 'frame' is set to 'main' in 'mods.json'")
                         }
                     }
                 } else if (isFirefox()) {
@@ -137,7 +137,7 @@ function injectContent(modsInfo, requiredContent, url, tabId, frameId) {
                                 }
                             }
                         } else {
-                            console.log("Skipping injection of '" + tempMod.id + "' in tab with id '" + tabId + "' in frame with id '" + frameId + "' because 'frame' is set to 'main' in 'available-mods.json'")
+                            console.log("Skipping injection of '" + tempMod.id + "' in tab with id '" + tabId + "' in frame with id '" + frameId + "' because 'frame' is set to 'main' in 'mods.json'")
                         }
                     }
                 }
@@ -169,8 +169,8 @@ function injectContent(modsInfo, requiredContent, url, tabId, frameId) {
 // Injects mods when new frame with Itslearning's URL is requested
 chrome.webNavigation.onCommitted.addListener(function (details) {
     if (details.url != undefined) {
-        if (details.url.includes("itslearning")) {
-            fetch(chrome.runtime.getURL("/available-mods.json")).then(function (response) {
+        if (details.url.includes("univ-nantes.fr")) {
+            fetch(chrome.runtime.getURL("/mods.json")).then(function (response) {
                 return response.json();
             }).then(function (data) {
                 chrome.storage.sync.get(null, function (localSettings) {

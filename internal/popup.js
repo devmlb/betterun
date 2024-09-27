@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activeSwitchHoverEffect.classList.remove("hover");
     });
     checkUpdates();
-    fetch(chrome.runtime.getURL("/available-mods.json")).then(function (response) {
+    fetch(chrome.runtime.getURL("/mods.json")).then(function (response) {
         return response.json();
     }).then(function (modsList) {
         chrome.storage.sync.get(null, function (localSettings) {
