@@ -23,13 +23,14 @@
     "content_scripts": [
         {
           "matches": ["https://*.univ-nantes.fr/*"],
-          "js": ["/internal/itsbetter-api.js"],
+          "js": ["/internal/utils.js"],
+          "css": ["/internal/utils.css"],
           "run_at": "document_start"
         }
       ],
     "web_accessible_resources": [
         {
-        "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/itsbetter/*"],
+        "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/bun/*"],
         "matches": ["https://*.univ-nantes.fr/*"]
         }
     ],
