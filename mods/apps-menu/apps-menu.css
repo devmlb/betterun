@@ -59,6 +59,7 @@
     height: 80px;
     width: 80px;
     text-align: center;
+    text-transform: none;
 }
 
 #outils_numeriques .outils_numeriques__item>a:hover {
