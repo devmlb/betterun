@@ -1,0 +1,14 @@
+[
+    {
+        "id": "mod-apps-menu",
+        "title": "Menu des applications modernisé",
+        "desc": "Apporte une touche de fraicheur au menu donnant accès aux services numériques de l'Université sur l'accueil de l'intranet.",
+        "frame": "all",
+        "default-state": true,
+        "chromium-files": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
+        "firefox-files": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
+        "matches": ["https://*.itslearning.com/*"],
+        "version": "beta",
+        "hidden": false
+    }
+]
