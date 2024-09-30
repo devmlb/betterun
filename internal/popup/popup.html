@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="mdui-theme-auto">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="/mdui/mdui.css">
+    <script src="/mdui/mdui.global.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div id="home-page" class="page">
+        <header style="padding: 20px;">
+            <img src="/internal/icons/icon-256.png" style="width: 50px; height: 50px; margin-right: 16px;">
+            <h1 style="margin-block: 0px;">BetterUN</h1>
+            <div style="flex-grow: 1"></div>
+            <mdui-button-icon id="settings-btn" icon="settings--rounded"></mdui-button-icon>
+        </header>
+        <div class="content">
+            <mdui-card id="update-card" variant="filled" style="display: none; cursor: pointer; margin-bottom: 20px; background-color: rgb(var(--mdui-color-error-light)); align-items: center;">
+                <i class="material-icons-round" style="color: rgb(var(--mdui-color-on-error-light)); margin-right: 20px;">error</i>
+                <div>
+                    <h2 style="color: rgb(var(--mdui-color-on-error-light)); margin-block-start: 0px; margin-block-end: 0px;">Une mise à jour est disponible !</h2>
+                    <p style="display: flex; align-items: center; margin-block-start: 10px; color: rgb(var(--mdui-color-on-error-light));">Téléchargez la dernière version<i class="material-icons-round" style="font-size: 14px; margin-left: 5px;">open_in_new</i></p>
+                </div>
+            </mdui-card>
+            <mdui-card variant="filled" style="margin-bottom: 20px;">
+                <div id="div-active-switch" style="display: flex; align-items: center; justify-content: space-between;">
+                    <p style="margin-right: 10px; font-weight: bold;">Activer l'extension</p>
+                    <mdui-switch id="active-switch" style="scale: 0.8;">Test</mdui-switch>
+                </div>
+            </mdui-card>
+            <h2>Mods</h2>
+            <section id="mods-list"></section>
+        </div>
+        <!-- <mdui-card variant="outlined" id="settings" style="display: flex; flex-direction: column;"></mdui-card> -->
+        <!-- <mdui-card variant="filled" clickable style="display: flex; justify-content: space-between; align-items: center;">
+            <p>Paramètres</p>
+            <i class="material-icons-round" style="margin-left: 20px;">arrow_right</i>
+        </mdui-card> -->
+    </div>
+    <div id="settings-page" class="page">
+        <header>
+            <mdui-button-icon class="back-btn" icon="arrow_back--rounded" style="margin-right: 16px;"></mdui-button-icon>
+            <h2 style="margin-block: 0px;">Paramètres</h2>
+            <div style="flex-grow: 1"></div>
+        </header>
+        <div class="content">
+            <h3 id="about">À propos</h3>
+            <mdui-card variant="outlined">
+                <p style="margin-bottom: 10px;" id="contributors">Cette extension a été développée par Mlb.</p>
+                <mdui-button id="check-updates-btn" style="margin-top: 15px;" icon="sync--rounded" full-width variant="text">Vérifier les mises à jour</mdui-button>
+                <mdui-button style="margin-top: 5px;" icon="code--rounded" full-width href="https://github.com/devmlb/bun/" target="_blank" variant="text">Voir sur Github</mdui-button>
+                <mdui-button disabled style="margin-top: 5px;" icon="bug_report--rounded" full-width href="https://forms.gle/Poo2q21Fc2fXqF3z9" target="_blank" variant="text">Signaler un bug</mdui-button>
+            </mdui-card>
+        </div>
+    </div>
+</body>
+
+</html>
