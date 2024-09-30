@@ -1,14 +1,30 @@
 [
     {
-        "id": "mod-apps-menu",
-        "title": "Menu des applications modernisé",
+        "id": "apps-menu",
+        "title": "Moderniser le menu des applications",
         "desc": "Apporte une touche de fraicheur au menu donnant accès aux services numériques de l'Université sur l'accueil de l'intranet.",
         "frame": "all",
-        "default-state": true,
-        "chromium-files": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
-        "firefox-files": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
-        "matches": ["https://*.itslearning.com/*"],
+        "enabled": true,
+        "chromiumFiles": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
+        "firefoxFiles": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
+        "matches": ["https://intraetu.univ-nantes.fr*"],
         "version": "beta",
-        "hidden": false
+        "hidden": false,
+        "pageId": "intranet",
+        "sectionId": "main"
+    },
+    {
+        "id": "madoc-pp",
+        "title": "Redimensionner la photo de profil",
+        "desc": "Corrige un bug rendant la photo de profil démesurée par rapport à l'interface.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/madoc-pp/madoc-pp.css"],
+        "firefoxFiles": ["/mods/madoc-pp/madoc-pp.css"],
+        "matches": ["https://madoc.univ-nantes.fr*"],
+        "version": "beta",
+        "hidden": false,
+        "pageId": "madoc",
+        "sectionId": "main"
     }
 ]
