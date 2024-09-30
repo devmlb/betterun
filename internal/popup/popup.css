@@ -18,7 +18,7 @@
 }
 
 html {
-    width: fit-content;
+    width: 350px;;
 }
 
 body {
@@ -43,18 +43,23 @@ body {
 p,
 a {
     font-size: 14px;
-    color: var(--mdui-color-on-surface);
+    /* color: var(--mdui-color-on-surface); */
     margin-block-start: 0px;
     margin-block-end: 0px;
 }
 
-p:not(.checkbox-title, .checkbox-desc, #contributors) {
+/* p:not(.checkbox-title, .checkbox-desc, #contributors) {
     white-space: nowrap;
-}
+} */
 
 a {
     text-decoration: none;
-    color: var(--mdui-color-on-surface);
+    color: rgb(var(--mdui-color-primary));
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
 }
 
 mdui-card {
@@ -65,7 +70,7 @@ mdui-card {
 .checkbox-desc {
     color: var(--mdui-color-on-surface-variant-light);
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .checkbox-title {
@@ -137,4 +142,17 @@ header {
     padding: 10px 20px;
     flex-grow: 0;
     background-color: rgb(var(--mdui-color-primary-container));
+}
+
+#about-section p {
+    margin-bottom: 8px;
+}
+
+#release-version {
+    text-align: center;
+}
+
+mdui-divider {
+    background-color: rgb(var(--mdui-color-outline));
+    margin: 16px 0px;
 }

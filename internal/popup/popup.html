@@ -39,11 +39,6 @@
             <h2>Mods</h2>
             <section id="mods-list"></section>
         </div>
-        <!-- <mdui-card variant="outlined" id="settings" style="display: flex; flex-direction: column;"></mdui-card> -->
-        <!-- <mdui-card variant="filled" clickable style="display: flex; justify-content: space-between; align-items: center;">
-            <p>Paramètres</p>
-            <i class="material-icons-round" style="margin-left: 20px;">arrow_right</i>
-        </mdui-card> -->
     </div>
     <div id="settings-page" class="page">
         <header>
@@ -52,13 +47,18 @@
             <div style="flex-grow: 1"></div>
         </header>
         <div class="content">
-            <h3 id="about">À propos</h3>
-            <mdui-card variant="outlined">
-                <p style="margin-bottom: 10px;" id="contributors">Cette extension a été développée par Mlb.</p>
-                <mdui-button id="check-updates-btn" style="margin-top: 15px;" icon="sync--rounded" full-width variant="text">Vérifier les mises à jour</mdui-button>
+            <section id="about-section">
+                <h3>À propos</h3>
+                <mdui-card class="mods-card" variant="filled">
+                    <h1 id="release-version"></h1>
+                    <mdui-divider></mdui-divider>
+                    <p id="contributors">Cette extension est développée par <a href="https://github.com/devmlb" target="_blank">Mlb</a>.</p>
+                    <p>BetterUN n'est pas affiliée, associée, ou en aucun cas officiellement liée à Nantes Université.</p>
+                    <p>Cette extension est disponible sous licence GNU General Public License v3.0.</p>
+                </mdui-card>
+                <mdui-button disabled id="check-updates-btn" style="margin-top: 15px;" icon="sync--rounded" full-width variant="text">Vérifier les mises à jour</mdui-button>
                 <mdui-button style="margin-top: 5px;" icon="code--rounded" full-width href="https://github.com/devmlb/bun/" target="_blank" variant="text">Voir sur Github</mdui-button>
-                <mdui-button disabled style="margin-top: 5px;" icon="bug_report--rounded" full-width href="https://forms.gle/Poo2q21Fc2fXqF3z9" target="_blank" variant="text">Signaler un bug</mdui-button>
-            </mdui-card>
+            </section>
         </div>
     </div>
 </body>
