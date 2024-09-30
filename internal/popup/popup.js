@@ -8,23 +8,23 @@ function getModById(modId, modsList) {
 }
 
 function checkUpdates() {
-    fetch('https://devmlb.github.io/bun/release.json')
-        .then(response => response.json())
-        .then(data => {
-            const latestVersion = data['latest-version'];
-            const currentManifestVersion = chrome.runtime.getManifest().version
-            if (latestVersion != currentManifestVersion) {
-                const updateCard = document.getElementById('update-card');
-                updateCard.style.display = "flex"
-                updateCard.addEventListener("click", function () {
-                    window.open('https://github.com/devmlb/bun/releases/latest', '_blank').focus();
-                });
-                console.log('Update available! (v' + currentManifestVersion + " > v" + latestVersion + ")");
-                chrome.action.setBadgeText({ text: "!" });
-                chrome.action.setBadgeTextColor({ color: [255, 255, 255, 255] });
-                chrome.action.setBadgeBackgroundColor({ color: [186, 26, 26, 255] });
-            }
-        });
+    // fetch('https://devmlb.github.io/bun/release.json')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         const latestVersion = data['latest-version'];
+    //         const currentManifestVersion = chrome.runtime.getManifest().version
+    //         if (latestVersion != currentManifestVersion) {
+    //             const updateCard = document.getElementById('update-card');
+    //             updateCard.style.display = "flex"
+    //             updateCard.addEventListener("click", function () {
+    //                 window.open('https://github.com/devmlb/bun/releases/latest', '_blank').focus();
+    //             });
+    //             console.log('Update available! (v' + currentManifestVersion + " > v" + latestVersion + ")");
+    //             chrome.action.setBadgeText({ text: "!" });
+    //             chrome.action.setBadgeTextColor({ color: [255, 255, 255, 255] });
+    //             chrome.action.setBadgeBackgroundColor({ color: [186, 26, 26, 255] });
+    //         }
+    //     });
 }
 
 async function getMods(modsFile = '/mods.json') {
@@ -147,7 +147,7 @@ async function createMods(modsList) {
             chrome.storage.sync.set(activeSwitchState);
         });
         const currentVersion = chrome.runtime.getManifest().version;
-        document.getElementById("about").textContent = "À propos (v" + currentVersion + ")"
+        document.getElementById("release-version").textContent = "v" + currentVersion;
         for (const key in localSettings) {
             if (!key.startsWith('gbs-')) {
                 let tempMod = getModById(key.replace('mod-', ''), modsList);

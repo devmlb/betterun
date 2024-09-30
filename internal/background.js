@@ -268,21 +268,21 @@ chrome.runtime.onInstalled.addListener((details) => {
 });
 
 // Checks for updates every 24 hours, and displays a badge if necessary
-chrome.alarms.onAlarm.addListener((alarm) => {
-    fetch('https://devmlb.github.io/bun/release.json')
-        .then(response => response.json())
-        .then(data => {
-            const latestVersion = data['latest-version'];
-            const currentManifestVersion = chrome.runtime.getManifest().version
-            if (latestVersion != currentManifestVersion) {
-                console.log('Update available! (v' + currentManifestVersion + ' > v' + latestVersion + ')');
-                chrome.action.setBadgeText({ text: '!' });
-                chrome.action.setBadgeTextColor({ color: [255, 255, 255, 255] });
-                chrome.action.setBadgeBackgroundColor({ color: [186, 26, 26, 255] });
-            }
-        })
-        .catch(error => {
-            console.error('Error when checking for update:', error);
-        });
+// chrome.alarms.onAlarm.addListener((alarm) => {
+//     fetch('https://devmlb.github.io/bun/release.json')
+//         .then(response => response.json())
+//         .then(data => {
+//             const latestVersion = data['latest-version'];
+//             const currentManifestVersion = chrome.runtime.getManifest().version
+//             if (latestVersion != currentManifestVersion) {
+//                 console.log('Update available! (v' + currentManifestVersion + ' > v' + latestVersion + ')');
+//                 chrome.action.setBadgeText({ text: '!' });
+//                 chrome.action.setBadgeTextColor({ color: [255, 255, 255, 255] });
+//                 chrome.action.setBadgeBackgroundColor({ color: [186, 26, 26, 255] });
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error when checking for update:', error);
+//         });
 
-});
+// });
