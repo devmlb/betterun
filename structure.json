@@ -1,0 +1,16 @@
+[
+    {
+        "id": "intranet",
+        "name": "Accueil de l'intranet",
+        "sections": {
+            "main": ""
+        }
+    },
+    {
+        "id": "madoc",
+        "name": "Madoc",
+        "sections": {
+            "main": ""
+        }
+    }
+]
