@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "BetterUN",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Improve your experience on the Nantes Université websites",
     "permissions": [
         "storage",
@@ -12,7 +12,7 @@
     ],
     "action": {
         "default_title": "BetterUN",
-        "default_popup": "/internal/popup.html"
+        "default_popup": "/internal/popup/popup.html"
     },
     "icons": {
         "16": "/internal/icons/icon-16.png",
