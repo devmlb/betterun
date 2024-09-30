@@ -26,5 +26,19 @@
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "main"
+    },
+    {
+        "id": "uncloud-autologin",
+        "title": "Utiliser l'authentification centralisée",
+        "desc": "Remplace le dispositif de connexion natif d'UNcloud par l'authentification centralisée de l'Université.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/uncloud-autologin/uncloud-autologin.js"],
+        "firefoxFiles": ["/mods/uncloud-autologin/uncloud-autologin.js"],
+        "matches": ["https://uncloud.univ-nantes.fr*"],
+        "version": "alpha",
+        "hidden": false,
+        "pageId": "uncloud",
+        "sectionId": "main"
     }
 ]
