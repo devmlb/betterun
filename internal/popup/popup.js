@@ -42,44 +42,40 @@ async function getExtensionStorage(key = null) {
     return storage;
 }
 
-async function createPagesLinks(structure) {
-    const modsList = document.querySelector('#mods-list');
+async function createModsPagesLinks(structure) {
+    const modsPagesList = document.querySelector('#mods-list');
     structure.forEach(pageInfos => {
-        let pageLink = document.createElement('div');
-        pageLink.innerHTML = `
-        <mdui-card variant="filled" clickable id="${pageInfos.id}-btn" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-            <p>${pageInfos.name}</p>
-            <i class="material-icons-round" style="margin-left: 20px;">arrow_right</i>
-        </mdui-card>
-        `
-        modsList.appendChild(pageLink)
-        document.getElementById(pageInfos.id + '-btn').addEventListener("click", () => {
+        let modPageLink = document.createElement('mdui-card');
+        modPageLink.innerHTML = `
+        <p>${pageInfos.name}</p>
+        <i class="material-icons-round">arrow_right</i>
+        `;
+        modPageLink.setAttribute('clickable', '');
+        modPageLink.setAttribute('variant', 'filled');
+        modPageLink.id = pageInfos.id + '-btn';
+        modPageLink.classList.add('mod-link');
+        modsPagesList.appendChild(modPageLink);
+        modPageLink.addEventListener('click', () => {
             document.getElementById(pageInfos.id).classList.add('swipe-left');
-            document.getElementById('home-page').classList.add('swipe-left');
+            document.querySelector('#home-page').classList.add('swipe-left');
         });
     });
 }
 
 async function createPages(structure) {
-    const body = document.querySelector('body');
-    const homePage = document.querySelector('#home-page');
     structure.forEach(pageInfos => {
         let sections = '';
         Object.keys(pageInfos.sections).forEach(sectionId => {
+            sections += '<section>';
             if (sectionId != 'main') {
-                sections += `<section>
-                <h3>${pageInfos.sections[sectionId]}</h3>
-                <mdui-card variant="filled" id="${pageInfos.id + '-' + sectionId}" class="mods-card"></mdui-card>
-                </section>`;
-            } else {
-                sections += `<section>
-                <mdui-card variant="filled" id="${pageInfos.id + '-' + sectionId}" class="mods-card"></mdui-card>
-                </section>`;
+                sections += `<h3>${pageInfos.sections[sectionId]}</h3>`;
             }
+            sections += `<mdui-card variant="filled" id="${pageInfos.id + '-' + sectionId}" class="mods-card"></mdui-card>
+            </section>`;
         });
         let page = document.createElement('div');
         page.id = pageInfos.id;
-        page.classList = 'page';
+        page.classList.add('page');
         page.innerHTML = `
         <header>
             <mdui-button-icon class="back-btn" icon="arrow_back--rounded"></mdui-button-icon>
@@ -90,86 +86,52 @@ async function createPages(structure) {
         ${sections}
         </div>
         `;
-        body.appendChild(page)
-        page.querySelector('.back-btn').addEventListener("click", () => {
-            page.classList.remove('swipe-left');
-            homePage.classList.remove('swipe-left');
+        document.querySelector('body').appendChild(page);
+    });
+    document.querySelectorAll('.back-btn').forEach(backBtn => {
+        backBtn.addEventListener('click', () => {
+            backBtn.parentNode.parentNode.classList.remove('swipe-left');
+            document.querySelector('#home-page').classList.remove('swipe-left');
         });
-    });
-    let settingsPage = document.querySelector('#settings-page');
-    document.querySelector('#settings-btn').addEventListener("click", () => {
-        settingsPage.classList.add('swipe-left');
-        homePage.classList.add('swipe-left');
-    });
-    settingsPage.querySelector('.back-btn').addEventListener("click", () => {
-        settingsPage.classList.remove('swipe-left');
-        homePage.classList.remove('swipe-left');
     });
 }
 
 async function enableDisableMod(modId, state) {
     let modSettings = await getExtensionStorage(modId);
-    console.log(state)
     if (state) {
         modSettings[modId].enabled = true;
+        console.info('Enabling mod with id ' + modId);
     } else {
         modSettings[modId].enabled = false;
+        console.info('Disabling mod with id ' + modId);
     }
-    console.info("Updating setting with id '" + modId + "' to " + modSettings)
     chrome.storage.sync.set(modSettings);
 }
 
 async function createMods(modsList) {
-    const activeSwitch = document.querySelector("#enable-switch mdui-switch");
-    chrome.storage.sync.get(null, function (localSettings) {
-        if (localSettings["gbs-enabled"]) {
-            activeSwitch.setAttribute('checked', '');
-        }
-        activeSwitch.addEventListener('change', () => {
-            let activeSwitchState = {};
-            let modsCards = document.querySelectorAll('.mod-checkbox');
-            if (activeSwitch.checked) {
-                activeSwitchState["gbs-enabled"] = true
-                modsCards.forEach((mod) => {
-                    mod.removeAttribute('disabled', '');
-                });
-            } else {
-                activeSwitchState["gbs-enabled"] = false
-                modsCards.forEach((mod) => {
-                    mod.setAttribute('disabled', '');
-                });
-            }
-            console.info("Updating setting with id 'gbs-enabled' to " + activeSwitchState['gbs-enabled'])
-            chrome.storage.sync.set(activeSwitchState);
-        });
-        const currentVersion = chrome.runtime.getManifest().version;
-        document.getElementById("release-version").textContent = "v" + currentVersion;
-        for (const key in localSettings) {
-            if (!key.startsWith('gbs-')) {
-                let tempMod = getModById(key.replace('mod-', ''), modsList);
-                if (!tempMod.hidden) {
-                    let settingsCard = document.querySelector('section>#' + tempMod.pageId + '-' + tempMod.sectionId);
-                    let checkbox = document.createElement("mdui-checkbox");
-                    checkbox.innerHTML = `
-                    <div class="checkbox-div">
-                        <p class="checkbox-title">${tempMod.title}<mdui-badge variant="large">${tempMod.version}</mdui-badge></p>
-                        <p class="checkbox-desc">${tempMod.desc}</p>
-                    </div>
-                    `
-                    checkbox.setAttribute('id', 'mod-' + tempMod.id);
-                    checkbox.setAttribute('class', 'mod-checkbox');
-                    if (localSettings[key].enabled) {
-                        checkbox.setAttribute('checked', '');
-                    }
-                    if (!activeSwitch.checked) {
-                        checkbox.setAttribute('disabled', '');
-                    }
-                    settingsCard.appendChild(checkbox);
-                    checkbox.addEventListener('change', () => {
-                        let checkboxId = checkbox.getAttribute("id");
-                        enableDisableMod(checkboxId, checkbox.checked);
-                    });
+    const localSettings = await getExtensionStorage();
+    Object.keys(localSettings).forEach(key => {
+        if (!key.startsWith('gbs-')) {
+            let mod = getModById(key.replace('mod-', ''), modsList);
+            if (!mod.hidden) {
+                let modsCard = document.querySelector('section>#' + mod.pageId + '-' + mod.sectionId);
+                let checkbox = document.createElement('mdui-checkbox');
+                checkbox.setAttribute('id', 'mod-' + mod.id);
+                checkbox.setAttribute('class', 'mod-checkbox');
+                checkbox.innerHTML = `<div class="checkbox-div">
+                    <p class="checkbox-title">${mod.title}<mdui-badge variant="large">${mod.version}</mdui-badge></p>
+                    <p class="checkbox-desc">${mod.desc}</p>
+                </div>`;
+                if (localSettings[key].enabled) {
+                    checkbox.setAttribute('checked', '');
                 }
+                if (!document.querySelector('#enable-switch mdui-switch').checked) {
+                    checkbox.setAttribute('disabled', '');
+                }
+                modsCard.appendChild(checkbox);
+                checkbox.addEventListener('change', () => {
+                    enableDisableMod(checkbox.getAttribute('id'), checkbox.checked);
+                });
             }
         }
     });
@@ -178,43 +140,55 @@ async function createMods(modsList) {
 async function initUI() {
     const structure = await getStructure();
     const mods = await getMods();
+    const localSettings = await getExtensionStorage();
+    const enableSwitch = document.querySelector('#enable-switch mdui-switch');
+    if (localSettings['gbs-enabled']) {
+        enableSwitch.setAttribute('checked', '');
+    }
+    enableSwitch.addEventListener('change', () => {
+        let modsCards = document.querySelectorAll('.mod-checkbox');
+        let enableSwitchState = true;
+        if (enableSwitch.checked) {
+            modsCards.forEach((mod) => {
+                mod.removeAttribute('disabled', '');
+            });
+            console.info('Enabling the extension');
+        } else {
+            enableSwitchState = false;
+            modsCards.forEach((mod) => {
+                mod.setAttribute('disabled', '');
+            });
+            console.info('Disabling the extension');
+        }
+        chrome.storage.sync.set({'gbs-enabled': enableSwitchState});
+    });
+    const enableSwitchCard = document.querySelector('#enable-switch');
+    enableSwitchCard.addEventListener('click', () => {
+        enableSwitch.click();
+    });
+    let settingsPage = document.querySelector('#settings-page');
+    document.querySelector('#settings-btn').addEventListener('click', () => {
+        settingsPage.classList.add('swipe-left');
+        document.querySelector('#home-page').classList.add('swipe-left');
+    });
+    document.querySelector('#release-version').textContent = "v" + chrome.runtime.getManifest().version;
     createPages(structure);
-    createPagesLinks(structure);
-    console.log(mods)
+    createModsPagesLinks(structure);
     createMods(mods);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     mdui.setColorScheme('#3452ff');
-
     initUI()
-
     setInterval(() => {
         document.querySelector('body').classList.add('ready');
     }, 160); // hiding the switch activation effect 
-    
-
-    // const settingsCard = document.getElementById("settings");
-    const activeSwitch = document.querySelector("#enable-switch mdui-switch");
-    // const activeSwitchHoverEffect = document.querySelector("#active-switch").shadowRoot.querySelector("label > div > div > mdui-ripple").shadowRoot.querySelector("div")
-    const divActiveSwitch = document.querySelector("#enable-switch");
     // // const checkUpdatesBtn = document.getElementById("check-updates-btn");
-    // divActiveSwitch.addEventListener("click", function () {
-    //     activeSwitch.click()
+    // divenableSwitch.addEventListener("click", function () {
+    //     enableSwitch.click()
     // });
     // checkUpdatesBtn.addEventListener("click", function() {
     //     checkUpdates();
     //     window.scrollTo({top: 0, behavior: 'smooth'});
-    // });
-    // divActiveSwitch.addEventListener("mouseover", function () {
-    //     activeSwitch.setAttribute('hover', '');
-    //     activeSwitchHoverEffect.classList.add("hover");
-    // });
-    // divActiveSwitch.addEventListener("mouseout", function () {
-    //     activeSwitch.removeAttribute('hover', '');
-    //     activeSwitchHoverEffect.classList.remove("hover");
-    // });
-    divActiveSwitch.addEventListener('click', () => {
-        activeSwitch.click();
-    });
+    // });   
 });
