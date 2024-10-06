@@ -1,3 +1,4 @@
+// TODO: clean the code
 (function () {
     const groupsList = document.querySelector('.groups-list');
     const searchBox = document.querySelector('#searchBox');
