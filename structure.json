@@ -19,5 +19,12 @@
         "sections": {
             "main": ""
         }
+    },
+    {
+        "id": "calendar",
+        "name": "Emploi du temps",
+        "sections": {
+            "main": ""
+        }
     }
 ]

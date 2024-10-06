@@ -40,5 +40,33 @@
         "hidden": false,
         "pageId": "uncloud",
         "sectionId": "main"
+    },
+    {
+        "id": "calendar-loader",
+        "title": "Corriger l'animation de chargement des calendriers",
+        "desc": "Empêche le cercle de chargement de faire des mouvements diagonaux quand un emploi du temps est sélectionné.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/calendar-loader/calendar-loader.css", "/mods/calendar-loader/calendar-loader.js"],
+        "firefoxFiles": ["/mods/calendar-loader/calendar-loader.css", "/mods/calendar-loader/calendar-loader.js"],
+        "matches": ["https://edt-v2.univ-nantes.fr*"],
+        "version": "1.0",
+        "hidden": false,
+        "pageId": "calendar",
+        "sectionId": "main"
+    },
+    {
+        "id": "improved-groups-selection",
+        "title": "Améliorer la sélection de groupe",
+        "desc": "Déplace la sélection de l'emploi du temps des groupes dans un popup et ajoute des tags pour les retirer facilement.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/improved-groups-selection/improved-groups-selection.css", "/mods/improved-groups-selection/improved-groups-selection.js"],
+        "firefoxFiles": ["/mods/improved-groups-selection/improved-groups-selection.css", "/mods/improved-groups-selection/improved-groups-selection.js"],
+        "matches": ["https://edt-v2.univ-nantes.fr*"],
+        "version": "beta",
+        "hidden": false,
+        "pageId": "calendar",
+        "sectionId": "main"
     }
 ]

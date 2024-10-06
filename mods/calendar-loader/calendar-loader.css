@@ -1,0 +1,13 @@
+.calendar-loader {
+    top: calc(50% + 50px) !important;
+    left: calc(50% - 50px) !important;
+    transform: none !important;
+    /* -webkit-transform: translateX(0%) translateY(0%) !important; */
+    animation: spin2 1s linear infinite !important;
+}
+
+@keyframes spin2 {
+    100% {
+        rotate: 360deg;
+    }
+}
