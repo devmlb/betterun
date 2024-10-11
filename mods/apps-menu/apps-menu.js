@@ -6,7 +6,8 @@
         { name: 'Webmail', img: '/mods/apps-menu/icons/mail.png', url: 'https://intraetu.univ-nantes.fr/vos-webservices/webmail', alt: 'Webmail' },
         { name: 'Madoc', img: '/mods/apps-menu/icons/school.png', url: 'https://intraetu.univ-nantes.fr/vos-webservices/madoc', alt: 'Madoc' },
         { name: 'UNcloud', img: '/mods/apps-menu/icons/cloud.png', url: 'https://intraetu.univ-nantes.fr/vos-webservices/uncloud', alt: 'UNcloud' },
-        { name: 'Emploi du temps', img: '/mods/apps-menu/icons/calendar.png', url: 'https://edt.univ-nantes.fr/edt', alt: 'Emploi du temps' }
+        { name: 'Emploi du temps', img: '/mods/apps-menu/icons/calendar.png', url: 'https://edt.univ-nantes.fr/edt', alt: 'Emploi du temps' },
+        { name: 'Gestion des absences', img: '/mods/apps-menu/icons/contract.png', url: 'https://abs-sciences.univ-nantes.fr/', alt: 'Gestion des absences' }
     ];
     
     appsMenuUl.innerHTML = '';
