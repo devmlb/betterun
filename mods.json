@@ -68,5 +68,19 @@
         "hidden": false,
         "pageId": "calendar",
         "sectionId": "main"
+    },
+    {
+        "id": "absences-tool-refresh",
+        "title": "Rafraichir l'interface",
+        "desc": "Améliore et unifie l'apparence pour ressembler aux autres sites de l'Université (fac de sciences uniquement).",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/absences-tool-refresh/absences-tool-refresh.css"],
+        "firefoxFiles": ["/mods/absences-tool-refresh/absences-tool-refresh.css"],
+        "matches": ["https://abs-sciences.univ-nantes.fr/*"],
+        "version": "alpha",
+        "hidden": false,
+        "pageId": "absences-tool",
+        "sectionId": "main"
     }
 ]

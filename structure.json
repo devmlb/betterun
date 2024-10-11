@@ -26,5 +26,12 @@
         "sections": {
             "main": ""
         }
+    },
+    {
+        "id": "absences-tool",
+        "name": "Gestion des absences",
+        "sections": {
+            "main": ""
+        }
     }
 ]

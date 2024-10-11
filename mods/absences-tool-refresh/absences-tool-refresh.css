@@ -1,0 +1,23 @@
+input[type='file'], input[type='submit'] {
+    border: none;
+    transition-duration: var(--transition-duration);
+    display: block;
+    background-color: var(--primary) !important;
+    color: var(--on-primary) !important;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    opacity: 1;
+    text-decoration: none;
+    font-weight: 700 !important;
+    box-shadow: none;
+}
+
+#boutsubmit:hover {
+    background-color: var(--primary-dark);
+    color: var(--on-primary-dark);
+}
