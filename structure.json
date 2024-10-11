@@ -19,5 +19,19 @@
         "sections": {
             "main": ""
         }
+    },
+    {
+        "id": "calendar",
+        "name": "Emploi du temps",
+        "sections": {
+            "main": ""
+        }
+    },
+    {
+        "id": "absences-tool",
+        "name": "Gestion des absences",
+        "sections": {
+            "main": ""
+        }
     }
 ]
