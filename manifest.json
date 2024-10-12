@@ -43,7 +43,7 @@
     ],
     "browser_specific_settings": {
         "gecko": {
-            "id": "itsbetter@mlb",
+            "id": "betterun@mlb",
             "update_url": "https://example.com/updates.json"
         }
     }
