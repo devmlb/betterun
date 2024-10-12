@@ -3,6 +3,8 @@
 BetterUN is a [browser extension](https://en.wikipedia.org/wiki/Browser_extension) that enhances the [Nantes Université](https://www.univ-nantes.fr/) websites available to students. It modifies their appearance and adds new features to make the user experience more pleasant, unified and ergonomic.  
   
 BetterUN includes mods which are independent functionalities that each make a specific change to the interface. These mods can be easily enabled or disabled from the extension's popup, providing a high level of customisation.  
+  
+BetterUN is based on the [ItsBetter project](https://github.com/devmlb/itsbetter).
 
 ## Compatibility
 
