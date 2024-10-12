@@ -82,5 +82,19 @@
         "hidden": false,
         "pageId": "absences-tool",
         "sectionId": "main"
+    },
+    {
+        "id": "auto-theme",
+        "title": "Utiliser un thème automatique",
+        "desc": "Bascule automatiquement les couleurs de la page vers le mode sombre ou clair en fonction du thème de l'appareil.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/auto-theme/auto-theme.css"],
+        "firefoxFiles": ["/mods/auto-theme/auto-theme.css"],
+        "matches": ["https://intraetu.univ-nantes.fr*"],
+        "version": "alpha",
+        "hidden": false,
+        "pageId": "intranet",
+        "sectionId": "main"
     }
 ]

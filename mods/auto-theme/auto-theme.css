@@ -1,0 +1,69 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #3452ff !important;
+        --on-primary: #ffffff !important;
+        --primary-dark: #21339f !important;
+        --on-primary-dark: #ffffff !important;
+        --neutral: #cecece !important;
+        --on-neutral: #000000 !important;
+
+        --surface-low: #1A1A1A !important;
+        --surface-medium: #343434 !important;
+        --surface-high: #4D4D4D !important;
+        --on-surface-high-emphasis: #FFFFFF !important;
+        --on-surface-low-emphasis: #B4B4B4 !important;
+
+        --shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2) !important;
+
+        --transition-duration: .3s !important;
+    }
+}
+
+body {
+    background-color: var(--surface-low) !important;
+    color: var(--on-surface-high-emphasis) !important;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+#redacteur-date {
+    color: var(--on-surface-high-emphasis) !important;
+    transition: color var(--transition-duration);
+}
+
+.paragraphe--3, .paragraphe--2 {
+    background-color: var(--surface-medium) !important;
+    color: var(--on-surface-high-emphasis) !important;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+#account-menu-header>div>span {
+    color: var(--on-surface-low-emphasis) !important;
+    transition: color var(--transition-duration);
+}
+
+.toolbar__component__dropdown {
+    background-color: var(--surface-medium) !important;
+    transition: background-color var(--transition-duration);
+}
+
+.toolbar-grid-menu__element a {
+    background-color: var(--surface-medium) !important;
+    color: var(--on-surface-high-emphasis) !important;
+    transition: background-color var(--transition-duration), color var(--transition-duration) !important;
+}
+
+.toolbar-grid-menu__element a:hover, .toolbar-grid-menu__element a:focus {
+    background-color: var(--surface-high) !important;
+}
