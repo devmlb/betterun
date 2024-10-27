@@ -7,8 +7,7 @@
         "storage",
         "scripting",
         "tabs",
-        "webNavigation",
-        "alarms"
+        "webNavigation"
     ],
     "action": {
         "default_title": "BetterUN",
@@ -30,7 +29,7 @@
       ],
     "web_accessible_resources": [
         {
-        "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/bun/*"],
+        "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/betterun/*"],
         "matches": ["https://*.univ-nantes.fr/*"]
         }
     ],

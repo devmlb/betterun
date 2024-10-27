@@ -220,9 +220,9 @@ async function injectContent(url, tabId, frameId) {
                     }
                 }
             } else if (key == 'gbs-updated' && extensionStorage[key] && frameId == 0) {
-                JSToInject.push('/internal/update-inject.js');
-                chrome.storage.sync.set({ 'gbs-updated': false });
-                console.log('Adding injection of update message')
+                // JSToInject.push('/internal/update-inject.js');
+                // chrome.storage.sync.set({ 'gbs-updated': false });
+                // console.log('Adding injection of update message')
             }
         });
     }
@@ -256,7 +256,7 @@ chrome.webNavigation.onCommitted.addListener((details) => {
 chrome.runtime.onInstalled.addListener((details) => {
     checkPermissions();
     const currentVersion = chrome.runtime.getManifest().version;
-    chrome.alarms.create('updateAlarm', { delayInMinutes: 1, periodInMinutes: 1440 })
+    // chrome.alarms.create('updateAlarm', { delayInMinutes: 1, periodInMinutes: 1440 })
     if (details.reason == 'update') {
         if (currentVersion == details.previousVersion) {
             console.warn('The previous version of the extension (' + details.previousVersion + ') and the current version (' + currentVersion + ') are identical, despite an update. Has the version been updated in the manifest?')
@@ -266,23 +266,3 @@ chrome.runtime.onInstalled.addListener((details) => {
         initStorage(null, null);
     }
 });
-
-// Checks for updates every 24 hours, and displays a badge if necessary
-// chrome.alarms.onAlarm.addListener((alarm) => {
-//     fetch('https://devmlb.github.io/bun/release.json')
-//         .then(response => response.json())
-//         .then(data => {
-//             const latestVersion = data['latest-version'];
-//             const currentManifestVersion = chrome.runtime.getManifest().version
-//             if (latestVersion != currentManifestVersion) {
-//                 console.log('Update available! (v' + currentManifestVersion + ' > v' + latestVersion + ')');
-//                 chrome.action.setBadgeText({ text: '!' });
-//                 chrome.action.setBadgeTextColor({ color: [255, 255, 255, 255] });
-//                 chrome.action.setBadgeBackgroundColor({ color: [186, 26, 26, 255] });
-//             }
-//         })
-//         .catch(error => {
-//             console.error('Error when checking for update:', error);
-//         });
-
-// });
