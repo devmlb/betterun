@@ -96,5 +96,19 @@
         "hidden": false,
         "pageId": "intranet",
         "sectionId": "main"
+    },
+    {
+        "id": "theme-refresh",
+        "title": "Moderniser le thème",
+        "desc": "Unifie et améliore la charte graphique de l'interface.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/theme-refresh/theme-refresh.css", "/mods/theme-refresh/theme-refresh.js"],
+        "firefoxFiles": ["/mods/theme-refresh/theme-refresh.css", "/mods/theme-refresh/theme-refresh.js"],
+        "matches": ["https://intraetu.univ-nantes.fr*"],
+        "version": "alpha",
+        "hidden": false,
+        "pageId": "intranet",
+        "sectionId": "main"
     }
 ]

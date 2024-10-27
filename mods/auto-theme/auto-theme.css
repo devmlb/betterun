@@ -42,11 +42,11 @@ h6,
     transition: color var(--transition-duration);
 }
 
-.paragraphe--3, .paragraphe--2 {
+/* .paragraphe--3, .paragraphe--2 {
     background-color: var(--surface-medium) !important;
     color: var(--on-surface-high-emphasis) !important;
     transition: background-color var(--transition-duration), color var(--transition-duration);
-}
+} */
 
 #account-menu-header>div>span {
     color: var(--on-surface-low-emphasis) !important;
