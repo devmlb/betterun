@@ -6,7 +6,6 @@
     "permissions": [
         "storage",
         "scripting",
-        "tabs",
         "webNavigation"
     ],
     "action": {
