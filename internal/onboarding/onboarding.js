@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-    mdui.setColorScheme('#f47920');
-    const btn = document.getElementById("permission-btn");
-    const snackbar = document.getElementById("snackbar");
-    btn.addEventListener("click", function() {
-        chrome.permissions.request({ origins: ['https://*.itslearning.com/*'] });
+document.addEventListener('DOMContentLoaded', function () {
+    mdui.setColorScheme('#3452ff');
+    const btn = document.getElementById('permission-btn');
+    const snackbar = document.getElementById('snackbar');
+    btn.addEventListener('click', function() {
+        chrome.permissions.request({ origins: ['https://*.univ-nantes.fr/*'] });
         snackbar.open = true;
     });
 });
