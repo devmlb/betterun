@@ -12,6 +12,9 @@
     --on-surface-high-emphasis: #000000;
     --on-surface-low-emphasis: #676767;
 
+    --error: #B00020;
+    --on-error: #ffffff;
+
     --shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
 
     --transition-duration: .3s;

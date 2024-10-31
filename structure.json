@@ -1,9 +1,10 @@
 [
     {
         "id": "intranet",
-        "name": "Accueil de l'intranet",
+        "name": "Intranet",
         "sections": {
-            "main": ""
+            "main": "",
+            "login-page": "Page de connexion"
         }
     },
     {
