@@ -1,0 +1,83 @@
+.mdc-drawer-app-content {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#main-content {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: auto !important;
+    height: min-content !important;
+}
+
+#loginForm {
+    padding: 0px !important;
+}
+
+.form-wrapper {
+    border-radius: 20px !important;
+    background-color: #ffffff !important;
+    padding: 40px !important;
+    background-image: none !important;
+    max-width: 430px !important;
+}
+
+#fm1 {
+    margin-top: 0px !important;
+}
+
+#window-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+#window-header--infos h1 {
+    color: var(--primary);
+    margin-block-end: 4px;
+}
+
+#window-header--infos span {
+    font-weight: bold;
+}
+
+#window-header--logo {
+    background-image: url(https://cdn.univ-nantes.fr/images/cas/cas-loginbox-back-nolock-nu2022.png?v=2021121701);
+    height: 112px;
+    width: 112px;
+    display: block;
+    border-radius: 1000px;
+    flex-shrink: 0;
+    scale: 0.8;
+}
+
+#login-form-controls {
+    max-width: unset !important;
+}
+
+#passwordSection {
+    gap: 20px;
+}
+
+.mdc-button.mdc-button--raised {
+    box-shadow: none !important;
+    background-color: var(--primary) !important;
+    border-radius: 8px !important;
+    height: auto;
+    padding: 16px;
+    transition: background-color var(--transition-duration) !important;
+}
+
+.mdc-button.mdc-button--raised:hover {
+    background-color: var(--primary-dark) !important;
+    border: none !important;
+    color: var(--on-primary-dark) !important;
+}
+
+#loginErrorsPanel {
+    background-color: var(--error) !important;
+    border: none !important;
+    color: var(--on-error) !important;
+    padding: 10px !important;
+}

@@ -110,5 +110,19 @@
         "hidden": false,
         "pageId": "intranet",
         "sectionId": "main"
+    },
+    {
+        "id": "refreshed-login",
+        "title": "Moderniser l'écran de connexion",
+        "desc": "Unifie et améliore l'apparence de l'interface de connexion.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/refreshed-login/refreshed-login.css", "/mods/refreshed-login/refreshed-login.js"],
+        "firefoxFiles": ["/mods/refreshed-login/refreshed-login.css", "/mods/refreshed-login/refreshed-login.js"],
+        "matches": ["https://cas6.univ-nantes.fr*"],
+        "version": "beta",
+        "hidden": false,
+        "pageId": "intranet",
+        "sectionId": "login-page"
     }
 ]
