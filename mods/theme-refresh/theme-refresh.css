@@ -21,11 +21,30 @@ h1::after, .h1::after {
 .paragraphe--2 {
     border-radius: 12px;
     background-color: var(--primary) !important;
+    border: none !important;
+    color: var(--on-primary) !important;
+}
+
+.paragraphe--2 h2, .paragraphe--2 h3, .paragraphe--2 a {
+    color: var(--on-primary) !important;
+}
+
+.paragraphe--2 img {
+    filter: var(--on-primary-filter);
+}
+
+.paragraphe--0 a img {
+    filter: var(--on-surface-high-emphasis-filter);
 }
 
 .paragraphe__titre--6, .paragraphe__contenu--6 {
     background-color: var(--surface-medium) !important;
     color: var(--on-surface-high-emphasis) !important;
+}
+
+.paragraphe--6 img {
+    filter: var(--on-surface-high-emphasis-filter);
+    transition: filter var(--transition-duration);
 }
 
 .paragraphe--3 {
@@ -44,4 +63,32 @@ h1::after, .h1::after {
 
 .objets.actualites .photo {
     border-radius: 6px;
+}
+
+#to-top {
+    background-color: var(--primary) !important;
+}
+
+footer {
+    background-color: var(--surface-high) !important;
+    transition: background-color var(--transition-duration);
+}
+
+footer .libelle {
+    color: var(--on-surface-high-emphasis) !important;
+    transition: color var(--transition-duration);
+}
+
+footer h3.libelle {
+    border-bottom: 1px solid var(--on-surface-high-emphasis) !important;
+}
+
+.footer__logo__contenu, .footer__logo__lien {
+    filter: var(--on-surface-high-emphasis-filter);
+    transition: filter var(--transition-duration);
+}
+
+.actions-fiche svg {
+    filter: var(--on-surface-low-emphasis-filter);
+    transition: filter var(--transition-duration);
 }

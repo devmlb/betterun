@@ -7,6 +7,11 @@
         --neutral: #cecece !important;
         --on-neutral: #000000 !important;
 
+        --on-primary-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
+        --on-primary-dark-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
+        --on-surface-high-emphasis-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
+        --on-surface-low-emphasis-filter: brightness(0) saturate(100%) invert(84%) sepia(9%) saturate(8%) hue-rotate(16deg) brightness(88%) contrast(83%) !important;
+
         --surface-low: #1A1A1A !important;
         --surface-medium: #343434 !important;
         --surface-high: #4D4D4D !important;
