@@ -57,10 +57,10 @@
 }
 
 #passwordSection {
-    gap: 20px;
+    gap: 1rem;
 }
 
-.mdc-button.mdc-button--raised {
+/* .mdc-button.mdc-button--raised {
     box-shadow: none !important;
     background-color: var(--primary) !important;
     border-radius: 8px !important;
@@ -73,11 +73,107 @@
     background-color: var(--primary-dark) !important;
     border: none !important;
     color: var(--on-primary-dark) !important;
-}
+} */
 
 #loginErrorsPanel {
     background-color: var(--error) !important;
     border: none !important;
     color: var(--on-error) !important;
     padding: 10px !important;
+}
+
+.mdc-button.mdc-button--raised {
+    height: auto !important;
+    box-shadow: none !important;
+    font-family: "Source Sans Pro" !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    font-size: 1rem !important;
+    padding: 0.7rem 1.2rem !important;
+    border-radius: 0.4rem !important;
+    transition: background-color var(--transition-duration), color var(--transition-duration), border var(--transition-duration) !important;
+    cursor: pointer !important;
+    background-color: var(--primary) !important;
+    color: var(--on-primary) !important;
+    border: 3px solid var(--primary) !important;
+}
+
+.mdc-button--raised:hover, .mdc-button--raised:focus {
+    background-color: var(--primary-dark) !important;
+    color: var(--on-primary-dark) !important;
+    border: 3px solid var(--primary-dark) !important;
+}
+
+.mdc-text-field.mdc-text-field--outlined {
+    font-family: "Source Sans Pro" !important;
+    font-size: 1rem !important;
+    padding: 0.7rem !important;
+    border-radius: 0.4rem !important;
+    transition: border var(--transition-duration) !important;
+    background-color: inherit !important;
+    color: #000000 !important;
+    border: 3px solid var(--neutral) !important;
+}
+
+.mdc-text-field.mdc-text-field--outlined:hover,
+.mdc-text-field.mdc-text-field--outlined:focus,
+.mdc-text-field.mdc-text-field--outlined:focus-visible,
+.mdc-text-field.mdc-text-field--outlined:active {
+    border: 3px solid var(--primary) !important;
+    outline: none !important;
+}
+
+.mdc-notched-outline.mdc-notched-outline--upgraded {
+    display: none !important;
+}
+
+.un-input {
+    font-family: "Source Sans Pro";
+    font-size: 1rem;
+    padding: 0.7rem;
+    border-radius: 0.4rem !important;
+    transition: border var(--transition-duration);
+    background-color: inherit;
+    color: #000000;
+    border: 3px solid var(--neutral);
+    line-height: initial;
+}
+
+.un-input:hover,
+.un-input:focus,
+.un-input:focus-visible,
+.un-input:active {
+    border: 3px solid var(--primary);
+    outline: none;
+}
+
+#usernameSection .d-flex, #passwordSection .mdc-input-group-field, #passwordSection .reveal-password {
+    display: none !important;
+}
+
+input#username, input#password {
+    width: 100%;
+}
+
+.un-button {
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.4rem;
+    transition: background-color var(--transition-duration), color var(--transition-duration), border var(--transition-duration);
+    cursor: pointer;
+}
+
+.un-button-filled {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: 3px solid var(--primary);
+}
+
+.un-button-filled:hover {
+    background-color: var(--primary-dark);
+    color: var(--on-primary-dark);
+    border: 3px solid var(--primary-dark);
 }
