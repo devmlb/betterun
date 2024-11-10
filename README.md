@@ -8,12 +8,23 @@ BetterUN is based on the [ItsBetter project](https://github.com/devmlb/itsbetter
 
 ## Compatibility
 
+<table>
+<tr><td>
+
 | Browser | Windows | Linux | Mac
 |--|--|--|--|
-| Chrome | ✅ | ❓ | ❓ | ❓
+| Chrome | ✅ | ☑️ | ☑️ |
+| Chromium-based (Opera, Edge...) | ☑️ | ☑️ | ☑️ |
 | Firefox | ❓ | ❓ | ❓ |
-| Opera | ❓ | ❓ | ❓ |
-| Edge| ❓ | ❓ | ❓ |
+
+</td><td>
+
+✅ Works correctly (tested)  
+☑️ Works in theory (but not tested)  
+❓ Not tested
+
+</td></tr>
+</table>
 
 BetterUN is currently being developed and tested for [the student intranet](https://intraetu.univ-nantes.fr/) only.
 
