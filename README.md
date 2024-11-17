@@ -30,9 +30,7 @@ BetterUN is currently being developed and tested for [the student intranet](http
 
 ## Installing, uninstalling and updating
 
-Before BetterUN is available in the official browser stores, you can test the pre-release versions.
-Please refer to the [installation](https://github.com/devmlb/betterun/wiki/Installing,-uninstalling-and-updating#installation), [update](https://github.com/devmlb/betterun/wiki/Installing,-uninstalling-and-updating#mise-%C3%A0-jour) or [uninstallation](https://github.com/devmlb/betterun/wiki/Installing,-uninstalling-and-updating#d%C3%A9sinstallation) procedure for your browser.
-
+Before BetterUN is available in the official browser stores, you can [test the beta versions](https://github.com/devmlb/betterun/releases).
 
 ## Documentation
 
