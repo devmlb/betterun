@@ -1,7 +1,8 @@
 {
     "manifest_version": 3,
     "name": "BetterUN",
-    "version": "0.1.1",
+    "version": "0.2.0",
+    "version_name": "0.2.0-beta-chrome",
     "description": "Improve your experience on the Nantes Université websites",
     "permissions": [
         "storage",
@@ -53,11 +54,5 @@
     },
     "host_permissions": [
         "https://*.univ-nantes.fr/*"
-    ],
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "betterun@mlb",
-            "update_url": "https://example.com/updates.json"
-        }
-    }
+    ]
 }
