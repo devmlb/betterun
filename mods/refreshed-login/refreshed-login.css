@@ -20,7 +20,6 @@
     padding: 40px !important;
     background-image: none !important;
     max-width: 430px !important;
-    box-shadow: var(--shadow);
 }
 
 #fm1 {
@@ -41,16 +40,16 @@
 
 #window-header--infos span {
     font-weight: bold;
-    font-size: large;
 }
 
 #window-header--logo {
-    background-image: url(https://cas6n.univ-nantes.fr/esup-cas-server/images/pastille-100px_pastille-noir-defonce.png);
-    height: 100px;
-    width: 100px;
+    background-image: url(https://cdn.univ-nantes.fr/images/cas/cas-loginbox-back-nolock-nu2022.png?v=2021121701);
+    height: 112px;
+    width: 112px;
     display: block;
     border-radius: 1000px;
     flex-shrink: 0;
+    scale: 0.8;
 }
 
 #login-form-controls {
@@ -99,10 +98,7 @@
     border: 3px solid var(--primary) !important;
 }
 
-.mdc-button--raised:hover,
-.mdc-button--raised:focus,
-#submit-button:hover,
-#submit-button:focus {
+.mdc-button--raised:hover, .mdc-button--raised:focus {
     background-color: var(--primary-dark) !important;
     color: var(--on-primary-dark) !important;
     border: 3px solid var(--primary-dark) !important;
@@ -151,24 +147,11 @@
     outline: none;
 }
 
-#usernameSection .d-flex,
-#passwordSection .mdc-input-group-field,
-#passwordSection .reveal-password {
+#usernameSection .d-flex, #passwordSection .mdc-input-group-field, #passwordSection .reveal-password {
     display: none !important;
 }
 
-#passwordSection>button.un-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#passwordSection>button.un-button>i {
-    font-size: 20px !important;
-}
-
-input#username,
-input#password {
+input#username, input#password {
     width: 100%;
 }
 
@@ -193,9 +176,4 @@ input#password {
     background-color: var(--primary-dark);
     color: var(--on-primary-dark);
     border: 3px solid var(--primary-dark);
-}
-
-#form-title1,
-#form-title2 {
-    display: none;
 }

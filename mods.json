@@ -119,7 +119,7 @@
         "enabled": true,
         "chromiumFiles": ["/mods/refreshed-login/refreshed-login.css", "/mods/refreshed-login/refreshed-login.js"],
         "firefoxFiles": ["/mods/refreshed-login/refreshed-login.css", "/mods/refreshed-login/refreshed-login.js"],
-        "matches": ["https://cas6.univ-nantes.fr*", "https://cas6n.univ-nantes.fr*"],
+        "matches": ["https://cas6.univ-nantes.fr*"],
         "version": "beta",
         "hidden": false,
         "pageId": "intranet",

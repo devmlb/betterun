@@ -7,13 +7,12 @@ windowHeader.innerHTML = `
 <span id="window-header--logo"></span>
 <div id="window-header--infos">
 <h1>Connexion</h1>
-<span>aux services numériques de Nantes Université</span>
+<span>à l'intranet et aux webservices de Nantes Université</span>
 </div>
 `;
 
 formWindow.prepend(windowHeader);
 
-document.querySelector('.mdc-button[type="submit"]').id = 'submit-button';
 
 document.querySelector('#usernameSection label').removeChild(document.querySelector('#username'));
 document.querySelector('#passwordSection label').removeChild(document.querySelector('#password'));
@@ -37,7 +36,4 @@ const revealPasswordButton = document.createElement('button');
 revealPasswordButton.classList = 'un-button un-button-filled';
 revealPasswordButton.innerHTML = '<i class="material-icons-round">visibility</i>';
 revealPasswordButton.setAttribute('type', 'button');
-revealPasswordButton.addEventListener('click', () => {
-    passwordInput.type = passwordInput.type === "text" ? "password" : "text";
-});
 document.querySelector('#passwordSection').appendChild(revealPasswordButton);
