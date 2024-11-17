@@ -20,21 +20,36 @@
     },
     "content_scripts": [
         {
-          "matches": ["https://*.univ-nantes.fr/*"],
-          "js": ["/internal/utils.js"],
-          "css": ["/internal/utils.css"],
-          "run_at": "document_start"
+            "matches": [
+                "https://*.univ-nantes.fr/*"
+            ],
+            "js": [
+                "/internal/utils.js", "/internal/test.js"
+            ],
+            "css": [
+                "/internal/utils.css"
+            ],
+            "run_at": "document_start"
         }
-      ],
+    ],
     "web_accessible_resources": [
         {
-        "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/betterun/*"],
-        "matches": ["https://*.univ-nantes.fr/*"]
+            "resources": [
+                "/mods/*",
+                "/internal/*",
+                "/mdui/*",
+                "https://devmlb.github.io/betterun/*"
+            ],
+            "matches": [
+                "https://*.univ-nantes.fr/*"
+            ]
         }
     ],
     "background": {
         "service_worker": "/internal/background.js",
-        "scripts": ["/internal/background.js"]
+        "scripts": [
+            "/internal/background.js"
+        ]
     },
     "host_permissions": [
         "https://*.univ-nantes.fr/*"
