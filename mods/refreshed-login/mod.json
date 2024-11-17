@@ -1,0 +1,62 @@
+{
+    "title": "Moderniser l'écran de connexion",
+    "desc": "Unifie et améliore l'apparence de l'interface de connexion.",
+    "credits": [
+        {
+            "name": "Mlb",
+            "link": "https://github.com/devmlb"
+        },
+        {
+            "name": "Maxence"
+        }
+    ],
+    "chromiumFiles": [
+        "/mods/refreshed-login/refreshed-login.css",
+        "/mods/refreshed-login/refreshed-login.js"
+    ],
+    "firefoxFiles": [
+        "/mods/refreshed-login/refreshed-login.css",
+        "/mods/refreshed-login/refreshed-login.js"
+    ],
+    "matches": [
+        "https://cas6.univ-nantes.fr*"
+    ],
+    "settings": [
+        {
+            "name": "Thème appliqué à la page",
+            "id": "theme",
+            "type": "select",
+            "values": [
+                {
+                    "name": "Automatique",
+                    "id": "auto"
+                },
+                {
+                    "name": "Clair",
+                    "id": "light"
+                },
+                {
+                    "name": "Sombre",
+                    "id": "dark"
+                }
+            ],
+            "defaultValue": "auto"
+        },
+        {
+            "name": "Ajouter un menu pour sélectionner les emplois du temps",
+            "id": "menu",
+            "type": "checkbox",
+            "defaultValue": true
+        },
+        {
+            "name": "URLs à ajouter au menu (séparées par des virgules)",
+            "id": "urls",
+            "type": "textfield",
+            "defaultValue": ""
+        }
+    ],
+    "version": "beta",
+    "mainFrameOnly": false,
+    "enabledByDefault": true,
+    "pageId": "intranet"
+}
