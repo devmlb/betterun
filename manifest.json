@@ -54,16 +54,5 @@
     },
     "host_permissions": [
         "https://*.univ-nantes.fr/*"
-<<<<<<< Updated upstream
-    ],
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "betterun@mlb",
-            "update_url": "https://example.com/updates.json"
-        }
-    }
-}
-=======
     ]
 }
->>>>>>> Stashed changes
