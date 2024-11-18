@@ -86,7 +86,7 @@
 .mdc-button.mdc-button--raised {
     height: auto !important;
     box-shadow: none !important;
-    font-family: "Source Sans Pro" !important;
+    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif !important;
     font-weight: bold !important;
     text-transform: uppercase !important;
     font-size: 1rem !important;
@@ -109,7 +109,7 @@
 }
 
 .mdc-text-field.mdc-text-field--outlined {
-    font-family: "Source Sans Pro" !important;
+    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif !important;
     font-size: 1rem !important;
     padding: 0.7rem !important;
     border-radius: 0.4rem !important;
@@ -132,7 +132,7 @@
 }
 
 .un-input {
-    font-family: "Source Sans Pro";
+    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif;
     font-size: 1rem;
     padding: 0.7rem;
     border-radius: 0.4rem !important;
@@ -173,7 +173,7 @@ input#password {
 }
 
 .un-button {
-    font-family: "Source Sans Pro";
+    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1rem;
