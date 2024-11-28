@@ -1,5 +1,5 @@
 (function() {
-    UNCLOUD_URL = 'https://uncloud.univ-nantes.fr';
+    UNCLOUD_URL = 'https://madoc.univ-nantes.fr';
     const currentUrl = window.location.toString();
     if (currentUrl.startsWith(UNCLOUD_URL + '/index.php/login')) {
         window.location.replace(document.querySelector('#alternative-logins>a').href);

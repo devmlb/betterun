@@ -30,7 +30,7 @@
     {
         "id": "uncloud-autologin",
         "title": "Utiliser l'authentification centralisée",
-        "desc": "Remplace le dispositif de connexion natif d'UNcloud par l'authentification centralisée de l'Université.",
+        "desc": "Remplace le dispositif de connexion natif d'UNcloud par l'authentification centralisée (CAS) de l'Université.",
         "frame": "all",
         "enabled": true,
         "chromiumFiles": ["/mods/uncloud-autologin/uncloud-autologin.js", "/mods/uncloud-autologin/uncloud-autologin.css"],
@@ -124,5 +124,19 @@
         "hidden": false,
         "pageId": "intranet",
         "sectionId": "login-page"
+    },
+    {
+        "id": "madoc-autologin",
+        "title": "Utiliser l'authentification centralisée",
+        "desc": "Remplace le dispositif de connexion natif de Madoc par l'authentification centralisée (CAS) de l'Université.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
+        "firefoxFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
+        "matches": ["https://madoc.univ-nantes.fr*"],
+        "version": "alpha",
+        "hidden": false,
+        "pageId": "uncloud",
+        "sectionId": "main"
     }
 ]
