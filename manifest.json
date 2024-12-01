@@ -41,8 +41,8 @@
     ],
     "browser_specific_settings": {
         "gecko": {
-            "id": "betterun@mlb",
-            "update_url": "https://example.com/updates.json"
+            "id": "betterun@devmlb",
+            "update_url": "https://devmlb.github.io/betterun/api/update/manifest.json"
         }
     }
 }
