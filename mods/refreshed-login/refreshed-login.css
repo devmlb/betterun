@@ -97,6 +97,7 @@
     background-color: var(--primary) !important;
     color: var(--on-primary) !important;
     border: 3px solid var(--primary) !important;
+    letter-spacing: normal !important;
 }
 
 .mdc-button--raised:hover,
