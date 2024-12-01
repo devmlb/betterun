@@ -50,7 +50,7 @@
         "chromiumFiles": ["/mods/calendar-loader/calendar-loader.css"],
         "firefoxFiles": ["/mods/calendar-loader/calendar-loader.css"],
         "matches": ["https://edt-v2.univ-nantes.fr*"],
-        "version": "1.0",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "calendar",
         "sectionId": "main"
