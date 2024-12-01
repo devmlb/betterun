@@ -38,6 +38,7 @@ revealPasswordButton.classList = 'un-button un-button-filled';
 revealPasswordButton.innerHTML = '<i class="material-icons-round">visibility</i>';
 revealPasswordButton.setAttribute('type', 'button');
 revealPasswordButton.addEventListener('click', () => {
-    passwordInput.type = passwordInput.type === "text" ? "password" : "text";
+    passwordInput.type = passwordInput.type === 'text' ? 'password' : 'text';
+    revealPasswordButton.innerHTML = passwordInput.type === 'text' ? '<i class="material-icons-round">visibility_off</i>' : '<i class="material-icons-round">visibility</i>';
 });
 document.querySelector('#passwordSection').appendChild(revealPasswordButton);
