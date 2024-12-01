@@ -1,0 +1,17 @@
+{
+    "addons": {
+        "betterun@devmlb": {
+            "updates": [
+                {
+                    "version": "0.1.2",
+                    "browser_specific_settings": {
+                        "gecko": {
+                            "strict_min_version": "126.0"
+                        }
+                    },
+                    "update_link": "...."
+                }
+            ]
+        }
+    }
+}
