@@ -1,12 +1,12 @@
 #groups-list-popup {
     position: fixed;
     top: 10vh;
-    left: 30vw;
+    left: calc((100vw - 500px) / 2);
     background-color: #ffffff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     height: 80vh;
-    width: 40vw;
+    width: 500px;
     max-height: unset !important;
     z-index: 1000;
     display: flex;
@@ -33,10 +33,6 @@
     display: block;
 }
 
-#right-label::placeholder {
-    color: #cecece;
-}
-
 button.selected-group {
     color: #ffffff;
     padding: 8px;
@@ -58,4 +54,75 @@ button.selected-group {
 
 .groups-list.ready, #searchBox.ready {
     display: unset;
+}
+
+#groups-button {
+    margin-bottom: 20px;
+}
+
+.un-input {
+    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif !important;
+    font-size: 1rem !important;
+    padding: 0.7rem !important;
+    border-radius: 0.4rem !important;
+    transition: border var(--transition-duration) !important;
+    background-color: inherit !important;
+    color: #000000 !important;
+    border: 3px solid var(--neutral) !important;
+    line-height: initial !important;
+    height: auto !important;
+    box-shadow: none !important;
+    font-weight: unset !important;
+}
+
+.un-input::placeholder {
+    color: var(--on-surface-low-emphasis) !important;
+    font-size: 1rem !important;
+}
+
+.un-input:hover,
+.un-input:focus,
+.un-input:focus-visible,
+.un-input:active {
+    border: 3px solid var(--primary) !important;
+    outline: none !important;
+}
+
+#groups-search {
+    margin: 0px 0px 20px 0px !important;
+}
+
+label.hidden-result, label.selected {
+    display: none !important;
+}
+
+.un-button {
+    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    font-size: 1rem !important;
+    padding: 0.7rem 1.2rem !important;
+    border-radius: 0.4rem !important;
+    transition: background-color var(--transition-duration), color var(--transition-duration), border var(--transition-duration) !important;
+    cursor: pointer !important;
+}
+
+.un-icon-button {
+    line-height: 0.8rem !important;
+}
+
+.un-button-filled {
+    background-color: var(--primary) !important;
+    color: var(--on-primary) !important;
+    border: 3px solid var(--primary) !important;
+}
+
+.un-button-filled:hover {
+    background-color: var(--primary-dark) !important;
+    color: var(--on-primary-dark) !important;
+    border: 3px solid var(--primary-dark) !important;
+}
+
+.un-icon-button i {
+    font-size: 1.1rem !important;
 }

@@ -64,7 +64,7 @@
         "chromiumFiles": ["/mods/improved-groups-selection/improved-groups-selection.css", "/mods/improved-groups-selection/improved-groups-selection.js"],
         "firefoxFiles": ["/mods/improved-groups-selection/improved-groups-selection.css", "/mods/improved-groups-selection/improved-groups-selection.js"],
         "matches": ["https://edt-v2.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.1",
         "hidden": false,
         "pageId": "calendar",
         "sectionId": "main"
