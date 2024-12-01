@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="mdui-theme-auto">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit" />
+    <link rel="stylesheet" href="/mdui/mdui.css">
+    <script src="/mdui/mdui.global.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="update.js"></script>
+    <title>BetterUN - Mise à jour</title>
+    <link rel="icon" type="image/x-icon" href="/internal/icons/icon-16.png">
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding: 10px;
+        }
+
+        .material-symbols-rounded {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+
+        p,
+        a {
+            font-size: 14px;
+            color: var(--mdui-color-on-surface);
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+        }
+    </style>
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+        <img src="/internal/icons/icon-256.png" style="width: 50px; height: 50px; margin-right: 10px;">
+        <h1>BetterUN</h1>
+    </div>
+    <mdui-card variant="filled" style="padding: 60px; text-align: center; max-width: 40vw;">
+        <h1 id="header-title" style="margin-top: 0px; margin-bottom: 60px;">BetterUN a été mise à jour !</h1>
+        <img src="banner.svg" style="height: 30vh; margin-bottom: 30px;"/>
+        <mdui-button href="https://github.com/devmlb/betterun/releases/latest" style="margin-top: 5px;">Consulter la liste des améliorations</mdui-button>
+    </mdui-card>
+</body>
+
+</html>
