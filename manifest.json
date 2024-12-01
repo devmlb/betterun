@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "BetterUN",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Improve your experience on the Nantes Université websites",
     "permissions": [
         "storage",
