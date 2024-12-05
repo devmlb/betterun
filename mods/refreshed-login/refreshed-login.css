@@ -196,7 +196,10 @@ input#password {
     border: 3px solid var(--primary-dark);
 }
 
-#form-title1,
-#form-title2 {
+.form-wrapper>h1 {
     display: none;
+}
+
+#supersized {
+    filter: blur(2px);
 }
