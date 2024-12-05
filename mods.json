@@ -136,7 +136,7 @@
         "matches": ["https://madoc.univ-nantes.fr*"],
         "version": "alpha",
         "hidden": false,
-        "pageId": "uncloud",
+        "pageId": "madoc",
         "sectionId": "main"
     }
 ]

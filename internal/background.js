@@ -263,7 +263,6 @@ chrome.runtime.onInstalled.addListener((details) => {
             console.log('The extension has been updated, opening the update page.');
             chrome.tabs.create({ url: chrome.runtime.getURL('/internal/update/update.html') });
         }
-        chrome.tabs.create({ url: chrome.runtime.getURL('/internal/update/update.html') });
         initStorage(details.previousVersion, currentVersion);
     } else {
         initStorage(null, null);
