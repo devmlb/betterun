@@ -22,7 +22,7 @@
         "chromiumFiles": ["/mods/madoc-pp/madoc-pp.css"],
         "firefoxFiles": ["/mods/madoc-pp/madoc-pp.css"],
         "matches": ["https://madoc.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "main"
@@ -138,5 +138,19 @@
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "main"
+    },
+    {
+        "id": "madoc-truncate",
+        "title": "Révéler le texte tronqué",
+        "desc": "Dans le menu de gauche, affiche une info-bulle précisant le texte tronqué quand la souris est passée dessus.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/madoc-truncate/madoc-truncate.js"],
+        "firefoxFiles": ["/mods/madoc-truncate/madoc-truncate.js"],
+        "matches": ["https://madoc.univ-nantes.fr*"],
+        "version": "beta",
+        "hidden": false,
+        "pageId": "madoc",
+        "sectionId": "course-page"
     }
 ]

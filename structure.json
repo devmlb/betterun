@@ -11,7 +11,8 @@
         "id": "madoc",
         "name": "Madoc",
         "sections": {
-            "main": ""
+            "main": "",
+            "course-page": "Page de cours"
         }
     },
     {
