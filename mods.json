@@ -2,7 +2,7 @@
     {
         "id": "apps-menu",
         "title": "Moderniser le menu des applications",
-        "desc": "Apporte une touche de fraicheur au menu donnant accès aux services numériques de l'Université sur l'accueil de l'intranet.",
+        "desc": "Apporte une touche de fraicheur au menu donnant accès aux services numériques de l'Université.",
         "frame": "all",
         "enabled": true,
         "chromiumFiles": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],

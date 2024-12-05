@@ -3,7 +3,7 @@
         "id": "intranet",
         "name": "Intranet",
         "sections": {
-            "main": "",
+            "main": "Général",
             "login-page": "Page de connexion"
         }
     },
@@ -11,7 +11,7 @@
         "id": "madoc",
         "name": "Madoc",
         "sections": {
-            "main": "",
+            "main": "Général",
             "course-page": "Page de cours"
         }
     },
@@ -19,21 +19,21 @@
         "id": "uncloud",
         "name": "UNcloud",
         "sections": {
-            "main": ""
+            "main": "Général"
         }
     },
     {
         "id": "calendar",
         "name": "Emploi du temps",
         "sections": {
-            "main": ""
+            "main": "Général"
         }
     },
     {
         "id": "absences-tool",
         "name": "Gestion des absences",
         "sections": {
-            "main": ""
+            "main": "Général"
         }
     }
 ]

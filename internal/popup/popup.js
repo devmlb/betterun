@@ -47,9 +47,7 @@ async function createPages(structure) {
         let sections = '';
         Object.keys(pageInfos.sections).forEach(sectionId => {
             sections += '<section>';
-            if (sectionId != 'main') {
-                sections += `<h3>${pageInfos.sections[sectionId]}</h3>`;
-            }
+            sections += `<h3>${pageInfos.sections[sectionId]}</h3>`;
             sections += `<mdui-card variant="filled" id="${pageInfos.id + '-' + sectionId}" class="mods-card"></mdui-card>
             </section>`;
         });
