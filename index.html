@@ -45,9 +45,9 @@
             overflow: hidden;
             opacity: 0;
             transition-duration: .3s;
-            margin: 0px; 
-            padding: 60px; 
-            font-family: Roboto; 
+            margin: 0px;
+            padding: 60px;
+            font-family: Roboto;
             height: calc(100vh - 120px);
         }
 
@@ -193,10 +193,14 @@
             downloadBtnIcon.classList = 'grow';
             if (downloadLink === "") {
                 downloadBtn.setAttribute('disabled', '');
+                try {
+                    downloadBtn.removeAttribute('onclick', `window.location = '${downloadLink}'`);
+                } catch { }
             } else {
                 downloadBtn.setAttribute('onclick', `window.location = '${downloadLink}'`);
-                downloadBtn.setAttribute('disabled', '');
-                downloadBtn.removeAttribute('disabled', '');
+                try {
+                    downloadBtn.removeAttribute('disabled', '');
+                } catch { }
             }
             mdui.setColorScheme(accentColor, { target: downloadBtn });
             setTimeout(() => {
