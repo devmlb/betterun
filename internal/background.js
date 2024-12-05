@@ -234,7 +234,7 @@ async function injectContent(url, tabId, frameId) {
         });
     }
     if (JSToInject.length > 0) {
-        console.log('Injecting JS files in tab with id ' + tabId + ' in frame with id ' + frameId + ':\n' + JSON.stringify(CSSToInject, undefined, 2))
+        console.log('Injecting JS files in tab with id ' + tabId + ' in frame with id ' + frameId + ':\n' + JSON.stringify(JSToInject, undefined, 2))
         chrome.scripting.executeScript({
             target: { tabId: tabId, frameIds: [frameId] },
             files: JSToInject
