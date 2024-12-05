@@ -23,13 +23,6 @@
             <mdui-button-icon id="settings-btn" icon="settings--rounded"></mdui-button-icon>
         </header>
         <div class="content">
-            <!-- <mdui-card id="update-card" variant="filled" style="display: none; cursor: pointer; margin-bottom: 20px; background-color: rgb(var(--mdui-color-error-light)); align-items: center;">
-                <i class="material-icons-round" style="color: rgb(var(--mdui-color-on-error-light)); margin-right: 20px;">error</i>
-                <div>
-                    <h2 style="color: rgb(var(--mdui-color-on-error-light)); margin-block-start: 0px; margin-block-end: 0px;">Une mise à jour est disponible !</h2>
-                    <p style="display: flex; align-items: center; margin-block-start: 10px; color: rgb(var(--mdui-color-on-error-light));">Téléchargez la dernière version<i class="material-icons-round" style="font-size: 14px; margin-left: 5px;">open_in_new</i></p>
-                </div>
-            </mdui-card> -->
             <mdui-card id="enable-switch" variant="filled" clickable>
                 <p>Activer l'extension</p>
                 <mdui-switch></mdui-switch>
@@ -58,8 +51,9 @@
                     <p>Aucune donnée (personnelle ou statistique) appartenant à l'utilisateur n'est collectée par l'extension. En cas de doute, le code source est accessible à tous sur Github (voir ci-dessous).</p>
                 </mdui-card>
             </section>
-            <section>
-                <mdui-button icon="code--rounded" full-width href="https://github.com/devmlb/bun/" target="_blank" variant="text">Voir sur Github</mdui-button>
+            <section class="buttons-list">
+                <mdui-button icon="public--rounded" full-width href="https://devmlb.github.io/betterun/" target="_blank" variant="outlined">Visiter le site</mdui-button>
+                <mdui-button icon="code--rounded" full-width href="https://github.com/devmlb/bun/" target="_blank" variant="outlined">Voir sur Github</mdui-button>
             </section>
         </div>
     </div>
