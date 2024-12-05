@@ -219,11 +219,11 @@ async function injectContent(url, tabId, frameId) {
                         });
                     }
                 }
-            } else if (key == 'gbs-updated' && extensionStorage[key] && frameId == 0) {
+            } // else if (key == 'gbs-updated' && extensionStorage[key] && frameId == 0) {
                 // JSToInject.push('/internal/update-inject.js');
                 // chrome.storage.sync.set({ 'gbs-updated': false });
                 // console.log('Adding injection of update message')
-            }
+            // }
         });
     }
     if (CSSToInject.length > 0) {
