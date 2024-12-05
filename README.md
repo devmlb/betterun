@@ -15,13 +15,13 @@ BetterUN is based on the [ItsBetter project](https://github.com/devmlb/itsbetter
 |--|--|--|--|
 | Chrome | ✅ | ☑️ | ☑️ |
 | Chromium-based (Opera, Edge...) | ☑️ | ☑️ | ☑️ |
-| Firefox | ❓ | ❓ | ❓ |
+| Firefox | ⚠️ | ⚠️ | ⚠️ |
 
 </td><td>
 
 ✅ Works correctly (tested)  
 ☑️ Works in theory (but not tested)  
-❓ Not tested
+⚠️ Not fully tested
 
 </td></tr>
 </table>
