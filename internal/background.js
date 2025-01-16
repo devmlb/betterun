@@ -150,6 +150,18 @@ async function initStorage(previousRelease, currentRelease) {
         generalSettings['updated'] = false;
     }
     processStorage(mods, generalSettings);
+
+    chrome.scripting
+        .registerContentScripts([{
+            id: "test-script",
+            js: ["/internal/test-script.js"],
+            // css: ["/internal/test-style.css"],
+            persistAcrossSessions: true,
+            matches: ["https://*.univ-nantes.fr/*"],
+            runAt: "document_start",
+        }])
+        .then(() => console.log("registration complete"))
+        .catch((err) => console.warn("unexpected error", err))
 }
 
 async function getExtensionStorage(key = null) {
