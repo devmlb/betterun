@@ -2,7 +2,7 @@
     position: relative;
 }
 
-.toolbar__component__dropdown {
+.toolbar__component__dropdown:not(#recherche-simple .toolbar__component__dropdown) {
     border-radius: 16px !important;
     box-shadow: var(--shadow) !important;
     padding: 10px !important;

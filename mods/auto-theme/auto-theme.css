@@ -58,7 +58,7 @@ h6,
     transition: color var(--transition-duration);
 }
 
-.toolbar__component__dropdown {
+.toolbar__component__dropdown:not(#recherche-simple .toolbar__component__dropdown) {
     background-color: var(--surface-medium) !important;
     transition: background-color var(--transition-duration);
 }
