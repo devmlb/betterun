@@ -158,3 +158,7 @@ body.sticky-toolbar .header-wrapper .header__toolbar {
     background-color: var(--primary) !important;
     transition: background-color var(--transition-duration);
 }
+
+.header__inner.encadrement {
+    padding-left: 30px !important;
+}
