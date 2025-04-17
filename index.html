@@ -9,290 +9,63 @@
     <meta property="og:title" content="BetterUN" />
     <meta property="og:description" content="Améliorez votre expérience sur les sites web de Nantes Université" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://i.imgur.com/Ft3HyvM.png" />
+    <meta property="og:image" content="assets/preview-light.svg" />
     <title>BetterUN</title>
-    <link rel="icon" href="icon-128.png" />
+    <link rel="icon" href="assets/icon-128.png" />
     <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
     <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <style>
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            box-shadow: inset 0 0 10px 10px rgb(var(--mdui-color-surface-container));
-            border: solid 2px transparent;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            border-radius: 10px;
-            box-shadow: inset 0 0 10px 10px rgb(var(--mdui-color-surface-container-highest));
-        }
-
-        body {
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            overflow: hidden;
-            opacity: 0;
-            transition-duration: .3s;
-            margin: 0px;
-            padding: 60px;
-            font-family: Roboto;
-            height: calc(100vh - 120px);
-        }
-
-        body.ready {
-            opacity: 1;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p {
-            margin-block: 0px;
-        }
-
-        /* p,
-        a {
-            line-height: var(--mdui-typescale-body-large-line-height);
-            font-size: var(--mdui-typescale-body-large-size);
-            letter-spacing: var(--mdui-typescale-body-large-tracking);
-            font-weight: var(--mdui-typescale-body-large-weight);
-        } */
-
-        a {
-            color: rgb(var(--mdui-color-tertiary));
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .grow {
-            animation: .3s grow;
-        }
-
-        #download-container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            width: 50vw;
-        }
-
-        #mobile-message {
-            display: none;
-        }
-
-        #content-container {
-            display: flex; 
-            gap: 40px; 
-            margin-bottom: 60px; 
-            justify-content: center; 
-            height: calc(90vh - 180px); 
-            align-items: center;
-        }
-
-        @keyframes grow {
-            from {
-                transform: rotate(180deg) scale(0.5);
-            }
-
-            to {
-                transform: rotate(0deg) scale(1);
-            }
-        }
-
-        @media screen and (max-width: 1024px) {
-            body {
-                padding: 20px;
-            }
-
-            #app-bar {
-                flex-direction: column;
-            }
-
-            #download-container {
-                display: none;
-            }
-
-            #mobile-message {
-                display: block;
-            }
-
-            #content-container {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header id="app-bar" style="margin-bottom: 60px; display: flex; justify-content: space-between; height: 10vh;">
-        <div style="display: flex; align-items: center; gap: 20px; justify-content: center;">
-            <img src="icon-128.png" style="width: 50px; height: 50px; border-radius: var(--mdui-shape-corner-extra-large);" />
+    <div id="app-bar">
+        <div id="branding">
+            <img src="assets/icon-128.png" />
             <h1>BetterUN</h1>
-            <mdui-card variant="filled" style="background-color: rgb(var(--mdui-color-primary)); color: rgb(var(--mdui-color-on-primary)); padding: 10px;">BETA</mdui-card>
+            <mdui-card class="version" variant="filled">BETA</mdui-card>
         </div>
-        <nav style="display: flex; gap: 20px; align-items: center; justify-content: center;">
-            <!-- <mdui-card clickable style="display: flex; justify-content: center; align-items: center; min-width: 160px; color: rgb(var(--mdui-color-primary)); padding: 12px; background-color: rgb(var(--mdui-color-surface)); border-radius: var(--mdui-shape-corner-full); box-shadow: none;">
-                Télécharger
-            </mdui-card>
-            <mdui-card clickable style="display: flex; justify-content: center; align-items: center; min-width: 160px; color: rgb(var(--mdui-color-primary)); padding: 12px; background-color: rgb(var(--mdui-color-surface)); border-radius: var(--mdui-shape-corner-full); box-shadow: none;">
-                Installer
-            </mdui-card> -->
-            <mdui-card onclick="window.location = 'https://github.com/devmlb/betterun'" clickable style="gap: 10px; display: flex; justify-content: center; align-items: center; min-width: 160px; color: rgb(var(--mdui-color-primary)); padding: 12px; background-color: rgb(var(--mdui-color-surface)); border-radius: var(--mdui-shape-corner-full); box-shadow: none; height: fit-content;">
-                <svg style="height: 24px; width: 24px;" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path style="fill: rgb(var(--mdui-color-primary));" fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="#1B1F23" />
+        <nav id="nav-links">
+            <mdui-card class="nav-link github" onclick="window.location = 'https://github.com/devmlb/betterun'" clickable>
+                <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="#1B1F23" />
                 </svg>
                 Github
             </mdui-card>
         </nav>
-    </header>
-    <main>
-        <div id="content-container">
-            <div id="download-container">
-                <mdui-card id="download-btn" clickable variant="filled" style="width: fit-content; height: fit-content; color: rgb(var(--mdui-color-primary)); align-items: center; display: flex; gap: 30px; box-shadow: none; background-color: rgb(var(--mdui-color-primary-container)); padding: 30px; border-radius: var(--mdui-shape-corner-extra-large); transition: background-color .3s;">
-                    <img style="height: 60px; width: auto;" src="" />
-                    <h2 style="transition: color .3s, width .3s; text-wrap: nowrap; width: auto;">Installer BetterUN pour</h2>
-                </mdui-card>
-                <mdui-collapse accordion>
-                    <mdui-collapse-item>
-                        <div slot="header" style="display: flex; justify-content: center;">
-                            <mdui-button variant="text" icon="add--rounded">Télécharger pour un autre navigateur</mdui-button>
-                        </div>
-                        <div style="display: flex; gap: 10px; width: 400px; flex-wrap: wrap; align-items: center; justify-content: center; padding: 10px;">
-                            <mdui-chip id="chr-chip">Chrome</mdui-chip>
-                            <mdui-chip id="ffx-chip">Firefox</mdui-chip>
-                            <mdui-chip id="edg-chip">Edge</mdui-chip>
-                            <mdui-chip id="opr-chip">Opera</mdui-chip>
-                        </div>
-                    </mdui-collapse-item>
-                </mdui-collapse>
-                <!-- <mdui-card variant="filled" style="width: 400px; text-align: center; box-shadow: none; background-color: rgb(var(--mdui-color-surface-container)); padding: 20px; border-radius: var(--mdui-shape-corner-large);">
-                    <p style="font-weight: bold;">Un doute pour l'installation ?</p>
-                    <p style="margin-top: 8px; margin-bottom: 20px;">Pas de panique, ça arrive même aux meilleur•es ! :)</p>
-                    <mdui-button variant="text" icon="arrow_downward--rounded">Voir les instructions</mdui-button>
-                </mdui-card> -->
-            </div>
-            <div style="background-image: url('betterun-preview-light.svg'); background-size: contain; background-position: center; background-repeat: no-repeat; height: 100%; flex-grow: 1;"></div>
-            <div id="mobile-message">BetterUN n'est pas disponible sur mobile.</div>
+    </div>
+    <div id="main">
+        <div id="download-container">
+            <mdui-card id="download-btn" clickable variant="filled">
+                <img src="" />
+                <h2>Installer BetterUN pour</h2>
+            </mdui-card>
+            <mdui-collapse id="download-options" accordion>
+                <mdui-collapse-item>
+                    <div class="header" slot="header">
+                        <mdui-button variant="text" icon="add--rounded">Télécharger pour un autre navigateur</mdui-button>
+                    </div>
+                    <div class="content">
+                        <mdui-chip id="chr-chip">Chrome</mdui-chip>
+                        <mdui-chip id="ffx-chip">Firefox</mdui-chip>
+                        <mdui-chip id="edg-chip">Edge</mdui-chip>
+                        <mdui-chip id="opr-chip">Opera</mdui-chip>
+                    </div>
+                </mdui-collapse-item>
+            </mdui-collapse>
+            <!-- <mdui-card variant="filled" style="width: 400px; text-align: center; box-shadow: none; background-color: rgb(var(--mdui-color-surface-container)); padding: 20px; border-radius: var(--mdui-shape-corner-large);">
+                <p style="font-weight: bold;">Un doute pour l'installation ?</p>
+                <p style="margin-top: 8px; margin-bottom: 20px;">Pas de panique, ça arrive même aux meilleur•es ! :)</p>
+                <mdui-button variant="text" icon="arrow_downward--rounded">Voir les instructions</mdui-button>
+            </mdui-card> -->
         </div>
-        <!-- <mdui-card style="width: 100%; box-shadow: var(--mdui-elevation-level0); padding: 60px; border-radius: var(--mdui-shape-corner-extra-large); background-color: rgb(var(--mdui-color-surface-container));">
-            <mdui-tabs value="tab-1">
-                <mdui-tab value="tab-1">Chrome</mdui-tab>
-                <mdui-tab value="tab-2">Firefox</mdui-tab>
-                <mdui-tab value="tab-3">Opera</mdui-tab>
-
-                <mdui-tab-panel slot="panel" value="tab-1">Panel 1</mdui-tab-panel>
-                <mdui-tab-panel slot="panel" value="tab-2">Panel 2</mdui-tab-panel>
-                <mdui-tab-panel slot="panel" value="tab-3">Panel 3</mdui-tab-panel>
-            </mdui-tabs>
-        </mdui-card> -->
-    </main>
-    <!-- <footer style="display: flex; margin-top: 60px;">
-    </footer> -->
-    <script>
-        function detectBrowser() {
-            const userAgent = navigator.userAgent;
-
-            if (/firefox|fxios/i.test(userAgent)) {
-                return 'ffx';
-            } else if (/edg/i.test(userAgent)) {
-                return 'edg';
-            } else if (/chrome|chromium|crios/i.test(userAgent) && !/edg/i.test(userAgent)) {
-                return 'chr';
-            } else if (/safari/i.test(userAgent) && !/chrome|chromium|crios/i.test(userAgent)) {
-                return 'sfr';
-            } else if (/opr|opera/i.test(userAgent)) {
-                return 'opr';
-            } else {
-                return 'ukw';
-            }
-        }
-
-        function getBrowserInList(browserList, browserId) {
-            for (const browser of browserList) {
-                if (browser.id == browserId) {
-                    return browser;
-                }
-            }
-        }
-
-        function setDownloadButton(browserName, browserIcon, accentColor, downloadLink) {
-            downloadBtnLabel.textContent = 'Installer BetterUN pour ' + browserName;
-            downloadBtnIcon.setAttribute('src', browserIcon);
-            downloadBtnIcon.classList = 'grow';
-            if (downloadLink === "") {
-                downloadBtn.setAttribute('disabled', '');
-                try {
-                    downloadBtn.removeAttribute('onclick', `window.location = '${downloadLink}'`);
-                } catch { }
-            } else {
-                downloadBtn.setAttribute('onclick', `window.location = '${downloadLink}'`);
-                try {
-                    downloadBtn.removeAttribute('disabled', '');
-                } catch { }
-            }
-            mdui.setColorScheme(accentColor, { target: downloadBtn });
-            setTimeout(() => {
-                downloadBtnIcon.classList = '';
-            }, 300);
-        }
-
-        async function getFFDownloadLink() {
-            const response = await (await fetch('https://devmlb.github.io/betterun/api/update/manifest.json')).json();
-            const releasesList = response['addons']['betterun@devmlb']['updates'];
-            const release = releasesList[releasesList.length - 1]
-            return release.update_link;
-        }
-
-        function initDownloadButton(browsers) {
-            const currentBrowser = getBrowserInList(browsers, detectBrowser());
-            setDownloadButton(currentBrowser.name, currentBrowser.icon, currentBrowser.accentColor, currentBrowser.link);
-
-            browsers.forEach(browser => {
-                document.querySelector(`#${browser.id}-chip`).addEventListener('click', () => {
-                    setDownloadButton(browser.name, browser.icon, browser.accentColor, browser.link);
-                });
-            });
-        }
-
-        async function initBrowsersList() {
-            const browsers = [
-                { id: 'chr', name: 'Chrome', icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg', accentColor: '#fbc015', width: 90, link: "https://chromewebstore.google.com/detail/betterun/ejipemdfoclgepipfifgjkgijglolpgd", updateLink: "" },
-                { id: 'ffx', name: 'Firefox', icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg', accentColor: '#ff8131', width: 79, link: await getFFDownloadLink(), updateLink: "" },
-                { id: 'edg', name: 'Edge', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg', accentColor: '#2dc2da', width: 59, link: "", updateLink: "" },
-                { id: 'opr', name: 'Opera', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg', accentColor: '#ff1b2d', width: 69, link: "", updateLink: "" }
-            ];
-            initDownloadButton(browsers);
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            mdui.setColorScheme('#3452ff');
-        });
-
-
-        const downloadBtn = document.querySelector('#download-btn');
-        const downloadBtnIcon = downloadBtn.querySelector('img');
-        const downloadBtnLabel = downloadBtn.querySelector('h2');
-
-        initBrowsersList();
-
-        document.querySelector('body').classList.add('ready');
-    </script>
+        <div id="preview"></div>
+        <div id="mobile-message">BetterUN n'est pas disponible sur mobile.</div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
