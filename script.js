@@ -65,10 +65,10 @@ function initDownloadButton(browsers) {
 
 async function initBrowsersList() {
     const browsers = [
-        { id: 'chr', name: 'Chrome', icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg', accentColor: '#fbc015', width: 90, link: "https://chromewebstore.google.com/detail/betterun/ejipemdfoclgepipfifgjkgijglolpgd", updateLink: "" },
-        { id: 'ffx', name: 'Firefox', icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg', accentColor: '#ff8131', width: 79, link: await getFFDownloadLink(), updateLink: "" },
-        { id: 'edg', name: 'Edge', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg', accentColor: '#2dc2da', width: 59, link: "", updateLink: "" },
-        { id: 'opr', name: 'Opera', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Opera_2015_icon.svg', accentColor: '#ff1b2d', width: 69, link: "", updateLink: "" }
+        { id: 'chr', name: 'Chrome', icon: 'assets/chrome.svg', accentColor: '#fbc015', width: 90, link: "https://chromewebstore.google.com/detail/betterun/ejipemdfoclgepipfifgjkgijglolpgd", updateLink: "" },
+        { id: 'ffx', name: 'Firefox', icon: 'assets/firefox.svg', accentColor: '#ff8131', width: 79, link: await getFFDownloadLink(), updateLink: "" },
+        { id: 'edg', name: 'Edge', icon: 'assets/edge.svg', accentColor: '#2dc2da', width: 59, link: "", updateLink: "" },
+        { id: 'opr', name: 'Opera', icon: 'assets/opera.svg', accentColor: '#ff1b2d', width: 69, link: "", updateLink: "" }
     ];
     initDownloadButton(browsers);
 }
