@@ -53,21 +53,12 @@ const JSPreload = { finished: false, nodes: [] };
 preloadJS();
 injectContent();
 
-const font = new FontFace("Material Icons Round", `url(${chrome.runtime.getURL('/internal/material-icons-round.woff2')})`, {
+const font = new FontFace("Material Icons Round", `url(${chrome.runtime.getURL('/internal/res/fonts/material-icons-round.woff2')})`, {
     style: "normal",
     weight: "400"
 });
 document.fonts.add(font);
 font.load();
-
-class bun {
-    constructor(name) {
-        this.name = name;
-    }
-    greet() {
-        console.log(`Hello, my name is ${this.name}`);
-    }
-}
 
 window.postMessage({ betterun: chrome.runtime.getURL('internal/test-script.js') })
 

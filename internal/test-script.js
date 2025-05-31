@@ -4,3 +4,6 @@ function main() {
 }
 
 main();
+
+let test = betterun.getModSettings("test-id");
+console.log(test)

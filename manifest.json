@@ -14,10 +14,10 @@
         "default_popup": "/internal/popup/popup.html"
     },
     "icons": {
-        "16": "/internal/icons/icon-16.png",
-        "32": "/internal/icons/icon-32.png",
-        "48": "/internal/icons/icon-48.png",
-        "128": "/internal/icons/icon-128.png"
+        "16": "/internal/res/images/icon-16.png",
+        "32": "/internal/res/images/icon-32.png",
+        "48": "/internal/res/images/icon-48.png",
+        "128": "/internal/res/images/icon-128.png"
     },
     "content_scripts": [
         {
@@ -37,7 +37,7 @@
                 "https://*.univ-nantes.fr/*"
             ],
             "js": [
-                "/internal/test.js"
+                "/internal/api.js"
             ],
             "run_at": "document_start",
             "world": "MAIN"
