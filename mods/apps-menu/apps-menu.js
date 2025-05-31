@@ -61,7 +61,7 @@
                 <span>${document.querySelector('#personne_dsi').textContent}</span>
             </div>
         </div>
-        <a href="${document.querySelector('#se_deconnecter').href}">Se déconnecter</a>
+        <a href="${document.querySelector('#se_deconnecter_desktop').href}">Se déconnecter</a>
     </div>
     `;
 

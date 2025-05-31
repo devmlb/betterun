@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="onboarding.js"></script>
-    <title>BetterUN - Bienvenue</title>
+    <script src="update.js"></script>
+    <title>BetterUN - Mise à jour</title>
     <link rel="icon" type="image/x-icon" href="/internal/icons/icon-16.png">
     <style>
         body {
@@ -45,14 +45,10 @@
         <h1>BetterUN</h1>
     </div>
     <mdui-card variant="filled" style="padding: 60px; text-align: center; max-width: 40vw;">
-        <h1 style="margin-top: 0px; margin-bottom: 30px;">Vous y êtes presque !</h1>
-        <p style="margin-top: 0px; margin-bottom: 60px; font-size: 18px;">Il ne vous reste plus qu'à accorder à l'extension l'autorisation d'accéder
-            aux URLs du type "https://*.univ-nantes.fr" pour qu'elle puisse fonctionner correctement.</p>
-        <mdui-button id="permission-btn" style="margin-top: 5px;" full-width end-icon="open_in_new--rounded">Accorder
-            les permissions nécessaires</mdui-button>
-        <p style="margin-top: 20px;">Un popup devrait s'ouvrir. Une fois terminé, vous pourrez fermer cette page.</p>
+        <h1 id="header-title" style="margin-top: 0px; margin-bottom: 60px;">BetterUN a été mise à jour !</h1>
+        <img src="banner.svg" style="height: 30vh; margin-bottom: 30px;"/>
+        <mdui-button href="https://github.com/devmlb/betterun/releases/latest" style="margin-top: 5px;">Consulter la liste des améliorations</mdui-button>
     </mdui-card>
-    <mdui-snackbar id="snackbar">Demande de permissions initiée.</mdui-snackbar>
 </body>
 
 </html>

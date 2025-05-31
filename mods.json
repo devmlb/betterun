@@ -2,7 +2,7 @@
     {
         "id": "apps-menu",
         "title": "Moderniser le menu des applications",
-        "desc": "Apporte une touche de fraicheur au menu donnant accès aux services numériques de l'Université sur l'accueil de l'intranet.",
+        "desc": "Apporte une touche de fraicheur au menu donnant accès aux services numériques de l'Université.",
         "frame": "all",
         "enabled": true,
         "chromiumFiles": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
@@ -22,7 +22,7 @@
         "chromiumFiles": ["/mods/madoc-pp/madoc-pp.css"],
         "firefoxFiles": ["/mods/madoc-pp/madoc-pp.css"],
         "matches": ["https://madoc.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "main"
@@ -30,7 +30,7 @@
     {
         "id": "uncloud-autologin",
         "title": "Utiliser l'authentification centralisée",
-        "desc": "Remplace le dispositif de connexion natif d'UNcloud par l'authentification centralisée de l'Université.",
+        "desc": "Remplace le dispositif de connexion natif d'UNcloud par l'authentification centralisée (CAS) de l'Université.",
         "frame": "all",
         "enabled": true,
         "chromiumFiles": ["/mods/uncloud-autologin/uncloud-autologin.js", "/mods/uncloud-autologin/uncloud-autologin.css"],
@@ -50,7 +50,7 @@
         "chromiumFiles": ["/mods/calendar-loader/calendar-loader.css"],
         "firefoxFiles": ["/mods/calendar-loader/calendar-loader.css"],
         "matches": ["https://edt-v2.univ-nantes.fr*"],
-        "version": "1.0",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "calendar",
         "sectionId": "main"
@@ -64,7 +64,7 @@
         "chromiumFiles": ["/mods/improved-groups-selection/improved-groups-selection.css", "/mods/improved-groups-selection/improved-groups-selection.js"],
         "firefoxFiles": ["/mods/improved-groups-selection/improved-groups-selection.css", "/mods/improved-groups-selection/improved-groups-selection.js"],
         "matches": ["https://edt-v2.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.1",
         "hidden": false,
         "pageId": "calendar",
         "sectionId": "main"
@@ -124,5 +124,33 @@
         "hidden": false,
         "pageId": "intranet",
         "sectionId": "login-page"
+    },
+    {
+        "id": "madoc-autologin",
+        "title": "Utiliser l'authentification centralisée",
+        "desc": "Remplace le dispositif de connexion natif de Madoc par l'authentification centralisée (CAS) de l'Université.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
+        "firefoxFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
+        "matches": ["https://madoc.univ-nantes.fr*"],
+        "version": "alpha",
+        "hidden": false,
+        "pageId": "madoc",
+        "sectionId": "main"
+    },
+    {
+        "id": "madoc-truncate",
+        "title": "Révéler le texte tronqué",
+        "desc": "Dans le menu de gauche, affiche une info-bulle précisant le texte tronqué quand la souris est passée dessus.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/madoc-truncate/madoc-truncate.js"],
+        "firefoxFiles": ["/mods/madoc-truncate/madoc-truncate.js"],
+        "matches": ["https://madoc.univ-nantes.fr*"],
+        "version": "beta",
+        "hidden": false,
+        "pageId": "madoc",
+        "sectionId": "course-page"
     }
 ]

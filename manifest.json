@@ -42,25 +42,16 @@
             "run_at": "document_start",
             "world": "MAIN"
         }
-    ],
+      ],
     "web_accessible_resources": [
         {
-            "resources": [
-                "/mods/*",
-                "/internal/*",
-                "/mdui/*",
-                "https://devmlb.github.io/betterun/*"
-            ],
-            "matches": [
-                "https://*.univ-nantes.fr/*"
-            ]
+        "resources": ["/mods/*", "/internal/*", "/mdui/*", "https://devmlb.github.io/betterun/*"],
+        "matches": ["https://*.univ-nantes.fr/*"]
         }
     ],
     "background": {
         "service_worker": "/internal/background.js",
-        "scripts": [
-            "/internal/background.js"
-        ]
+        "scripts": ["/internal/background.js"]
     },
     "host_permissions": [
         "https://*.univ-nantes.fr/*"

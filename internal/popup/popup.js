@@ -7,26 +7,6 @@ function getModById(modId, modsList) {
     return null;
 }
 
-function checkUpdates() {
-    // fetch('https://devmlb.github.io/bun/release.json')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         const latestVersion = data['latest-version'];
-    //         const currentManifestVersion = chrome.runtime.getManifest().version
-    //         if (latestVersion != currentManifestVersion) {
-    //             const updateCard = document.getElementById('update-card');
-    //             updateCard.style.display = "flex"
-    //             updateCard.addEventListener("click", function () {
-    //                 window.open('https://github.com/devmlb/bun/releases/latest', '_blank').focus();
-    //             });
-    //             console.log('Update available! (v' + currentManifestVersion + " > v" + latestVersion + ")");
-    //             chrome.action.setBadgeText({ text: "!" });
-    //             chrome.action.setBadgeTextColor({ color: [255, 255, 255, 255] });
-    //             chrome.action.setBadgeBackgroundColor({ color: [186, 26, 26, 255] });
-    //         }
-    //     });
-}
-
 async function getMods(modsFile = '/mods.json') {
     const modsFileContent = await fetch(chrome.runtime.getURL(modsFile));
     return modsFileContent.json();
@@ -67,9 +47,7 @@ async function createPages(structure) {
         let sections = '';
         Object.keys(pageInfos.sections).forEach(sectionId => {
             sections += '<section>';
-            if (sectionId != 'main') {
-                sections += `<h3>${pageInfos.sections[sectionId]}</h3>`;
-            }
+            sections += `<h3>${pageInfos.sections[sectionId]}</h3>`;
             sections += `<mdui-card variant="filled" id="${pageInfos.id + '-' + sectionId}" class="mods-card"></mdui-card>
             </section>`;
         });
@@ -183,12 +161,4 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(() => {
         document.querySelector('body').classList.add('ready');
     }, 160); // hiding the switch activation effect 
-    // // const checkUpdatesBtn = document.getElementById("check-updates-btn");
-    // divenableSwitch.addEventListener("click", function () {
-    //     enableSwitch.click()
-    // });
-    // checkUpdatesBtn.addEventListener("click", function() {
-    //     checkUpdates();
-    //     window.scrollTo({top: 0, behavior: 'smooth'});
-    // });   
 });

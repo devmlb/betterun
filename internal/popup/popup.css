@@ -199,6 +199,12 @@ mdui-divider {
     margin-bottom: 8px;
 }
 
+.buttons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 #release-version {
     text-align: center;
 }

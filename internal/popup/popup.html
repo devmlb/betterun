@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="mdui-theme-auto" style="font-size: 13px;">
+<html class="mdui-theme-auto">
 
 <head>
     <meta charset="UTF-8">
@@ -30,62 +30,6 @@
             <section id="mods-list">
                 <h3>Mods</h3>
             </section>
-            <style>
-                .font-body-large {
-                    font-size: var(--mdui-typescale-body-large-size);
-                    line-height: var(--mdui-typescale-body-large-line-height);
-                    font-weight: var(--mdui-typescale-body-large-weight);
-                    letter-spacing: var(--mdui-typescale-body-large-tracking);
-                }
-                .font-title-medium {
-                    font-size: var(--mdui-typescale-title-medium-size);
-                    line-height: var(--mdui-typescale-title-medium-line-height);
-                    font-weight: var(--mdui-typescale-title-medium-weight);
-                    letter-spacing: var(--mdui-typescale-title-medium-tracking);
-                }
-                .font-label-large {
-                    font-size: var(--mdui-typescale-label-large-size);
-                    line-height: var(--mdui-typescale-label-large-line-height);
-                    font-weight: var(--mdui-typescale-label-large-weight);
-                    letter-spacing: var(--mdui-typescale-label-large-tracking);
-                }
-                mdui-chip {
-                    background-color: rgb(var(--mdui-color-inverse-primary));
-                    border: none;
-                }
-            </style>
-            <mdui-card id="mod-test" variant="filled" style="width: 100%; padding: 0px;">
-                <mdui-collapse accordion>
-                    <mdui-collapse-item>
-                        <mdui-card clickable variant="filled" slot="header" class="mod__header" style="display: flex; justify-content: space-between; align-items: center; padding: 12px; box-shadow: var(--mdui-elevation-level0);">
-                            <i class="material-icons-round">keyboard_arrow_down</i>
-                            <h3 class="mod__title font-title-medium" style="text-transform: uppercase; flex-grow: 1; margin: 0px 6px; font-weight: bold;">Corriger l'animation de chargement des calendriers<mdui-badge style="margin-left: 6px; font-size: var(--mdui-typescale-body-medium-size);">beta</mdui-badge></h3>
-                            <mdui-switch style="scale: 0.8;"></mdui-switch>
-                        </mdui-card>
-                        <div class="mod__content" style="padding: 12px;">
-                            <p style="margin-bottom: 12px;" class="mod__description font-body-large">Empêche le cercle de chargement de faire des mouvements diagonaux quand un emploi du temps est sélectionné.</p>
-                            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px;">
-                                <mdui-checkbox>
-                                    <span class="font-body-large" style="margin-left: 12px;">Ajouter un menu pour sélectionner les emplois du temps</span>
-                                </mdui-checkbox>
-                                <mdui-select variant="outlined" value="item-1" end-icon="keyboard_arrow_down--rounded">
-                                    <mdui-menu-item value="item-1">Item 1</mdui-menu-item>
-                                    <mdui-menu-item value="item-2">Item 2</mdui-menu-item>
-                                    <span slot="helper" class="font-body-large">Thème appliqué à la page</span>
-                                </mdui-select>
-                                <mdui-text-field autosize variant="outlined">
-                                    <span slot="helper" class="font-body-large">URLs à ajouter au menu (séparées par des virgules)</span>
-                                </mdui-text-field>
-                            </div>
-                            <div class="mod__authors" style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
-                                <span class="font-label-large">Créé par</span>
-                                <mdui-chip variant="suggestion" href="https://github.com/devmlb" target="_blank">Mlb</mdui-chip>
-                                <mdui-chip variant="suggestion" href="https://maxence.cc" target="_blank">Maxence</mdui-chip>
-                            </div>
-                        </div>
-                    </mdui-collapse-item>
-                </mdui-collapse>
-            </mdui-card>
         </div>
     </div>
     <div id="settings-page" class="page">
@@ -107,8 +51,9 @@
                     <p>Aucune donnée (personnelle ou statistique) appartenant à l'utilisateur n'est collectée par l'extension. En cas de doute, le code source est accessible à tous sur Github (voir ci-dessous).</p>
                 </mdui-card>
             </section>
-            <section>
-                <mdui-button icon="code--rounded" full-width href="https://github.com/devmlb/bun/" target="_blank" variant="text">Voir sur Github</mdui-button>
+            <section class="buttons-list">
+                <mdui-button icon="public--rounded" full-width href="https://devmlb.github.io/betterun/" target="_blank" variant="outlined">Visiter le site</mdui-button>
+                <mdui-button icon="code--rounded" full-width href="https://github.com/devmlb/bun/" target="_blank" variant="outlined">Voir sur Github</mdui-button>
             </section>
         </div>
     </div>
