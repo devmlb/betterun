@@ -1,5 +1,6 @@
 function main() {
     document.body.style.backgroundColor = 'red'
+    console.log('coucou')
 }
 
-injectContent(main);
+main();

@@ -25,12 +25,22 @@
                 "https://*.univ-nantes.fr/*"
             ],
             "js": [
-                "/internal/utils.js", "/internal/test.js"
+                "/internal/utils.js"
             ],
             "css": [
                 "/internal/utils.css"
             ],
             "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://*.univ-nantes.fr/*"
+            ],
+            "js": [
+                "/internal/test.js"
+            ],
+            "run_at": "document_start",
+            "world": "MAIN"
         }
     ],
     "web_accessible_resources": [

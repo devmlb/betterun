@@ -151,17 +151,17 @@ async function initStorage(previousRelease, currentRelease) {
     }
     processStorage(mods, generalSettings);
 
-    chrome.scripting
-        .registerContentScripts([{
-            id: "test-script",
-            js: ["/internal/test-script.js"],
-            // css: ["/internal/test-style.css"],
-            persistAcrossSessions: true,
-            matches: ["https://*.univ-nantes.fr/*"],
-            runAt: "document_start",
-        }])
-        .then(() => console.log("registration complete"))
-        .catch((err) => console.warn("unexpected error", err))
+    // chrome.scripting
+    //     .registerContentScripts([{
+    //         id: "test-script",
+    //         js: ["/internal/test-script.js"],
+    //         // css: ["/internal/test-style.css"],
+    //         persistAcrossSessions: true,
+    //         matches: ["https://*.univ-nantes.fr/*"],
+    //         runAt: "document_start",
+    //     }])
+    //     .then(() => console.log("registration complete"))
+    //     .catch((err) => console.warn("unexpected error", err))
 }
 
 async function getExtensionStorage(key = null) {
@@ -208,6 +208,17 @@ function matchAnyRegex(str, regexList) {
 }
 
 async function injectContent(url, tabId, frameId) {
+    chrome.scripting.executeScript({
+        args: ['coucou', 2],
+        func: () => {
+            console.log(1, 2);
+        },
+        injectImmediately: true,
+        target:{tabId : tabId, allFrames : true}
+    }).then(() => console.log('ok'))
+
+    return;
+
     checkPermissions();
     const extensionStorage = await getExtensionStorage();
     const CSSToInject = [];
