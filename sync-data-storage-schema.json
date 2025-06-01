@@ -1,0 +1,17 @@
+{
+    "internal": {
+        "enabled": true,
+        "mods": {
+            "enabled": [
+                "mod-id-mod"
+            ],
+            "settings": {
+                "mod-id-mod": {
+                    "theme": "auto",
+                    "menu": true,
+                    "urls": ""
+                }
+            }
+        }
+    }
+}
