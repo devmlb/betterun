@@ -1,6 +1,23 @@
 {
+    "pages": {
+        "intranet": {
+            "name": "Intranet",
+            "sections": {
+                "main": {
+                    "title": "Général",
+                    "mods": [
+                        "mod-id-mod"
+                    ]
+                },
+                "login-page": {
+                    "title": "Page de connexion",
+                    "mods": []
+                }
+            }
+        }
+    },
     "mods": {
-        "mod-id-mod": {
+        "mod-id": {
             "title": "Moderniser l'écran de connexion",
             "desc": "Unifie et améliore l'apparence de l'interface de connexion.",
             "credits": [

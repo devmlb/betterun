@@ -59,5 +59,6 @@
     "version": "beta",
     "mainFrameOnly": false,
     "enabledByDefault": true,
-    "pageId": "intranet"
+    "pageId": "intranet",
+    "sectionId": "main"
 }

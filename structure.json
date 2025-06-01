@@ -2,38 +2,59 @@
     {
         "id": "intranet",
         "name": "Intranet",
-        "sections": {
-            "main": "Général",
-            "login-page": "Page de connexion"
-        }
+        "sections": [
+            {
+                "id": "main",
+                "title": "Général"
+            },
+            {
+                "id": "login-page",
+                "title": "Page de connexion"
+            }
+        ]
     },
     {
         "id": "madoc",
         "name": "Madoc",
-        "sections": {
-            "main": "Général",
-            "course-page": "Page de cours"
-        }
+        "sections": [
+            {
+                "id": "main",
+                "title": "Général"
+            },
+            {
+                "id": "course-page",
+                "title": "Page de cours"
+            }
+        ]
     },
     {
         "id": "uncloud",
         "name": "UNcloud",
-        "sections": {
-            "main": "Général"
-        }
+        "sections": [
+            {
+                "id": "main",
+                "title": "Général"
+            }
+        ]
     },
     {
         "id": "calendar",
         "name": "Emploi du temps",
-        "sections": {
-            "main": "Général"
-        }
+        "sections": [
+            {
+                "id": "main",
+                "title": "Général"
+            }
+        ]
     },
     {
         "id": "absences-tool",
         "name": "Gestion des absences",
-        "sections": {
-            "main": "Général"
-        }
+        "sections": [
+            {
+                "id": "main",
+                "title": "Général"
+            }
+        ]
     }
 ]
