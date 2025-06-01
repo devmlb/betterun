@@ -1,4 +1,5 @@
 function checkPermissions() {
+    console.log("Checking permissions...");
     chrome.permissions.contains({ origins: ["https://*.univ-nantes.fr/*"] }, (response) => {
         if (!response) {
             console.log("Not all permissions are granted. Opening the onboarding page.");
@@ -24,11 +25,9 @@ async function initLocalStorage(modsManifests, pagesStructure) {
     };
 
     for (const page of pagesStructure) {
-        console.log(page)
         builtData.pages[page.id] = structuredClone(page);
         delete builtData.pages[page.id].id;
         builtData.pages[page.id].sections = {};
-        console.log(page.sections)
         for (const section of page.sections) {
             builtData.pages[page.id].sections[section.id] = {
                 title: section.title,
@@ -80,7 +79,7 @@ async function initSyncStorage(modsManifests) {
         newData.mods.settings[modManifest.id] = {};
         for (const setting of modManifest.settings) {
             try {
-                if (typeof(setting.default) === typeof(oldData.mods.settings[modManifest.id][setting.id])) {
+                if (typeof setting.default === typeof oldData.mods.settings[modManifest.id][setting.id]) {
                     newData.mods.settings[modManifest.id][setting.id] = oldData.mods.settings[modManifest.id][setting.id];
                 } else {
                     throw new Error();
@@ -97,6 +96,7 @@ async function initSyncStorage(modsManifests) {
 }
 
 async function initStorage() {
+    console.log("Initializing the extension storage...");
     const modsIds = await (await fetch(chrome.runtime.getURL("/mods.json"))).json();
     const modsManifests = [];
     for (const modId of modsIds) {
@@ -109,7 +109,9 @@ async function initStorage() {
     }
     const pagesStructure = await (await fetch(chrome.runtime.getURL("/structure.json"))).json();
 
+    console.log("Updating sync storage...");
     initSyncStorage(modsManifests);
+    console.log("Updating local storage...");
     initLocalStorage(modsManifests, pagesStructure);
 
 
@@ -130,14 +132,9 @@ chrome.runtime.onInstalled.addListener(async (details) => {
     await initStorage();
     const currentVersion = chrome.runtime.getManifest().version;
     if (details.reason === "update") {
-        if (currentVersion === details.previousVersion) {
-            console.warn(`The previous version of the extension (${details.previousVersion}) and the current version (${currentVersion}) are identical, despite an update. Has the version been updated in the manifest?`);
-        } else {
+        if (currentVersion !== details.previousVersion) {
             console.log("The extension has been updated. Opening the update page.");
             chrome.tabs.create({ url: chrome.runtime.getURL("/internal/update/update.html") });
         }
-        // initStorage(details.previousVersion, currentVersion);
-    } else {
-        // initStorage(null, null);
     }
 });
