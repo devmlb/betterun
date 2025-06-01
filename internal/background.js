@@ -1,16 +1,34 @@
-function checkPermissions() {
+function isFirefox() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return userAgent.includes("firefox");
+}
+
+async function checkPermissions() {
     console.log("Checking permissions...");
-    chrome.permissions.contains({ origins: ["https://*.univ-nantes.fr/*"] }, (response) => {
-        if (!response) {
-            console.log("Not all permissions are granted. Opening the onboarding page.");
-            chrome.tabs.create({ url: chrome.runtime.getURL("/internal/onboarding.html") });
-        }
-    });
+    const result = await chrome.permissions.contains({ origins: ["https://*.univ-nantes.fr/*"] });
+    if (!result) {
+        console.log("Not all permissions are granted. Opening the onboarding page.");
+        chrome.tabs.create({ url: chrome.runtime.getURL("/internal/onboarding.html") });
+    }
 }
 
 async function registerEnabledScripts() {
     await chrome.scripting.unregisterContentScripts();
-
+    const scripts = [];
+    const enabledModsIds = (await chrome.storage.sync.get(["internal"])).internal.mods.enabled;
+    const modsInfos = (await chrome.storage.local.get(["mods"])).mods;
+    for (const modId of enabledModsIds) {
+        scripts.push({
+            id: modId,
+            js: (isFirefox() ? modsInfos[modId].firefoxFiles : modsInfos[modId].chromiumFiles).filter(file => file.endsWith(".js")),
+            persistAcrossSessions: true,
+            matches: modsInfos[modId].matches,
+            runAt: "document_start",
+            allFrames: !modsInfos[modId].matches.mainFrameOnly,
+            world: "MAIN"
+        });
+    }
+    await chrome.scripting.registerContentScripts(scripts);
 }
 
 function isModManifestValid(manifest) {
@@ -110,26 +128,15 @@ async function initStorage() {
     const pagesStructure = await (await fetch(chrome.runtime.getURL("/structure.json"))).json();
 
     console.log("Updating sync storage...");
-    initSyncStorage(modsManifests);
+    await initSyncStorage(modsManifests);
     console.log("Updating local storage...");
-    initLocalStorage(modsManifests, pagesStructure);
-
-
-    // chrome.scripting
-    //     .registerContentScripts([{
-    //         id: "session-script",
-    //         css: ["internal/test-style.css"],
-    //         persistAcrossSessions: false,
-    //         matches: ["https://cas6n.univ-nantes.fr/*"],
-    //         runAt: "document_start",
-    //     }])
-    //     .then(() => console.log("registration complete"))
-    //     .catch((err) => console.warn("unexpected error", err))
+    await initLocalStorage(modsManifests, pagesStructure);
 }
 
 chrome.runtime.onInstalled.addListener(async (details) => {
-    checkPermissions();
+    await checkPermissions();
     await initStorage();
+    await registerEnabledScripts();
     const currentVersion = chrome.runtime.getManifest().version;
     if (details.reason === "update") {
         if (currentVersion !== details.previousVersion) {

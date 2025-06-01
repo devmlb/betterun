@@ -20,7 +20,7 @@
         "/mods/refreshed-login/refreshed-login.js"
     ],
     "matches": [
-        "https://cas6.univ-nantes.fr*"
+        "https://cas6.univ-nantes.fr/*"
     ],
     "settings": [
         {
