@@ -31,8 +31,57 @@ async function registerEnabledScripts() {
     await chrome.scripting.registerContentScripts(scripts);
 }
 
-function isModManifestValid(manifest) {
-    return true;
+function validateModManifest(manifest) {
+    // Pass 1: checking that all the required keys are present
+    const requiredKeys = [
+        "id",
+        "title",
+        "desc",
+        "credits",
+        "chromiumFiles",
+        "firefoxFiles",
+        "matches",
+        "settings",
+        "version",
+        "mainFrameOnly",
+        "enabledByDefault",
+        "pageId",
+        "sectionId"
+    ];
+    const unknownKeys = [];
+    for (const key of Object.keys(manifest)) {
+        if (requiredKeys.includes(key)) {
+            requiredKeys.splice(requiredKeys.indexOf(key), 1);
+        } else {
+            unknownKeys.push(key)
+        }
+    }
+    if (requiredKeys.length > 0) {
+        throw new Error(`missing-keys:${JSON.stringify(requiredKeys)}`);
+    } else if (unknownKeys.length > 0) {
+        throw new Error(`unknown-keys:${JSON.stringify(unknownKeys)}`);
+    }
+
+    // const oneLevelKeys = {
+    //     id: "string",
+    //     title: "string",
+    //     desc: "string",
+    //     version: "string",
+    //     mainFrameOnly: "boolean",
+    //     enabledByDefault: "boolean",
+    //     pageId: "string",
+    //     sectionId: "string"
+    // }
+
+    // for (const key of Object.keys(manifest)) {
+    //     if (oneLevelKeys[key]) {
+    //         if (typeof manifest[key] !== oneLevelKeys[key]) {
+    //             throw new Error(key);
+    //         }
+    //     }
+    // }
+
+    // TODO: deep checks (type...)
 }
 
 async function initLocalStorage(modsManifests, pagesStructure) {
@@ -119,10 +168,16 @@ async function initStorage() {
     const modsManifests = [];
     for (const modId of modsIds) {
         const modManifest = await (await fetch(chrome.runtime.getURL(`/mods/${modId}/manifest.json`))).json();
-        if (isModManifestValid(modManifest)) {
+        try {
+            validateModManifest(modManifest);
             modsManifests.push(modManifest);
-        } else {
-            console.error(`Invalid manifest found for mod with id '${modId}'. Skipping.`);
+        } catch (error) {
+            const stringError = error.toString().replace("Error: ", "");
+            if (stringError.startsWith("missing-keys")) {
+                console.error(`Keys '${JSON.parse(stringError.replace("missing-keys:", "")).join("', '")}' are missing from the '${modId}' mod manifest. Skipping.`);
+            } else if (stringError.startsWith("unknown-keys")) {
+                console.error(`Unknown keys '${JSON.parse(stringError.replace("unknown-keys:", "")).join("', '")}' found in the '${modId}' mod manifest. Skipping.`);
+            }
         }
     }
     const pagesStructure = await (await fetch(chrome.runtime.getURL("/structure.json"))).json();
@@ -134,7 +189,7 @@ async function initStorage() {
 }
 
 chrome.runtime.onInstalled.addListener(async (details) => {
-    await checkPermissions();
+    checkPermissions();
     await initStorage();
     await registerEnabledScripts();
     const currentVersion = chrome.runtime.getManifest().version;
