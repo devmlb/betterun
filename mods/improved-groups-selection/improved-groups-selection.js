@@ -40,7 +40,12 @@
     let selectedGroupTag;
     Object.keys(localStorage).forEach((key) => {
         selectedGroupTag = document.createElement('button');
+        try {
         groupsContainer.querySelector('label[for="' + key + '"]').click();
+        } catch {
+            localStorage.removeItem(key);
+            return;
+        }
         selectedGroupTag.classList.add('selected-group');
         selectedGroupTag.innerHTML = '<i class="fa fa-trash" style="margin-right: 6px;"></i>' + groupsContainer.querySelector('label[for="' + key + '"]').textContent;
         selectedGroupTag.id = 'selected-group-tag-' + key;
