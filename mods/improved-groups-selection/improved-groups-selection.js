@@ -26,11 +26,16 @@
     document.querySelector('body').appendChild(popup);
 
     // Creates the selection button and tag group
+    const sectionHeader = document.createElement('div');
+    sectionHeader.classList = 'groups-header';
+    const sectionTitle = document.createElement('h5');
+    sectionTitle.textContent = "Groupes sélectionnés"
     const groupsButton = document.createElement('button');
     groupsButton.id = 'groups-button';
-    groupsButton.textContent = 'Sélectionner des groupes';
-    groupsButton.classList = 'un-button un-button-filled';
-    document.querySelector('#sidebar>.columns').append(groupsButton, selectedGroupsTags);
+    groupsButton.classList = 'un-button un-button-filled un-icon-button';
+    groupsButton.innerHTML = '<i class="material-icons-round">add</i>';
+    sectionHeader.append(sectionTitle, groupsButton);
+    document.querySelector('#sidebar>.columns').append(sectionHeader, selectedGroupsTags);
 
     // Prepares checkbox selection
     const groupsContainer = document.querySelector('#desktopGroupForm>#educational_groups');

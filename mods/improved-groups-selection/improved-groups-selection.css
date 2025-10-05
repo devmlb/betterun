@@ -56,10 +56,6 @@ button.selected-group {
     display: unset;
 }
 
-#groups-button {
-    margin-bottom: 20px;
-}
-
 .un-input {
     font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif !important;
     font-size: 1rem !important;
@@ -96,6 +92,15 @@ label.hidden-result, label.selected {
     display: none !important;
 }
 
+button.un-icon-button {
+    line-height: 0.6rem !important;
+    padding: 0.6rem !important;
+}
+
+.un-icon-button i {
+    font-size: 1.3rem !important;
+}
+
 .un-button {
     font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif !important;
     font-weight: bold !important;
@@ -105,10 +110,6 @@ label.hidden-result, label.selected {
     border-radius: 0.4rem !important;
     transition: background-color var(--transition-duration), color var(--transition-duration), border var(--transition-duration) !important;
     cursor: pointer !important;
-}
-
-.un-icon-button {
-    line-height: 0.8rem !important;
 }
 
 .un-button-filled {
@@ -123,6 +124,13 @@ label.hidden-result, label.selected {
     border: 3px solid var(--primary-dark) !important;
 }
 
-.un-icon-button i {
-    font-size: 1.1rem !important;
+.groups-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.groups-header h5 {
+    margin: 0;
 }
