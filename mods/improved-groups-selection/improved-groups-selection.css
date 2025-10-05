@@ -134,3 +134,15 @@ button.un-icon-button {
 .groups-header h5 {
     margin: 0;
 }
+
+.button, .file-uploads .file-upload-button input {
+    border-radius: 0.4rem !important;
+}
+
+#container #toolBar .mobile-app-toggle {
+    border-radius: 0.5rem !important;
+}
+
+#container #toolBar .mobile-app-toggle .button:nth-child(n+1) {
+    border-left: none !important;
+}
