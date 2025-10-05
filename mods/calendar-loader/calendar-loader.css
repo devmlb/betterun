@@ -11,3 +11,7 @@
         rotate: 360deg;
     }
 }
+
+.off-canvas-content {
+    width: auto !important;
+}
