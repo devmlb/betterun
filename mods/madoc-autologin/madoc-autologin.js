@@ -1,14 +1,15 @@
 (function () {
-    UNCLOUD_URL = 'https://madoc.univ-nantes.fr';
+    MADOC_URL = 'https://madoc.univ-nantes.fr';
     const currentUrl = window.location.toString();
-    if (currentUrl === "https://madoc.univ-nantes.fr/") {
+    const indic = document.querySelector("#dropdownMenuLink");
+    if (currentUrl.startsWith("https://madoc.univ-nantes.fr") && indic) {
         const dropdowns = document.querySelectorAll('.dropdown-item');
         dropdowns.forEach((dropdown) => {
             if (dropdown.innerText == "Avec un compte de Nantes Université") {
                 window.location.replace(dropdown.href);
             }
         });
-    } else if (currentUrl.startsWith(UNCLOUD_URL + '/login/index.php')) {
+    } else if (currentUrl.startsWith(MADOC_URL + '/login/index.php')) {
         window.location.replace(document.querySelector('.btn.login-identityprovider-btn.btn-block').href);
     } 
     // else {
