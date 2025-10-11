@@ -1,7 +1,7 @@
 (function() {
     UNCLOUD_URL = "https://uncloud.univ-nantes.fr";
     const currentUrl = window.location.toString();
-    if (currentUrl.startsWith(UNCLOUD_URL + "/index.php/login")) {
+    if (currentUrl === UNCLOUD_URL + "/index.php/login") {
         // Login page
         document.body.style.display = "none";
         window.location.replace(document.querySelector("#alternative-logins>a").href);
