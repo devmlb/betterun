@@ -162,3 +162,12 @@ body.sticky-toolbar .header-wrapper .header__toolbar {
 .header__inner.encadrement {
     padding-left: 30px !important;
 }
+
+/* Hide the banner overlay and improve readability */
+.header-wrapper .background-overlay {
+    display: none !important;
+}
+
+.header-wrapper .background {
+    filter: opacity(0.6) !important;
+}
