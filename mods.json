@@ -8,7 +8,7 @@
         "chromiumFiles": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
         "firefoxFiles": ["/mods/apps-menu/apps-menu.css", "/mods/apps-menu/apps-menu.js"],
         "matches": ["https://intraetu.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "intranet",
         "sectionId": "main"
@@ -36,7 +36,7 @@
         "chromiumFiles": ["/mods/uncloud-autologin/uncloud-autologin.js", "/mods/uncloud-autologin/uncloud-autologin.css"],
         "firefoxFiles": ["/mods/uncloud-autologin/uncloud-autologin.js", "/mods/uncloud-autologin/uncloud-autologin.css"],
         "matches": ["https://uncloud.univ-nantes.fr*"],
-        "version": "alpha",
+        "version": "beta",
         "hidden": false,
         "pageId": "uncloud",
         "sectionId": "main"
@@ -134,7 +134,7 @@
         "chromiumFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
         "firefoxFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
         "matches": ["https://madoc.univ-nantes.fr*"],
-        "version": "alpha",
+        "version": "beta",
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "main"
@@ -148,7 +148,7 @@
         "chromiumFiles": ["/mods/madoc-truncate/madoc-truncate.js"],
         "firefoxFiles": ["/mods/madoc-truncate/madoc-truncate.js"],
         "matches": ["https://madoc.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "course-page"
@@ -162,7 +162,7 @@
         "chromiumFiles": ["/mods/uncloud-skip-consent/uncloud-skip-consent.js", "/mods/uncloud-skip-consent/uncloud-skip-consent.css"],
         "firefoxFiles": ["/mods/uncloud-autologin/uncloud-skip-consent.js", "/mods/uncloud-autologin/uncloud-skip-consent.css"],
         "matches": ["https://cas6n.univ-nantes.fr*"],
-        "version": "alpha",
+        "version": "beta",
         "hidden": false,
         "pageId": "uncloud",
         "sectionId": "main"
