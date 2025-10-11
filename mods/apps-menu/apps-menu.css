@@ -128,11 +128,12 @@ body>header>.header-wrapper .header__logo {
 #account-menu-header {
     display: flex;
     padding: 24px;
-    align-items: center;
 }
 
 #account-menu-header div>h3 {
     text-wrap: nowrap;
+    margin-bottom: 8px !important;
+    line-height: 0.7 !important;
 }
 
 #account-menu-header svg {
