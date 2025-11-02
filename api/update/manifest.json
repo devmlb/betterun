@@ -28,6 +28,15 @@
                         }
                     },
                     "update_link": "https://devmlb.github.io/betterun/api/update/betterun-v0.1.4.xpi"
+                },
+                {
+                    "version": "0.1.5",
+                    "browser_specific_settings": {
+                        "gecko": {
+                            "strict_min_version": "126.0"
+                        }
+                    },
+                    "update_link": "https://devmlb.github.io/betterun/api/update/betterun-v0.1.5.xpi"
                 }
             ]
         }
