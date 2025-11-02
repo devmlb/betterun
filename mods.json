@@ -166,5 +166,19 @@
         "hidden": false,
         "pageId": "uncloud",
         "sectionId": "main"
+    },
+    {
+        "id": "madoc-notifs-menu",
+        "title": "Améliorer le menu de notifications",
+        "desc": "Corrige un bug rendant le texte du menu de notifications illisible et unifie son apparence.",
+        "frame": "all",
+        "enabled": true,
+        "chromiumFiles": ["/mods/madoc-notifs-menu/madoc-notifs-menu.css"],
+        "firefoxFiles": ["/mods/madoc-notifs-menu/madoc-notifs-menu.css"],
+        "matches": ["https://madoc.univ-nantes.fr*"],
+        "version": "beta",
+        "hidden": false,
+        "pageId": "madoc",
+        "sectionId": "main"
     }
 ]

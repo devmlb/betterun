@@ -1,0 +1,41 @@
+/* Fix the text color inside the notifs menu */
+.popover-region.popover-region-notifications>.popover-region-container,
+.popover-region.popover-region-notifications>.popover-region-container i.icon {
+    color: #000000 !important;
+}
+
+.popover-region.popover-region-notifications>.popover-region-container .content-item-container:hover i.icon {
+    color: #ffffff !important;
+}
+
+/* Change the menu radius, add some padding and push it away from the navbar */
+.popover-region.popover-region-notifications>.popover-region-container {
+    border-radius: .5rem !important;
+    margin-top: 2px !important;
+    padding: .5rem 0 !important;
+}
+
+.popover-region.popover-region-notifications>.popover-region-container .popover-region-footer-container {
+    border-radius: 0 0 .6rem .6rem !important;
+}
+
+.popover-region.popover-region-notifications>.popover-region-container .popover-region-header-container {
+    padding: 0 .75rem .5rem .75rem !important;
+    height: calc(25px + .5rem);
+}
+
+/* Hide the top arrow */
+.popover-region.popover-region-notifications .popover-region-toggle::after,
+.popover-region.popover-region-notifications .popover-region-toggle::before {
+    display: none !important;
+}
+
+/* Add some padding to each notif */
+.popover-region.popover-region-notifications>.popover-region-container .content-item-container {
+    padding: .75rem !important;
+}
+
+.popover-region.popover-region-notifications>.popover-region-container .content-item-container .view-more {
+    bottom: .75rem !important;
+    right: .75rem !important;
+}
