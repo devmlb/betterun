@@ -1,8 +1,8 @@
 (function () {
     function setCourseItemsTitles() {
-        const courseItems = document.querySelectorAll('.courseindex-item>.courseindex-link.text-truncate');
+        const courseItems = document.querySelectorAll(".courseindex-item>.courseindex-link.text-truncate");
         courseItems.forEach((courseItem) => {
-            courseItem.setAttribute('title', courseItem.innerText)
+            courseItem.setAttribute("title", courseItem.innerText)
         });
     }
 
@@ -15,7 +15,7 @@
             });
         });
 
-        observer.observe(document.querySelector('#courseindex-content'), {
+        observer.observe(document.querySelector("#courseindex-content"), {
             childList: true,
             subtree: true,
             attributes: false,
@@ -23,9 +23,7 @@
         });
     }
 
-    if (document.readyState !== 'loading') {
-        setCourseIndexObserver();
-    } else {
+    if (document.querySelector("#courseindex-content")) {
         setCourseIndexObserver();
     }
 })();
