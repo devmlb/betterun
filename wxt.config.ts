@@ -4,9 +4,6 @@ import { defineConfig } from "wxt";
 export default defineConfig({
     srcDir: "src",
     modules: ["@wxt-dev/module-react"],
-    suppressWarnings: {
-        firefoxDataCollection: true,
-    },
     manifest: {
         name: "BetterUN",
         description:
@@ -25,7 +22,7 @@ export default defineConfig({
         },
         web_accessible_resources: [
             {
-                resources: ["mods/*", "icons/*", "assets/*", "*.woff2"],
+                resources: ["assets/*"],
                 matches: ["https://*.univ-nantes.fr/*"],
             },
         ],
