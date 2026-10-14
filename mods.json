@@ -131,10 +131,10 @@
         "desc": "Remplace le dispositif de connexion natif de Madoc par l'authentification centralisée (CAS) de l'Université.",
         "frame": "all",
         "enabled": true,
-        "chromiumFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
-        "firefoxFiles": ["/mods/madoc-autologin/madoc-autologin.js", "/mods/madoc-autologin/madoc-autologin.css"],
+        "chromiumFiles": ["/mods/madoc-autologin/madoc-autologin.js"],
+        "firefoxFiles": ["/mods/madoc-autologin/madoc-autologin.js"],
         "matches": ["https://madoc.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "main"
