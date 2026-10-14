@@ -1,9 +1,4 @@
 (function () {
-    const appsMenu = document.querySelector(
-        "#outils_numeriques .toolbar__component__dropdown",
-    );
-    const appsMenuUl = appsMenu.querySelector("ul");
-
     const newAppsShortcuts = [
         {
             name: "Webmail",
@@ -37,30 +32,6 @@
         },
     ];
 
-    // appsMenuUl.innerHTML = '';
-    // newAppsShortcuts.forEach(shortcut => {
-    //     let shortcutLi = document.createElement('li');
-    //     shortcutLi.classList = 'toolbar-grid-menu__element';
-    //     let shortcutBtn = document.createElement('a');
-    //     shortcutBtn.setAttribute('href', shortcut.url);
-    //     shortcutBtn.setAttribute('target', '_blank');
-    //     let shortcutImg = document.createElement('img');
-    //     shortcutImg.setAttribute('src', chrome.runtime.getURL(shortcut.img));
-    //     shortcutImg.setAttribute('alt', shortcut.alt);
-    //     let shortcutName = document.createTextNode(shortcut.name);
-    //     shortcutBtn.appendChild(shortcutImg);
-    //     shortcutBtn.appendChild(shortcutName);
-    //     shortcutLi.appendChild(shortcutBtn);
-    //     appsMenuUl.appendChild(shortcutLi)
-    // });
-
-    // const allAppsSpan = document.createElement('span');
-    // const allAppsBtn = document.createElement('a');
-    // allAppsBtn.textContent = 'Tous vos webservices';
-    // allAppsBtn.setAttribute('href', 'https://intraetu.univ-nantes.fr/vos-webservices-1');
-    // allAppsSpan.appendChild(allAppsBtn);
-    // appsMenu.appendChild(allAppsSpan);
-
     let appsMenuHTML = `
     <div class="toolbar__component__dropdown" data-toggle-target="">
         <ul>
@@ -75,7 +46,17 @@
         <a href="https://intraetu.univ-nantes.fr/vos-webservices-1">Tous les webservices</a>
     </div>
     `;
-    let connexionMenuHTML = `
+
+    const userName =
+        document.querySelector(".bandeau_acces_direct__component>a")
+            ?.textContent ?? "";
+    const userRole =
+        document.querySelector("#personne_dsi")?.textContent ?? "";
+    const logoutUrl =
+        document.querySelector<HTMLAnchorElement>("#se_deconnecter_desktop")
+            ?.href ?? "";
+
+    const connexionMenuHTML = `
     <div class="toolbar__component__dropdown" data-toggle-target="">
         <div id="account-menu-header">
             <svg width="128" height="160" viewBox="0 0 128 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,17 +65,19 @@
                 <path d="M31.1499 65.0189H0V-2.28882e-05H31.1499V65.0189Z" fill="white"/>
             </svg>
             <div>
-                <h3>${document.querySelector(".bandeau_acces_direct__component>a").textContent}</h3>
-                <span>${document.querySelector("#personne_dsi").textContent}</span>
+                <h3>${userName}</h3>
+                <span>${userRole}</span>
             </div>
         </div>
-        <a href="${document.querySelector("#se_deconnecter_desktop").href}">Se déconnecter</a>
+        <a href="${logoutUrl}">Se déconnecter</a>
     </div>
     `;
 
     const header = document.querySelector(".header__inner.encadrement");
+    if (!header) return;
+
     const toolbar = document.createElement("div");
-    toolbar.classList = "header__toolbar toolbar toolbar-new";
+    toolbar.className = "header__toolbar toolbar toolbar-new";
     toolbar.innerHTML = `
     <a href="https://intraetu.univ-nantes.fr/" class="header__logo__lien" title="Retour à la page d'accueil">
         <img src="/uas/intraetu/LOGO_STICKY/NantesUniversite.png" alt="logo-Retour à la page d'accueil">
@@ -143,8 +126,5 @@
     </div>
     `;
     header.appendChild(toolbar);
-    document.querySelector(".header__toolbar.toolbar").remove();
-    // document.querySelector('.bandeau_acces_direct').remove();
-    // <button type="button" class="button button-link" aria-expanded="false" data-toggle="#connexion .toolbar__component__dropdown" data-toggle-group="toolbar">
-    //             </button>
+    document.querySelector(".header__toolbar.toolbar")?.remove();
 })();

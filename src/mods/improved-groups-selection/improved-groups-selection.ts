@@ -1,6 +1,8 @@
 (function () {
     // Adds an indicator when there is no result
     const groupsList = document.querySelector(".groups-list");
+    if (!groupsList) return;
+
     const noResult = document.createElement("span");
     noResult.innerText = "Aucun résultat";
     noResult.style.display = "none";
@@ -23,34 +25,48 @@
     groupsListPopup.appendChild(groupsList);
     groupsList.classList.add("ready");
     popup.appendChild(groupsListPopup);
-    document.querySelector("body").appendChild(popup);
+    document.body.appendChild(popup);
 
     // Creates the selection button and tag group
     const sectionHeader = document.createElement("div");
-    sectionHeader.classList = "groups-header";
+    sectionHeader.className = "groups-header";
     const sectionTitle = document.createElement("h5");
     sectionTitle.textContent = "Groupes sélectionnés";
     const groupsButton = document.createElement("button");
     groupsButton.id = "groups-button";
-    groupsButton.classList = "un-button un-button-filled un-icon-button";
+    groupsButton.className = "un-button un-button-filled un-icon-button";
     groupsButton.innerHTML = '<i class="material-icons-round">add</i>';
     sectionHeader.append(sectionTitle, groupsButton);
-    document
-        .querySelector("#sidebar>.columns")
-        .append(sectionHeader, selectedGroupsTags);
+
+    const sidebarColumns = document.querySelector("#sidebar>.columns");
+    if (sidebarColumns) {
+        sidebarColumns.append(sectionHeader, selectedGroupsTags);
+    }
 
     // Prepares checkbox selection
     const groupsContainer = document.querySelector(
         "#desktopGroupForm>#educational_groups",
     );
-    const checkboxes = groupsContainer.querySelectorAll("input[type=checkbox]");
+    if (!groupsContainer) return;
+
+    const checkboxes = groupsContainer.querySelectorAll<HTMLInputElement>(
+        "input[type=checkbox]",
+    );
 
     // Creates groups tags on loading and requests the corresponding timetables
-    let selectedGroupTag;
+    let selectedGroupTag: HTMLButtonElement;
     Object.keys(localStorage).forEach((key) => {
+        const label = groupsContainer.querySelector<HTMLLabelElement>(
+            'label[for="' + key + '"]',
+        );
+        if (!label) {
+            localStorage.removeItem(key);
+            return;
+        }
+
         selectedGroupTag = document.createElement("button");
         try {
-            groupsContainer.querySelector('label[for="' + key + '"]').click();
+            label.click();
         } catch {
             localStorage.removeItem(key);
             return;
@@ -58,25 +74,20 @@
         selectedGroupTag.classList.add("selected-group");
         selectedGroupTag.innerHTML =
             '<i class="fa fa-trash" style="margin-right: 6px;"></i>' +
-            groupsContainer.querySelector('label[for="' + key + '"]')
-                .textContent;
+            (label.textContent ?? "");
         selectedGroupTag.id = "selected-group-tag-" + key;
         document
             .querySelector("#selected-groups")
-            .appendChild(selectedGroupTag);
-        groupsContainer
-            .querySelector('label[for="' + key + '"]')
-            .classList.add("selected");
+            ?.appendChild(selectedGroupTag);
+        label.classList.add("selected");
+
         selectedGroupTag.addEventListener("click", () => {
-            groupsContainer.querySelector('label[for="' + key + '"]').click();
-            document
-                .querySelector("#selected-groups")
-                .removeChild(
-                    document.querySelector("#selected-group-tag-" + key),
-                );
-            groupsContainer
-                .querySelector('label[for="' + key + '"]')
-                .classList.remove("selected");
+            label.click();
+            const tag = document.querySelector("#selected-group-tag-" + key);
+            if (tag) {
+                document.querySelector("#selected-groups")?.removeChild(tag);
+            }
+            label.classList.remove("selected");
             localStorage.removeItem(key);
         });
     });
@@ -84,36 +95,34 @@
     // Adds an event listener for checkboxes in all groups
     checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", (event) => {
-            if (event.currentTarget.checked) {
-                selectedGroupTag = document.createElement("button");
-                selectedGroupTag.classList.add("selected-group");
-                selectedGroupTag.innerHTML =
+            const target = event.currentTarget as HTMLInputElement | null;
+            if (target?.checked) {
+                const label = groupsContainer.querySelector<HTMLLabelElement>(
+                    'label[for="' + checkbox.id + '"]',
+                );
+                if (!label) return;
+
+                const tag = document.createElement("button");
+                tag.classList.add("selected-group");
+                tag.innerHTML =
                     '<i class="fa fa-trash" style="margin-right: 6px;"></i>' +
-                    groupsContainer.querySelector(
-                        'label[for="' + checkbox.id + '"]',
-                    ).textContent;
-                selectedGroupTag.id = "selected-group-tag-" + checkbox.id;
-                document
-                    .querySelector("#selected-groups")
-                    .appendChild(selectedGroupTag);
-                groupsContainer
-                    .querySelector('label[for="' + checkbox.id + '"]')
-                    .classList.add("selected");
+                    (label.textContent ?? "");
+                tag.id = "selected-group-tag-" + checkbox.id;
+                document.querySelector("#selected-groups")?.appendChild(tag);
+                label.classList.add("selected");
                 localStorage.setItem(checkbox.id, "");
-                selectedGroupTag.addEventListener("click", () => {
-                    groupsContainer
-                        .querySelector('label[for="' + checkbox.id + '"]')
-                        .click();
-                    document
-                        .querySelector("#selected-groups")
-                        .removeChild(
-                            document.querySelector(
-                                "#selected-group-tag-" + checkbox.id,
-                            ),
-                        );
-                    groupsContainer
-                        .querySelector('label[for="' + checkbox.id + '"]')
-                        .classList.remove("selected");
+
+                tag.addEventListener("click", () => {
+                    label.click();
+                    const existingTag = document.querySelector(
+                        "#selected-group-tag-" + checkbox.id,
+                    );
+                    if (existingTag) {
+                        document
+                            .querySelector("#selected-groups")
+                            ?.removeChild(existingTag);
+                    }
+                    label.classList.remove("selected");
                     localStorage.removeItem(checkbox.id);
                 });
             }
@@ -121,10 +130,13 @@
     });
 
     // Group search
-    const searchBox = document.querySelector("#groups-search");
-    const results = groupsContainer.querySelectorAll("label");
-    let groupNumber, resultsNumber, search;
-    searchBox.addEventListener("input", () => {
+    const searchBox = document.querySelector<HTMLInputElement>("#groups-search");
+    const results = groupsContainer.querySelectorAll<HTMLLabelElement>("label");
+    let groupNumber: string;
+    let resultsNumber: number;
+    let search: string;
+
+    searchBox?.addEventListener("input", () => {
         search = searchBox.value
             .toLowerCase()
             .normalize("NFD")
@@ -132,7 +144,7 @@
         resultsNumber = 0;
         results.forEach((result) => {
             if (!result.classList.contains("selected")) {
-                groupNumber = result.textContent
+                groupNumber = (result.textContent ?? "")
                     .toLowerCase()
                     .normalize("NFD")
                     .replace(/[\u0300-\u036f\s]/g, "");
@@ -154,13 +166,13 @@
 
     // Closes the pop-up window when you click outside or press the close button
     popup.addEventListener("click", function (event) {
-        if (!groupsListPopup.contains(event.target)) {
+        if (!groupsListPopup.contains(event.target as Node)) {
             popup.classList.remove("show");
         }
     });
     document
         .querySelector("#popup-close-button")
-        .addEventListener("click", () => {
+        ?.addEventListener("click", () => {
             popup.classList.remove("show");
         });
 })();

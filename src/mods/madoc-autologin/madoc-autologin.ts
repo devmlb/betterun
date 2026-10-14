@@ -12,16 +12,23 @@
         loginDropdown
     ) {
         // If there is a dropdown we are on the home page with login options
-        const dropdownCASItem = loginDropdown.parentElement
-            .querySelectorAll(".dropdown-item")
-            .values()
-            .find((d) => d.innerText.includes("de Nantes Université"));
+        const parent = loginDropdown.parentElement;
+        if (!parent) return;
+
+        const dropdownItems = Array.from(
+            parent.querySelectorAll<HTMLAnchorElement>(".dropdown-item"),
+        );
+        const dropdownCASItem = dropdownItems.find((d) =>
+            d.innerText.includes("de Nantes Université"),
+        );
         if (!dropdownCASItem) return;
 
         const redirectUrl = dropdownCASItem.href;
 
         // Adding redirection indicator to inform the user
         const jumbotron = document.querySelector(".jumbotron");
+        if (!jumbotron) return;
+
         const redirectDisplay = document.createElement("div");
         redirectDisplay.className = "row align-items-center";
         const redirectTextWrapper = document.createElement("div");
@@ -39,12 +46,16 @@
         window.location.replace(redirectUrl);
     } else if (currentUrl === MADOC_BASE_URL + "/login/index.php") {
         // Alternative login page
-        const redirectUrl = document.querySelector(
+        const redirectBtn = document.querySelector<HTMLAnchorElement>(
             ".btn.login-identityprovider-btn.btn-block",
-        ).href;
+        );
+        if (!redirectBtn) return;
+        const redirectUrl = redirectBtn.href;
 
         // Adding redirection indicator to inform the user
         const loginForm = document.querySelector(".loginform");
+        if (!loginForm) return;
+
         const redirectText = document.createElement("h2");
         redirectText.className = "login-heading";
         redirectText.innerText =

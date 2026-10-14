@@ -1,9 +1,10 @@
 const formWindow = document.querySelector(".form-wrapper");
 
-const windowHeader = document.createElement("div");
-windowHeader.id = "window-header";
+if (formWindow) {
+    const windowHeader = document.createElement("div");
+    windowHeader.id = "window-header";
 
-windowHeader.innerHTML = `
+    windowHeader.innerHTML = `
 <span id="window-header--logo"></span>
 <div id="window-header--infos">
 <h1>Connexion</h1>
@@ -11,16 +12,28 @@ windowHeader.innerHTML = `
 </div>
 `;
 
-formWindow.prepend(windowHeader);
+    formWindow.prepend(windowHeader);
+}
 
-document.querySelector('.mdc-button[type="submit"]').id = "submit-button";
+const submitBtn = document.querySelector<HTMLElement>(
+    '.mdc-button[type="submit"]',
+);
+if (submitBtn) {
+    submitBtn.id = "submit-button";
+}
 
-document
-    .querySelector("#usernameSection label")
-    .removeChild(document.querySelector("#username"));
-document
-    .querySelector("#passwordSection label")
-    .removeChild(document.querySelector("#password"));
+const usernameLabel = document.querySelector("#usernameSection label");
+const oldUsername = document.querySelector("#username");
+if (usernameLabel && oldUsername) {
+    usernameLabel.removeChild(oldUsername);
+}
+
+const passwordLabel = document.querySelector("#passwordSection label");
+const oldPassword = document.querySelector("#password");
+if (passwordLabel && oldPassword) {
+    passwordLabel.removeChild(oldPassword);
+}
+
 const usernameInput = document.createElement("input");
 usernameInput.id = "username";
 usernameInput.classList.add("un-input");
@@ -34,11 +47,11 @@ passwordInput.setAttribute("placeholder", "Mot de passe");
 passwordInput.setAttribute("name", "password");
 passwordInput.setAttribute("type", "password");
 
-document.querySelector("#usernameSection").appendChild(usernameInput);
-document.querySelector("#passwordSection").appendChild(passwordInput);
+document.querySelector("#usernameSection")?.appendChild(usernameInput);
+document.querySelector("#passwordSection")?.appendChild(passwordInput);
 
 const revealPasswordButton = document.createElement("button");
-revealPasswordButton.classList = "un-button un-button-filled";
+revealPasswordButton.className = "un-button un-button-filled";
 revealPasswordButton.innerHTML =
     '<i class="material-icons-round">visibility</i>';
 revealPasswordButton.setAttribute("type", "button");
@@ -49,4 +62,4 @@ revealPasswordButton.addEventListener("click", () => {
             ? '<i class="material-icons-round">visibility_off</i>'
             : '<i class="material-icons-round">visibility</i>';
 });
-document.querySelector("#passwordSection").appendChild(revealPasswordButton);
+document.querySelector("#passwordSection")?.appendChild(revealPasswordButton);

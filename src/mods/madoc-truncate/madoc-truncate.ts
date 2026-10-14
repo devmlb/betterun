@@ -1,6 +1,6 @@
 (function () {
     function setCourseItemsTitles() {
-        const courseItems = document.querySelectorAll(
+        const courseItems = document.querySelectorAll<HTMLElement>(
             ".courseindex-item>.courseindex-link.text-truncate",
         );
         courseItems.forEach((courseItem) => {
@@ -9,7 +9,10 @@
     }
 
     function setCourseIndexObserver() {
-        let observer = new MutationObserver((mutations) => {
+        const content = document.querySelector("#courseindex-content");
+        if (!content) return;
+
+        const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (!mutation.addedNodes) return;
                 setCourseItemsTitles();
@@ -17,7 +20,7 @@
             });
         });
 
-        observer.observe(document.querySelector("#courseindex-content"), {
+        observer.observe(content, {
             childList: true,
             subtree: true,
             attributes: false,

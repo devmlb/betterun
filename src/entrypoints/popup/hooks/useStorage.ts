@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import type { Browser } from "wxt/browser";
 
 /**
  * Hook to read a single key from browser.storage.sync reactively.
@@ -18,9 +17,7 @@ export function useStorage<T>(key: string | null, defaultValue: T) {
 
         load();
 
-        const listener = (
-            changes: Record<string, Browser.Storage.StorageChange>,
-        ) => {
+        const listener = (changes: Record<string, any>) => {
             if (!key || key in changes) {
                 load();
             }
