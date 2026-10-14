@@ -7,27 +7,36 @@
         --neutral: #cecece !important;
         --on-neutral: #000000 !important;
 
-        --on-primary-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
-        --on-primary-dark-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
-        --on-surface-high-emphasis-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
-        --on-surface-low-emphasis-filter: brightness(0) saturate(100%) invert(84%) sepia(9%) saturate(8%) hue-rotate(16deg) brightness(88%) contrast(83%) !important;
+        --on-primary-filter: brightness(0) saturate(100%) invert(99%) sepia(0%)
+            saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
+        --on-primary-dark-filter: brightness(0) saturate(100%) invert(99%)
+            sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%)
+            contrast(102%) !important;
+        --on-surface-high-emphasis-filter: brightness(0) saturate(100%)
+            invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg)
+            brightness(102%) contrast(102%) !important;
+        --on-surface-low-emphasis-filter: brightness(0) saturate(100%)
+            invert(84%) sepia(9%) saturate(8%) hue-rotate(16deg) brightness(88%)
+            contrast(83%) !important;
 
-        --surface-low: #1A1A1A !important;
+        --surface-low: #1a1a1a !important;
         --surface-medium: #343434 !important;
-        --surface-high: #4D4D4D !important;
-        --on-surface-high-emphasis: #FFFFFF !important;
-        --on-surface-low-emphasis: #B4B4B4 !important;
+        --surface-high: #4d4d4d !important;
+        --on-surface-high-emphasis: #ffffff !important;
+        --on-surface-low-emphasis: #b4b4b4 !important;
 
         --shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2) !important;
 
-        --transition-duration: .3s !important;
+        --transition-duration: 0.3s !important;
     }
 }
 
 body {
     background-color: var(--surface-low) !important;
     color: var(--on-surface-high-emphasis) !important;
-    transition: background-color var(--transition-duration), color var(--transition-duration);
+    transition:
+        background-color var(--transition-duration),
+        color var(--transition-duration);
 }
 
 h1,
@@ -53,12 +62,14 @@ h6,
     transition: background-color var(--transition-duration), color var(--transition-duration);
 } */
 
-#account-menu-header>div>span {
+#account-menu-header > div > span {
     color: var(--on-surface-low-emphasis) !important;
     transition: color var(--transition-duration);
 }
 
-.toolbar__component__dropdown:not(#recherche-simple .toolbar__component__dropdown) {
+.toolbar__component__dropdown:not(
+    #recherche-simple .toolbar__component__dropdown
+) {
     background-color: var(--surface-medium) !important;
     transition: background-color var(--transition-duration);
 }
@@ -66,9 +77,12 @@ h6,
 .toolbar-grid-menu__element a {
     background-color: var(--surface-medium) !important;
     color: var(--on-surface-high-emphasis) !important;
-    transition: background-color var(--transition-duration), color var(--transition-duration) !important;
+    transition:
+        background-color var(--transition-duration),
+        color var(--transition-duration) !important;
 }
 
-.toolbar-grid-menu__element a:hover, .toolbar-grid-menu__element a:focus {
+.toolbar-grid-menu__element a:hover,
+.toolbar-grid-menu__element a:focus {
     background-color: var(--surface-high) !important;
 }

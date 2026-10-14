@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import 'mdui/mdui.css';
-import 'mdui';
-import '@fontsource/roboto/400.css';
-import 'material-icons/iconfont/round.css';
-import './style.css';
-import OnboardingApp from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "mdui/mdui.css";
+import "mdui";
+import "@fontsource/roboto/400.css";
+import "material-icons/iconfont/round.css";
+import "./style.css";
+import OnboardingApp from "./App";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <OnboardingApp />
-  </React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+    <React.StrictMode>
+        <OnboardingApp />
+    </React.StrictMode>,
 );

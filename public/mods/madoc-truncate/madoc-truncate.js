@@ -1,8 +1,10 @@
 (function () {
     function setCourseItemsTitles() {
-        const courseItems = document.querySelectorAll(".courseindex-item>.courseindex-link.text-truncate");
+        const courseItems = document.querySelectorAll(
+            ".courseindex-item>.courseindex-link.text-truncate",
+        );
         courseItems.forEach((courseItem) => {
-            courseItem.setAttribute("title", courseItem.innerText)
+            courseItem.setAttribute("title", courseItem.innerText);
         });
     }
 
@@ -19,7 +21,7 @@
             childList: true,
             subtree: true,
             attributes: false,
-            characterData: false
+            characterData: false,
         });
     }
 

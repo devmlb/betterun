@@ -1,13 +1,40 @@
 (function () {
-    const appsMenu = document.querySelector('#outils_numeriques .toolbar__component__dropdown');
-    const appsMenuUl = appsMenu.querySelector('ul');
+    const appsMenu = document.querySelector(
+        "#outils_numeriques .toolbar__component__dropdown",
+    );
+    const appsMenuUl = appsMenu.querySelector("ul");
 
     const newAppsShortcuts = [
-        { name: 'Webmail', img: 'mail', url: 'https://intraetu.univ-nantes.fr/vos-webservices/webmail', alt: 'Webmail' },
-        { name: 'Madoc', img: 'school', url: 'https://intraetu.univ-nantes.fr/vos-webservices/madoc', alt: 'Madoc' },
-        { name: 'UNcloud', img: 'cloud', url: 'https://intraetu.univ-nantes.fr/vos-webservices/uncloud', alt: 'UNcloud' },
-        { name: 'Emploi du temps', img: 'calendar_today', url: 'https://edt.univ-nantes.fr/edt', alt: 'Emploi du temps' },
-        { name: 'Gestion des absences', img: 'contract_edit', url: 'https://abs-sciences.univ-nantes.fr/', alt: 'Gestion des absences' }
+        {
+            name: "Webmail",
+            img: "mail",
+            url: "https://intraetu.univ-nantes.fr/vos-webservices/webmail",
+            alt: "Webmail",
+        },
+        {
+            name: "Madoc",
+            img: "school",
+            url: "https://intraetu.univ-nantes.fr/vos-webservices/madoc",
+            alt: "Madoc",
+        },
+        {
+            name: "UNcloud",
+            img: "cloud",
+            url: "https://intraetu.univ-nantes.fr/vos-webservices/uncloud",
+            alt: "UNcloud",
+        },
+        {
+            name: "Emploi du temps",
+            img: "calendar_today",
+            url: "https://edt.univ-nantes.fr/edt",
+            alt: "Emploi du temps",
+        },
+        {
+            name: "Gestion des absences",
+            img: "contract_edit",
+            url: "https://abs-sciences.univ-nantes.fr/",
+            alt: "Gestion des absences",
+        },
     ];
 
     // appsMenuUl.innerHTML = '';
@@ -38,16 +65,16 @@
     <div class="toolbar__component__dropdown" data-toggle-target="">
         <ul>
     `;
-    newAppsShortcuts.forEach(shortcut => {
+    newAppsShortcuts.forEach((shortcut) => {
         appsMenuHTML += `
         <li class="toolbar-grid-menu__element"><a href="${shortcut.url}" target="_blank"><i class="material-icons-round">${shortcut.img}</i>${shortcut.name}</a></li>
-        `
+        `;
     });
     appsMenuHTML += `
         </ul>
         <a href="https://intraetu.univ-nantes.fr/vos-webservices-1">Tous les webservices</a>
     </div>
-    `
+    `;
     let connexionMenuHTML = `
     <div class="toolbar__component__dropdown" data-toggle-target="">
         <div id="account-menu-header">
@@ -57,17 +84,17 @@
                 <path d="M31.1499 65.0189H0V-2.28882e-05H31.1499V65.0189Z" fill="white"/>
             </svg>
             <div>
-                <h3>${document.querySelector('.bandeau_acces_direct__component>a').textContent}</h3>
-                <span>${document.querySelector('#personne_dsi').textContent}</span>
+                <h3>${document.querySelector(".bandeau_acces_direct__component>a").textContent}</h3>
+                <span>${document.querySelector("#personne_dsi").textContent}</span>
             </div>
         </div>
-        <a href="${document.querySelector('#se_deconnecter_desktop').href}">Se déconnecter</a>
+        <a href="${document.querySelector("#se_deconnecter_desktop").href}">Se déconnecter</a>
     </div>
     `;
 
-    const header = document.querySelector('.header__inner.encadrement');
-    const toolbar = document.createElement('div');
-    toolbar.classList = 'header__toolbar toolbar toolbar-new';
+    const header = document.querySelector(".header__inner.encadrement");
+    const toolbar = document.createElement("div");
+    toolbar.classList = "header__toolbar toolbar toolbar-new";
     toolbar.innerHTML = `
     <a href="https://intraetu.univ-nantes.fr/" class="header__logo__lien" title="Retour à la page d'accueil">
         <img src="/uas/intraetu/LOGO_STICKY/NantesUniversite.png" alt="logo-Retour à la page d'accueil">
@@ -116,7 +143,7 @@
     </div>
     `;
     header.appendChild(toolbar);
-    document.querySelector('.header__toolbar.toolbar').remove();
+    document.querySelector(".header__toolbar.toolbar").remove();
     // document.querySelector('.bandeau_acces_direct').remove();
     // <button type="button" class="button button-link" aria-expanded="false" data-toggle="#connexion .toolbar__component__dropdown" data-toggle-group="toolbar">
     //             </button>

@@ -1,4 +1,4 @@
-@import 'material-icons/iconfont/round.css';
+@import "material-icons/iconfont/round.css";
 
 :root {
     --primary: #3452ff;
@@ -8,21 +8,24 @@
     --neutral: #cecece;
     --on-neutral: #000000;
 
-    --on-primary-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
-    --on-primary-dark-filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
+    --on-primary-filter: brightness(0) saturate(100%) invert(99%) sepia(0%)
+        saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
+    --on-primary-dark-filter: brightness(0) saturate(100%) invert(99%) sepia(0%)
+        saturate(5%) hue-rotate(150deg) brightness(102%) contrast(102%) !important;
     --on-surface-high-emphasis-filter: brightness(0) saturate(100%) !important;
-    --on-surface-low-emphasis-filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%) hue-rotate(152deg) brightness(98%) contrast(89%) !important;
+    --on-surface-low-emphasis-filter: brightness(0) saturate(100%) invert(40%)
+        sepia(0%) saturate(0%) hue-rotate(152deg) brightness(98%) contrast(89%) !important;
 
-    --surface-low: #F9F9F9;
-    --surface-medium: #E7E7E7;
-    --surface-high: #D4D4D4;
+    --surface-low: #f9f9f9;
+    --surface-medium: #e7e7e7;
+    --surface-high: #d4d4d4;
     --on-surface-high-emphasis: #000000;
     --on-surface-low-emphasis: #676767;
 
-    --error: #B00020;
+    --error: #b00020;
     --on-error: #ffffff;
 
     --shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.2);
 
-    --transition-duration: .3s;
+    --transition-duration: 0.3s;
 }

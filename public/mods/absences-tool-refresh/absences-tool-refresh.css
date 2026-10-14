@@ -1,4 +1,5 @@
-input[type='file'], input[type='submit'] {
+input[type="file"],
+input[type="submit"] {
     border: none;
     transition-duration: var(--transition-duration);
     display: block;
@@ -7,7 +8,9 @@ input[type='file'], input[type='submit'] {
     text-align: center;
     padding: 12px;
     border-radius: 10px;
-    font-family: "source sans pro", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif;
+    font-family:
+        "source sans pro", Arial, "Helvetica Neue", Helvetica,
+        "Bitstream Vera Sans", sans-serif;
     font-size: 16px;
     line-height: 1.5;
     cursor: pointer;

@@ -1,7 +1,7 @@
-const formWindow = document.querySelector('.form-wrapper');
+const formWindow = document.querySelector(".form-wrapper");
 
-const windowHeader = document.createElement('div');
-windowHeader.id = 'window-header';
+const windowHeader = document.createElement("div");
+windowHeader.id = "window-header";
 
 windowHeader.innerHTML = `
 <span id="window-header--logo"></span>
@@ -13,32 +13,40 @@ windowHeader.innerHTML = `
 
 formWindow.prepend(windowHeader);
 
-document.querySelector('.mdc-button[type="submit"]').id = 'submit-button';
+document.querySelector('.mdc-button[type="submit"]').id = "submit-button";
 
-document.querySelector('#usernameSection label').removeChild(document.querySelector('#username'));
-document.querySelector('#passwordSection label').removeChild(document.querySelector('#password'));
-const usernameInput = document.createElement('input');
-usernameInput.id = 'username';
-usernameInput.classList.add('un-input');
-usernameInput.setAttribute('placeholder', 'Identifiant');
-usernameInput.setAttribute('name', 'username');
+document
+    .querySelector("#usernameSection label")
+    .removeChild(document.querySelector("#username"));
+document
+    .querySelector("#passwordSection label")
+    .removeChild(document.querySelector("#password"));
+const usernameInput = document.createElement("input");
+usernameInput.id = "username";
+usernameInput.classList.add("un-input");
+usernameInput.setAttribute("placeholder", "Identifiant");
+usernameInput.setAttribute("name", "username");
 
-const passwordInput = document.createElement('input');
-passwordInput.id = 'password';
-passwordInput.classList.add('un-input');
-passwordInput.setAttribute('placeholder', 'Mot de passe');
-passwordInput.setAttribute('name', 'password');
-passwordInput.setAttribute('type', 'password');
+const passwordInput = document.createElement("input");
+passwordInput.id = "password";
+passwordInput.classList.add("un-input");
+passwordInput.setAttribute("placeholder", "Mot de passe");
+passwordInput.setAttribute("name", "password");
+passwordInput.setAttribute("type", "password");
 
-document.querySelector('#usernameSection').appendChild(usernameInput);
-document.querySelector('#passwordSection').appendChild(passwordInput);
+document.querySelector("#usernameSection").appendChild(usernameInput);
+document.querySelector("#passwordSection").appendChild(passwordInput);
 
-const revealPasswordButton = document.createElement('button');
-revealPasswordButton.classList = 'un-button un-button-filled';
-revealPasswordButton.innerHTML = '<i class="material-icons-round">visibility</i>';
-revealPasswordButton.setAttribute('type', 'button');
-revealPasswordButton.addEventListener('click', () => {
-    passwordInput.type = passwordInput.type === 'text' ? 'password' : 'text';
-    revealPasswordButton.innerHTML = passwordInput.type === 'text' ? '<i class="material-icons-round">visibility_off</i>' : '<i class="material-icons-round">visibility</i>';
+const revealPasswordButton = document.createElement("button");
+revealPasswordButton.classList = "un-button un-button-filled";
+revealPasswordButton.innerHTML =
+    '<i class="material-icons-round">visibility</i>';
+revealPasswordButton.setAttribute("type", "button");
+revealPasswordButton.addEventListener("click", () => {
+    passwordInput.type = passwordInput.type === "text" ? "password" : "text";
+    revealPasswordButton.innerHTML =
+        passwordInput.type === "text"
+            ? '<i class="material-icons-round">visibility_off</i>'
+            : '<i class="material-icons-round">visibility</i>';
 });
-document.querySelector('#passwordSection').appendChild(revealPasswordButton);
+document.querySelector("#passwordSection").appendChild(revealPasswordButton);
