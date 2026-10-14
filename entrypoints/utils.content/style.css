@@ -11,7 +11,6 @@
     --on-surface-high-emphasis-filter: brightness(0) saturate(100%) !important;
     --on-surface-low-emphasis-filter: brightness(0) saturate(100%) invert(40%) sepia(0%) saturate(0%) hue-rotate(152deg) brightness(98%) contrast(89%) !important;
 
-
     --surface-low: #F9F9F9;
     --surface-medium: #E7E7E7;
     --surface-high: #D4D4D4;

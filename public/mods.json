@@ -160,7 +160,7 @@
         "frame": "all",
         "enabled": true,
         "chromiumFiles": ["/mods/uncloud-skip-consent/uncloud-skip-consent.js", "/mods/uncloud-skip-consent/uncloud-skip-consent.css"],
-        "firefoxFiles": ["/mods/uncloud-autologin/uncloud-skip-consent.js", "/mods/uncloud-autologin/uncloud-skip-consent.css"],
+        "firefoxFiles": ["/mods/uncloud-skip-consent/uncloud-skip-consent.js", "/mods/uncloud-skip-consent/uncloud-skip-consent.css"],
         "matches": ["https://cas6n.univ-nantes.fr*"],
         "version": "beta",
         "hidden": false,

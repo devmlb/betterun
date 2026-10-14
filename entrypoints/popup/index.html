@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit" />
     <link rel="stylesheet" href="/mdui/mdui.css">
     <script src="/mdui/mdui.global.js"></script>
@@ -10,14 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="popup.js"></script>
-    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div id="home-page" class="page">
         <header>
-            <img src="/internal/icons/icon-256.png">
+            <img src="/icons/icon-256.png" alt="BetterUN logo">
             <h1>BetterUN</h1>
             <span class="growing-space"></span>
             <mdui-button-icon id="settings-btn" icon="settings--rounded"></mdui-button-icon>
@@ -57,6 +57,7 @@
             </section>
         </div>
     </div>
+    <script type="module" src="./main.ts"></script>
 </body>
 
 </html>

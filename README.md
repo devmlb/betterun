@@ -1,4 +1,4 @@
-# <p align="center"><img src="internal/icons/banner.png" width="50%"></p>
+# <p align="center"><img src="public/icons/banner.png" width="50%"></p>
 
 BetterUN is a [browser extension](https://en.wikipedia.org/wiki/Browser_extension) that enhances the [Nantes Université](https://www.univ-nantes.fr/) websites available to students. It modifies their appearance and adds new features to make the user experience more pleasant, unified and ergonomic.  
   
@@ -15,7 +15,7 @@ BetterUN is based on the [ItsBetter project](https://github.com/devmlb/itsbetter
 |--|--|--|--|
 | Chrome | ✅ | ☑️ | ☑️ |
 | Chromium-based (Opera, Edge...) | ☑️ | ☑️ | ☑️ |
-| Firefox | ⚠️ | ⚠️ | ⚠️ |
+| Firefox | ✅ | ☑️ | ☑️ |
 
 </td><td>
 
@@ -27,6 +27,45 @@ BetterUN is based on the [ItsBetter project](https://github.com/devmlb/itsbetter
 </table>
 
 BetterUN is currently being developed and tested for [the student intranet](https://intraetu.univ-nantes.fr/) only.
+
+## Development
+
+The project is built with [WXT](https://wxt.dev/) and [TypeScript](https://www.typescriptlang.org/).
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+)
+- [npm](https://www.npmjs.com/)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+```
+
+### Commands
+
+```bash
+# Start development server with hot-reload (Chrome)
+npm run dev
+
+# Start development server with hot-reload (Firefox)
+npm run dev:firefox
+
+# Type check
+npm run compile
+
+# Build for Chrome (MV3)
+npm run build
+
+# Build for Firefox (MV2/MV3)
+npm run build:firefox
+
+# Package zip files for distribution
+npm run zip
+npm run zip:firefox
+```
 
 ## Installing, uninstalling and updating
 
