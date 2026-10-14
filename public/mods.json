@@ -154,20 +154,6 @@
         "sectionId": "course-page"
     },
     {
-        "id": "uncloud-skip-consent",
-        "title": "Passer la demande de consentement à la connexion",
-        "desc": "Autorise automatiquement l'accès à UNcloud au profil utilisateur dans la page apparaissant juste après la connexion.",
-        "frame": "all",
-        "enabled": true,
-        "chromiumFiles": ["/mods/uncloud-skip-consent/uncloud-skip-consent.js", "/mods/uncloud-skip-consent/uncloud-skip-consent.css"],
-        "firefoxFiles": ["/mods/uncloud-skip-consent/uncloud-skip-consent.js", "/mods/uncloud-skip-consent/uncloud-skip-consent.css"],
-        "matches": ["https://cas6n.univ-nantes.fr*"],
-        "version": "beta",
-        "hidden": false,
-        "pageId": "uncloud",
-        "sectionId": "main"
-    },
-    {
         "id": "madoc-notifs-menu",
         "title": "Améliorer le menu de notifications",
         "desc": "Corrige un bug rendant le texte du menu de notifications illisible et unifie son apparence.",
