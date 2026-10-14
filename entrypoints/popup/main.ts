@@ -1,3 +1,10 @@
+import 'mdui/mdui.css';
+import 'mdui';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import 'material-icons/iconfont/round.css';
+import { setColorScheme } from 'mdui';
+
 import type { Mod, Structure, ExtensionStorage } from '../../types/betterun';
 import type { PublicPath } from 'wxt/browser';
 
@@ -175,7 +182,7 @@ async function initUI(): Promise<void> {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  (window as any).mdui?.setColorScheme('#3452ff');
+  setColorScheme('#3452ff');
   initUI();
   setTimeout(() => {
     document.body.classList.add('ready');

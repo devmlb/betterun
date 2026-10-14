@@ -1,5 +1,11 @@
+import 'mdui/mdui.css';
+import 'mdui';
+import '@fontsource/roboto/400.css';
+import 'material-icons/iconfont/round.css';
+import { setColorScheme } from 'mdui';
+
 document.addEventListener('DOMContentLoaded', () => {
-  (window as any).mdui?.setColorScheme('#3452ff');
+  setColorScheme('#3452ff');
   const btn = document.getElementById('permission-btn');
   const snackbar = document.getElementById('snackbar') as any;
 

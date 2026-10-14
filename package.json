@@ -15,6 +15,9 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
+    "@fontsource/material-icons-round": "^5.3.0",
+    "@fontsource/roboto": "^5.3.0",
+    "material-icons": "^1.13.14",
     "mdui": "^2.1.5"
   },
   "devDependencies": {

@@ -24,9 +24,8 @@ export default defineConfig({
       {
         resources: [
           'mods/*',
-          'internal/*',
-          'mdui/*',
           'icons/*',
+          'assets/*',
           '*.woff2',
         ],
         matches: ['https://*.univ-nantes.fr/*'],
