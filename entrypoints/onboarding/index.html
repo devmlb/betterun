@@ -7,24 +7,11 @@
     <meta name="renderer" content="webkit" />
     <title>BetterUN - Bienvenue</title>
     <link rel="icon" type="image/png" href="/icons/icon-16.png">
-    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-        <img src="/icons/icon-256.png" style="width: 50px; height: 50px; margin-right: 10px;" alt="BetterUN logo">
-        <h1>BetterUN</h1>
-    </div>
-    <mdui-card variant="filled" style="padding: 60px; text-align: center; max-width: 40vw;">
-        <h1 style="margin-top: 0px; margin-bottom: 30px;">Vous y êtes presque !</h1>
-        <p style="margin-top: 0px; margin-bottom: 60px; font-size: 18px;">Il ne vous reste plus qu'à accorder à l'extension l'autorisation d'accéder
-            aux URLs du type "https://*.univ-nantes.fr" pour qu'elle puisse fonctionner correctement.</p>
-        <mdui-button id="permission-btn" style="margin-top: 5px;" full-width end-icon="open_in_new--rounded">Accorder
-            les permissions nécessaires</mdui-button>
-        <p style="margin-top: 20px;">Un popup devrait s'ouvrir. Une fois terminé, vous pourrez fermer cette page.</p>
-    </mdui-card>
-    <mdui-snackbar id="snackbar">Demande de permissions initiée.</mdui-snackbar>
-    <script type="module" src="./main.ts"></script>
+<body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
 </body>
 
 </html>

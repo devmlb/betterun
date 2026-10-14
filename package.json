@@ -18,10 +18,15 @@
     "@fontsource/material-icons-round": "^5.3.0",
     "@fontsource/roboto": "^5.3.0",
     "material-icons": "^1.13.14",
-    "mdui": "^2.1.5"
+    "mdui": "^2.1.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@wxt-dev/module-react": "^1.2.2",
     "typescript": "^5.7.3",
     "wxt": "^0.21.4"
   }
