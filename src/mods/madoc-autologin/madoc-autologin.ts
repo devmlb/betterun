@@ -12,6 +12,9 @@
         loginDropdown
     ) {
         // If there is a dropdown we are on the home page with login options
+        // https://madoc.univ-nantes.fr/
+        // https://madoc.univ-nantes.fr
+        
         const parent = loginDropdown.parentElement;
         if (!parent) return;
 
@@ -44,8 +47,11 @@
         jumbotron.appendChild(redirectDisplay);
 
         window.location.replace(redirectUrl);
-    } else if (currentUrl === MADOC_BASE_URL + "/login/index.php") {
+    } else if (currentUrl.startsWith(MADOC_BASE_URL + "/login/index.php")) {
         // Alternative login page
+        // https://madoc.univ-nantes.fr/login/index.php
+        // https://madoc.univ-nantes.fr/login/index.php?loginredirect=1
+
         const redirectBtn = document.querySelector<HTMLAnchorElement>(
             ".btn.login-identityprovider-btn.btn-block",
         );
