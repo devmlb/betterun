@@ -1,4 +1,8 @@
+import { Logger } from "@/utils/logger";
+
 (function () {
+    const logger = new Logger("uncloud-autologin");
+
     const UNCLOUD_URL = "https://uncloud.univ-nantes.fr";
     const currentUrl = window.location.toString();
 
@@ -18,18 +22,23 @@
             "#alternative-logins>a",
         )?.href;
 
-        if (!redirectUrl) return;
-
-        const redirectText = document.createElement("h2");
-        redirectText.className = "login-form__headline";
-        redirectText.textContent =
-            "Redirection vers l'authentification centralisée...";
+        if (!redirectUrl) {
+            logger.error("Cannot find redirect URL");
+            return;
+        }
 
         const form = document.querySelector(".guest-box.login-box");
-        if (!form) return;
+        if (form) {
+            const redirectText = document.createElement("h2");
+            redirectText.className = "login-form__headline";
+            redirectText.textContent =
+                "Redirection vers l'authentification centralisée...";
 
-        form.childNodes.forEach((n) => form.removeChild(n));
-        form.appendChild(redirectText);
+            form.childNodes.forEach((n) => form.removeChild(n));
+            form.appendChild(redirectText);
+        } else {
+            logger.warn("Cannot find the form node to append the redirect text");
+        }
 
         window.location.replace(redirectUrl);
     }
