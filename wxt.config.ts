@@ -22,7 +22,7 @@ export default defineConfig({
         },
         web_accessible_resources: [
             {
-                resources: ["assets/*"],
+                resources: ["assets/*", "mods/*"],
                 matches: ["https://*.univ-nantes.fr/*"],
             },
         ],

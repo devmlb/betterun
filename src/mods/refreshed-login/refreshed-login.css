@@ -1,219 +1,125 @@
-.mdc-drawer-app-content {
-    justify-content: center !important;
-    align-items: center !important;
+:root {
+    --un-logo-path: url("chrome-extension://__MSG_@@extension_id__/mods/refreshed-login/logo.png");
 }
 
 #main-content {
-    margin: 0px !important;
-    padding: 0px !important;
-    width: auto !important;
-    height: min-content !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+#content > div.mdc-card {
+    border: solid 1px #dcdcdc !important;
+    border-radius: 8px !important;
 }
 
 #loginForm {
-    padding: 0px !important;
-}
-
-.form-wrapper {
-    border-radius: 20px !important;
-    background-color: #ffffff !important;
-    padding: 40px !important;
-    background-image: none !important;
-    max-width: 430px !important;
-    box-shadow: var(--shadow);
-}
-
-#fm1 {
-    margin-top: 0px !important;
-}
-
-#window-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-#window-header--infos h1 {
-    color: var(--primary);
-    margin-block-end: 4px;
-}
-
-#window-header--infos span {
-    font-weight: bold;
-    font-size: large;
-}
-
-#window-header--logo {
-    background-image: url(https://cas6n.univ-nantes.fr/esup-cas-server/images/pastille-100px_pastille-noir-defonce.png);
-    height: 100px;
-    width: 100px;
-    display: block;
-    border-radius: 1000px;
-    flex-shrink: 0;
-}
-
-#login-form-controls {
-    max-width: unset !important;
-}
-
-#passwordSection {
-    gap: 1rem;
-}
-
-/* .mdc-button.mdc-button--raised {
-    box-shadow: none !important;
-    background-color: var(--primary) !important;
-    border-radius: 8px !important;
-    height: auto;
-    padding: 16px;
-    transition: background-color var(--transition-duration) !important;
-}
-
-.mdc-button.mdc-button--raised:hover {
-    background-color: var(--primary-dark) !important;
-    border: none !important;
-    color: var(--on-primary-dark) !important;
-} */
-
-#loginErrorsPanel {
-    background-color: var(--error) !important;
-    border: none !important;
-    color: var(--on-error) !important;
+    min-width: 400px !important;
     padding: 10px !important;
 }
 
-.mdc-button.mdc-button--raised {
-    height: auto !important;
-    box-shadow: none !important;
-    font-family:
-        "source sans pro", Arial, "Helvetica Neue", Helvetica,
-        "Bitstream Vera Sans", sans-serif !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    font-size: 1rem !important;
-    padding: 0.7rem 1.2rem !important;
-    border-radius: 0.4rem !important;
-    transition:
-        background-color var(--transition-duration),
-        color var(--transition-duration),
-        border var(--transition-duration) !important;
-    cursor: pointer !important;
-    background-color: var(--primary) !important;
-    color: var(--on-primary) !important;
-    border: 3px solid var(--primary) !important;
-    letter-spacing: normal !important;
+#loginForm .form-wrapper {
+    padding: 0 20px 20px !important;
 }
 
-.mdc-button--raised:hover,
-.mdc-button--raised:focus,
-#submit-button:hover,
-#submit-button:focus {
-    background-color: var(--primary-dark) !important;
-    color: var(--on-primary-dark) !important;
-    border: 3px solid var(--primary-dark) !important;
+#loginForm .form-wrapper {
+    background: none !important;
 }
 
-.mdc-text-field.mdc-text-field--outlined {
-    font-family:
-        "source sans pro", Arial, "Helvetica Neue", Helvetica,
-        "Bitstream Vera Sans", sans-serif !important;
-    font-size: 1rem !important;
-    padding: 0.7rem !important;
-    border-radius: 0.4rem !important;
-    transition: border var(--transition-duration) !important;
-    background-color: inherit !important;
-    color: #000000 !important;
-    border: 3px solid var(--neutral) !important;
+#loginForm .form-wrapper > h1 {
+    background-image: var(--un-logo-path);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 80px;
 }
 
-.mdc-text-field.mdc-text-field--outlined:hover,
-.mdc-text-field.mdc-text-field--outlined:focus,
-.mdc-text-field.mdc-text-field--outlined:focus-visible,
-.mdc-text-field.mdc-text-field--outlined:active {
-    border: 3px solid var(--primary) !important;
-    outline: none !important;
+#loginForm .form-wrapper .form-title {
+    margin: 0 !important;
 }
 
-.mdc-notched-outline.mdc-notched-outline--upgraded {
-    display: none !important;
+#serviceui {
+    margin-bottom: 30px !important;
+    padding: 15px;
+    border: none !important;
+    background-color: #e9e9e9 !important;
 }
 
-.un-input {
-    font-family:
-        "source sans pro", Arial, "Helvetica Neue", Helvetica,
-        "Bitstream Vera Sans", sans-serif;
-    font-size: 1rem;
-    padding: 0.7rem;
-    border-radius: 0.4rem !important;
-    transition: border var(--transition-duration);
-    background-color: inherit;
-    color: #000000;
-    border: 3px solid var(--neutral);
-    line-height: initial;
-}
-
-.un-input:hover,
-.un-input:focus,
-.un-input:focus-visible,
-.un-input:active {
-    border: 3px solid var(--primary);
-    outline: none;
-}
-
-#usernameSection .d-flex,
-#passwordSection .mdc-input-group-field,
-#passwordSection .reveal-password {
-    display: none !important;
-}
-
-#passwordSection > button.un-button {
-    display: flex;
+#serviceui > div {
     justify-content: center;
-    align-items: center;
 }
 
-#passwordSection > button.un-button > i {
-    font-size: 20px !important;
-}
-
-input#username,
-input#password {
-    width: 100%;
-}
-
-.un-button {
-    font-family:
-        "source sans pro", Arial, "Helvetica Neue", Helvetica,
-        "Bitstream Vera Sans", sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1rem;
-    padding: 0.7rem 1.2rem;
-    border-radius: 0.4rem;
-    transition:
-        background-color var(--transition-duration),
-        color var(--transition-duration),
-        border var(--transition-duration);
-    cursor: pointer;
-}
-
-.un-button-filled {
-    background-color: var(--primary);
-    color: var(--on-primary);
-    border: 3px solid var(--primary);
-}
-
-.un-button-filled:hover {
-    background-color: var(--primary-dark);
-    color: var(--on-primary-dark);
-    border: 3px solid var(--primary-dark);
-}
-
-.form-wrapper > h1 {
+#serviceui #serviceUIMetadataDisplayName,
+#serviceui #servicedesc>strong {
     display: none;
 }
 
-#supersized {
-    filter: blur(2px);
+#serviceui #serviceUIMetadataDescription,
+#serviceui #servicedesc>p {
+    font-family: Beatrice;
+    font-size: 16px !important;
+    font-weight: bold;
+    margin-block-start: 4px;
+    color: #888888;
+}
+
+#passwordSection {
+    gap: 8px;
+}
+
+#login-form-controls {
+    max-width: none !important;
+}
+
+#logo {
+    display: none !important;
+}
+
+#footer-message {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #888888 !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(4px);
+}
+
+.mdc-button {
+    gap: 12px;
+}
+
+.mdc-button.mdc-button--raised {
+    box-shadow: none !important;
+    border-radius: 4px !important;
+    padding: 0 12px 0 12px !important;
+}
+
+.mdc-button.mdc-button--raised:focus,
+.mdc-button.mdc-button--raised:hover {
+    background-color: #2b42c7 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.mdc-button.mdc-button--raised:not(.reveal-password) {
+    height: 40px !important;
+}
+
+.mdc-button.mdc-button--raised.reveal-password {
+    background-color: transparent !important;
+    color: #666666 !important;
+}
+
+.mdc-button.mdc-button--raised.reveal-password:hover,
+.mdc-button.mdc-button--raised.reveal-password:focus {
+    background-color: #e9e9e9 !important;
+    border: none !important;
+}
+
+.mdc-button .mdc-button__label {
+    font-weight: 600;
+}
+
+.mdc-top-app-bar--fixed-adjust {
+    padding-top: 0 !important;
 }
