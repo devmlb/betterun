@@ -19,15 +19,13 @@ export default function SettingsPage({ active, onBack }: SettingsPageProps) {
                     icon="arrow_back--rounded"
                     onClick={onBack}
                 />
-                <h2>Paramètres</h2>
+                <h2>À propos</h2>
                 <span className="growing-space" />
             </header>
             <div className="content">
                 <section id="about-section">
-                    <h3>À propos</h3>
                     <mdui-card className="mods-card" variant="filled">
                         <h1 id="release-version">{version}</h1>
-                        <mdui-divider />
                         <p>
                             BetterUN est développée par{" "}
                             <a
@@ -35,7 +33,7 @@ export default function SettingsPage({ active, onBack }: SettingsPageProps) {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Mlb
+                                @devmlb
                             </a>
                             .
                         </p>
@@ -44,15 +42,13 @@ export default function SettingsPage({ active, onBack }: SettingsPageProps) {
                             aucun cas officiellement liée à Nantes Université.
                         </p>
                         <p>
-                            BetterUN est disponible sous licence GNU General
-                            Public License v3.0.
+                            BetterUN est un projet open source disponible sous
+                            licence GNU General Public License v3.0.
                         </p>
                         <mdui-divider />
                         <p>
-                            Aucune donnée (personnelle ou statistique)
-                            appartenant à l'utilisateur n'est collectée par
-                            l'extension. En cas de doute, le code source est
-                            accessible à tous sur Github (voir ci-dessous).
+                            Aucune donnée personnelle ou statistique appartenant
+                            à l'utilisateur n'est collectée par l'extension.
                         </p>
                     </mdui-card>
                 </section>

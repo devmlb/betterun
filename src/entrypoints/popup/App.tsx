@@ -65,7 +65,7 @@ export default function PopupApp() {
                     <span className="growing-space" />
                     <mdui-button-icon
                         id="settings-btn"
-                        icon="settings--rounded"
+                        icon="more_vert--rounded"
                         onClick={() => setActivePage("settings")}
                     />
                 </header>
