@@ -4,6 +4,7 @@ import fontWoff2Url from "material-icons/iconfont/material-icons-round.woff2";
 export default defineContentScript({
     matches: ["https://*.univ-nantes.fr/*"],
     runAt: "document_start",
+    allFrames: true,
     main() {
         const url =
             typeof fontWoff2Url === "string" &&
