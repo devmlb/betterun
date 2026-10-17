@@ -6,15 +6,7 @@ export default defineContentScript({
     runAt: "document_start",
     allFrames: true,
     main() {
-        const url =
-            typeof fontWoff2Url === "string" &&
-            (fontWoff2Url.startsWith("http") ||
-                fontWoff2Url.startsWith("chrome-extension://") ||
-                fontWoff2Url.startsWith("moz-extension://"))
-                ? fontWoff2Url
-                : browser.runtime.getURL(fontWoff2Url as any);
-
-        const font = new FontFace("Material Icons Round", `url(${url})`, {
+        const font = new FontFace("Material Icons Round", `url(${fontWoff2Url})`, {
             style: "normal",
             weight: "400",
         });
