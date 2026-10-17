@@ -14,20 +14,6 @@
         "sectionId": "main"
     },
     {
-        "id": "madoc-pp",
-        "title": "Redimensionner la photo de profil",
-        "desc": "Corrige un bug rendant la photo de profil démesurée par rapport à l'interface.",
-        "frame": "all",
-        "enabled": true,
-        "chromiumFiles": ["/mods/madoc-pp/madoc-pp.css"],
-        "firefoxFiles": ["/mods/madoc-pp/madoc-pp.css"],
-        "matches": ["https://madoc.univ-nantes.fr*"],
-        "version": "v1.0",
-        "hidden": false,
-        "pageId": "madoc",
-        "sectionId": "main"
-    },
-    {
         "id": "uncloud-autologin",
         "title": "Utiliser l'authentification centralisée",
         "desc": "Remplace le dispositif de connexion natif d'UNcloud par l'authentification centralisée (CAS) de l'Université.",
@@ -36,7 +22,7 @@
         "chromiumFiles": ["/mods/uncloud-autologin/uncloud-autologin.js"],
         "firefoxFiles": ["/mods/uncloud-autologin/uncloud-autologin.js"],
         "matches": ["https://uncloud.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "uncloud",
         "sectionId": "main"
@@ -113,14 +99,14 @@
     },
     {
         "id": "refreshed-login",
-        "title": "Moderniser l'écran de connexion",
-        "desc": "Unifie et améliore l'apparence de l'interface de connexion.",
+        "title": "Moderniser l'interface",
+        "desc": "Unifie et améliore l'apparence de l'interface de connexion centralisée (CAS).",
         "frame": "all",
         "enabled": true,
         "chromiumFiles": ["/mods/refreshed-login/refreshed-login.css"],
         "firefoxFiles": ["/mods/refreshed-login/refreshed-login.css", "/mods/refreshed-login/refreshed-login-ff.css"],
         "matches": ["https://login.univ-nantes.fr/*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "intranet",
         "sectionId": "login-page"
@@ -142,7 +128,7 @@
     {
         "id": "madoc-truncate",
         "title": "Révéler le texte tronqué",
-        "desc": "Dans le menu de gauche, affiche une info-bulle précisant le texte tronqué quand la souris est passée dessus.",
+        "desc": "Affiche une info-bulle précisant le texte tronqué quand la souris est passée sur un item du panneau de gauche.",
         "frame": "all",
         "enabled": true,
         "chromiumFiles": ["/mods/madoc-truncate/madoc-truncate.js"],
@@ -162,7 +148,7 @@
         "chromiumFiles": ["/mods/madoc-notifs-menu/madoc-notifs-menu.css"],
         "firefoxFiles": ["/mods/madoc-notifs-menu/madoc-notifs-menu.css"],
         "matches": ["https://madoc.univ-nantes.fr*"],
-        "version": "beta",
+        "version": "v1.0",
         "hidden": false,
         "pageId": "madoc",
         "sectionId": "main"
